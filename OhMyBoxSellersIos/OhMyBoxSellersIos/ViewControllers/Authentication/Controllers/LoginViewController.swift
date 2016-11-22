@@ -17,34 +17,64 @@ let KEY_CONFIRM_PASS = "confirmationPass"
 class LoginViewController: UIViewController {
     
     
+    @IBOutlet weak var pinkBackgroundImage: UIImageView!
+    @IBOutlet weak var backgroundImageBlue: UIImageView!
     @IBOutlet weak var loginTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
     var dictionaryTextFields = Dictionary <String, String>()
 
     
+    func doBackgroundChangeAnimation() {
+        
+        //Author - André Brandão
+        UIView.animate(withDuration: 5.0, delay: 0.0, options: .curveEaseInOut, animations: {
+            
+            if self.backgroundImageBlue.alpha == 1 {
+                self.backgroundImageBlue.alpha = 0
+            } else {
+                self.backgroundImageBlue.alpha = 1
+            }
+            if self.pinkBackgroundImage.alpha == 1 {
+                self.pinkBackgroundImage.alpha = 0
+            } else {
+                self.pinkBackgroundImage.alpha = 1
+            }
+
+        }) { (finished) in
+            
+            if finished {
+                self.doBackgroundChangeAnimation()
+            }
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-         FBSDKLoginManager().logOut()
+        
+        FBSDKLoginManager().logOut()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.doBackgroundChangeAnimation()
     }
 
     @IBAction func loginApp(_ sender: AnyObject) {
         
         if let msgError = self.verifyInformations() {
-            
             self.present(ViewUtil.alertControllerWithTitle(_title: "Erro", _withMessage: msgError), animated: true, completion: nil)
-            
-          
             return
+        } else {
+            self.getRequestLogin()
         }
-        self.getRequestLogin()
     }
     
     @IBAction func loginWithFacebook(_ sender: AnyObject) {
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
-        
+
         fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
-          
             if error == nil {
                 self.view.loadAnimation()
                 let fbloginresult : FBSDKLoginManagerLoginResult = result!
@@ -53,21 +83,13 @@ class LoginViewController: UIViewController {
                     self.view.unload()
                     return
                 }
-                
                 if(fbloginresult.grantedPermissions.contains("email")) {
-                    
                     self.returnUserData()
-                    
                 }
-            } else {
-            
             }
-            
         }
-
-        
-    
     }
+    
     func returnUserData(){
         
         if((FBSDKAccessToken.current()) != nil){
@@ -76,58 +98,24 @@ class LoginViewController: UIViewController {
                 
                 if (error == nil) {
                     
-                    print(result)
-                    
                     let data:[String:AnyObject] = result as! [String : AnyObject]
-//                    
-//                    UserRequest.loginUserWithFacebook(id: data["id"] as! String, email: data["email"] as! String,mediaType:SocialMediaType.facebook.rawValue, completionHandler: { (success, msg, user) in
-//                        
-//                            if success {
-//                            Defaults.sharedInstance.isLogged = true
-//                            self.present(ViewUtil.viewControllerFromStoryboardWithIdentifier("Main")!, animated: true, completion: nil)
-//
-//                                print (user)
-//                            }else {
-//                                self.view.unload()
-//                                self.present(ViewUtil.alertControllerWithTitle(_title: "Erro", _withMessage: msg), animated: true, completion: nil)
-//                            }
-//                    })
                     
+                    let socialMediaId = data["id"] as! String
+                    let email = data["email"] as! String
                     
-                    
+                    FFAuthRequests.loginUserWithSocialMedia(socialMediaId: socialMediaId, email: email, socialMediaType: .facebook, socialMediaPasswordServerSecret: "AQWgd$j[QGe]Bh.Ugkf>?B3y696?2$#B2xwfN3hrVhFrE348g", autoStoreAuthTokenData: true) { (error, deta) in
+                        
+                        if error == nil {
+                            
+                            self.present(ViewUtil.viewControllerFromStoryboardWithIdentifier("Home")!, animated: true, completion: nil)
+                        }else {
+                            self.view.unload()
+                            self.present(ViewUtil.alertControllerWithTitle(_title: "Erro", _withMessage: error!.detail!), animated: true, completion: nil)
+                        }
+                    }
                 }
             })
         }
-    }
-    
-    
-    
-    func verifyInformations() -> String? {
-        self.getFields()
-        var msgErro: String?
-        
-        if self.dictionaryTextFields[KEY_EMAIL] == nil || self.dictionaryTextFields[KEY_EMAIL] == "" {
-            
-            msgErro = "Email inválido"
-            
-            return msgErro
-        }
-        
-        if self.dictionaryTextFields[KEY_PASS] == nil || self.dictionaryTextFields[KEY_PASS] == "" {
-            
-            msgErro = "Senha inválida"
-            
-            return msgErro
-        }
-        
-        return msgErro
-        
-    }
-    
-    func getFields(){
-        self.view.endEditing(true)
-        self.dictionaryTextFields[KEY_PASS] = passwordTextField.text
-        self.dictionaryTextFields[KEY_EMAIL] = loginTextField.text
     }
     
     func getRequestLogin(){
@@ -141,7 +129,6 @@ class LoginViewController: UIViewController {
             } else {
                    self.present(ViewUtil.alertControllerWithTitle(_title: "Erro", _withMessage:error!.detail!), animated: true, completion: nil)
             }
-
         }
     }
     
@@ -155,4 +142,37 @@ class LoginViewController: UIViewController {
         return alert
     }
     
+    
+    func verifyInformations() -> String? {
+        
+        self.getFields()
+        var msgErro: String?
+        
+        if self.dictionaryTextFields[KEY_EMAIL] == nil || self.dictionaryTextFields[KEY_EMAIL] == "" {
+            
+            msgErro = "Email inválido"
+            return msgErro
+        }
+        
+        if self.dictionaryTextFields[KEY_PASS] == nil || self.dictionaryTextFields[KEY_PASS] == "" {
+            
+            msgErro = "Senha inválida"
+            return msgErro
+        }
+        
+        return msgErro
+    }
+    
+    func getFields(){
+        self.view.endEditing(true)
+        self.dictionaryTextFields[KEY_PASS] = passwordTextField.text
+        self.dictionaryTextFields[KEY_EMAIL] = loginTextField.text
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 }
+
+

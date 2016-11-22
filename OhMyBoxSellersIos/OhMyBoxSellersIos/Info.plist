@@ -86,6 +86,14 @@
         <key>NSAllowsArbitraryLoads</key>
         <true/>
     </dict>
-
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb378622815806757</string>
+            </array>
+        </dict>
+    </array>
 </dict>
 </plist>
