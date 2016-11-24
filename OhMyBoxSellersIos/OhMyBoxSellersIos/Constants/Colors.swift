@@ -9,59 +9,35 @@
 import UIKit
 
 extension UIColor {
-
-    static var menuBackgroundColor: UIColor  {
+    
+    static var squaresViewBlueColor: UIColor  {
         get {
-                return UIColor(red: 44/255, green: 44/255, blue: 44/255, alpha: 1)
+            return UIColor.colorWithHexString("44F1DD")
         }
     }
     
-    static var unselectedButtonTextColor: UIColor  {
+    static var squaresButtonBlueColor: UIColor  {
         get {
-            return UIColor.colorWithHexString("BDBDBD")
+            return UIColor.colorWithHexString("B198D1")
         }
     }
     
-    static var selectedButtonTextColor: UIColor  {
+    static var squaresViewPinkColor: UIColor  {
         get {
-            return UIColor.white
+            return UIColor.colorWithHexString("E03D7B")
         }
     }
     
+    static var squaresButtonPinkColor: UIColor  {
+        get {
+            return UIColor.colorWithHexString("E03D7B")
+        }
+    }
   
 }
 
 //MARK: - CHAT MESSAGES COLORS
 extension UIColor {
     
-    static var myMessageChatTextColor: UIColor  {
-        get {
-            return UIColor.colorWithHexString("FFFFFF")
-        }
-    }
-    static var myMessageChatBorderColor: UIColor  {
-        get {
-            return UIColor.colorWithHexString("2C2C2C")
-        }
-    }
-    static var myMessageChatBackgroundColor: UIColor  {
-        get {
-            return UIColor.colorWithHexString("2C2C2C")
-        }
-    }
-    static var friendMessageChatTextColor: UIColor  {
-        get {
-            return UIColor.colorWithHexString("000000")
-        }
-    }
-    static var friendMessageChatBackgroundColor: UIColor  {
-        get {
-            return UIColor.colorWithHexString("FAFAFA")
-        }
-    }
-    static var friendMessageChatBorderColor: UIColor  {
-        get {
-            return UIColor.colorWithHexString("E0E0E0")
-        }
-    }
+  
 }

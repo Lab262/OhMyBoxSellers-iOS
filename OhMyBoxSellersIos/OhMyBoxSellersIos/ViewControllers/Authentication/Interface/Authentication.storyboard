@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XjA-il-pAm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4IL-UE-W8c">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -32,13 +32,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="m3v-0Q-6gc" userLabel="backgroundImage">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="m3v-0Q-6gc" userLabel="backgroundImage">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueBlur_image" translatesAutoresizingMaskIntoConstraints="NO" id="LnP-RB-M1o">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueBlur_image" translatesAutoresizingMaskIntoConstraints="NO" id="LnP-RB-M1o">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roseBlur_image" translatesAutoresizingMaskIntoConstraints="NO" id="XJg-kf-VjY" userLabel="Background Image Rose">
+                            <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roseBlur_image" translatesAutoresizingMaskIntoConstraints="NO" id="XJg-kf-VjY" userLabel="Background Image Rose">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QvN-qL-Zbb" userLabel="Vendas Square">
@@ -170,13 +170,13 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="o6t-HN-zRY" kind="show" id="tgW-OU-wn9">
+                                    <segue destination="o6t-HN-zRY" kind="showDetail" id="tgW-OU-wn9">
                                         <nil key="action"/>
                                     </segue>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lh9-Nv-06y" firstAttribute="leading" secondItem="HcZ-v7-I3g" secondAttribute="leading" id="0MG-7w-Lox"/>
                             <constraint firstItem="XJg-kf-VjY" firstAttribute="centerY" secondItem="LnP-RB-M1o" secondAttribute="centerY" id="2tq-BP-4ph"/>
@@ -200,7 +200,6 @@
                             <constraint firstItem="yIR-rD-VXT" firstAttribute="trailing" secondItem="THq-O8-ZhU" secondAttribute="trailing" id="KMd-wa-o9a"/>
                             <constraint firstItem="FHj-e4-nCS" firstAttribute="centerX" secondItem="LnP-RB-M1o" secondAttribute="centerX" id="Khu-kO-Zfw"/>
                             <constraint firstItem="THq-O8-ZhU" firstAttribute="top" secondItem="yIR-rD-VXT" secondAttribute="bottom" constant="2" id="MCe-Wt-3Mk"/>
-                            <constraint firstItem="QvN-qL-Zbb" firstAttribute="top" secondItem="JGv-IL-fmK" secondAttribute="bottom" constant="110" id="N77-LO-SMP"/>
                             <constraint firstItem="lh9-Nv-06y" firstAttribute="centerY" secondItem="LnP-RB-M1o" secondAttribute="centerY" multiplier="0.97" id="NCl-GT-TrH"/>
                             <constraint firstItem="LnP-RB-M1o" firstAttribute="height" secondItem="l3R-kt-3UL" secondAttribute="height" id="Nmp-iA-7tR"/>
                             <constraint firstItem="HcZ-v7-I3g" firstAttribute="centerX" secondItem="LnP-RB-M1o" secondAttribute="centerX" id="OLq-vP-dh9"/>
@@ -229,6 +228,7 @@
                             <constraint firstItem="M1i-IL-Vtf" firstAttribute="top" secondItem="isG-8E-eaV" secondAttribute="bottom" constant="-1" id="rX9-43-WB4"/>
                             <constraint firstItem="q6e-bM-8B7" firstAttribute="top" secondItem="lh9-Nv-06y" secondAttribute="bottom" constant="48" id="snn-57-MhE"/>
                             <constraint firstItem="M7G-cC-sA2" firstAttribute="trailing" secondItem="HcZ-v7-I3g" secondAttribute="trailing" id="szs-oO-I6U"/>
+                            <constraint firstItem="QvN-qL-Zbb" firstAttribute="top" secondItem="JGv-IL-fmK" secondAttribute="bottom" constant="110" id="teZ-6X-k98"/>
                             <constraint firstItem="VYe-e7-KBu" firstAttribute="top" secondItem="LnP-RB-M1o" secondAttribute="bottom" constant="-59" id="yJR-9k-1YB"/>
                         </constraints>
                     </view>
@@ -236,15 +236,16 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="backgroundImageBlue" destination="LnP-RB-M1o" id="uqV-Fk-T2q"/>
                         <outlet property="loginTextField" destination="yIR-rD-VXT" id="dKf-Xc-RLh"/>
                         <outlet property="passwordTextField" destination="isG-8E-eaV" id="NgS-OP-KPP"/>
-                        <outlet property="pinkBackgroundImage" destination="XJg-kf-VjY" id="68k-Xw-gTw"/>
+                        <outlet property="sellersSquare" destination="QvN-qL-Zbb" id="qtI-vb-PRi"/>
+                        <outlet property="squareLogin" destination="06N-rw-gfQ" id="geL-AE-JtI"/>
+                        <outlet property="squareOhMyBox" destination="M7G-cC-sA2" id="bYL-xt-Ab8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQK-Tm-fF8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2093.5999999999999" y="120.98950524737631"/>
+            <point key="canvasLocation" x="2255" y="121"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="VwP-xi-Pw8">
@@ -258,32 +259,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roseBlur_image" translatesAutoresizingMaskIntoConstraints="NO" id="3VP-2R-Kdu">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roseBlur_image" translatesAutoresizingMaskIntoConstraints="NO" id="3VP-2R-Kdu">
+                                <rect key="frame" x="-0.5" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_image" translatesAutoresizingMaskIntoConstraints="NO" id="yi1-zh-tfJ">
-                                <rect key="frame" x="87" y="92" width="202" height="151"/>
+                                <rect key="frame" x="86.5" y="92" width="202" height="151"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yi1-zh-tfJ" secondAttribute="height" multiplier="202:151" id="EJ8-pP-HQX"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4g-lk-kQH">
-                                <rect key="frame" x="240.5" y="608" width="82" height="33"/>
+                                <rect key="frame" x="240" y="608" width="82" height="33"/>
                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                 <state key="normal" title="Fazer login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="uO1-TX-Z7O" kind="show" id="Tpa-fa-IGW">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <action selector="backToLogin:" destination="o6t-HN-zRY" eventType="touchUpInside" id="Dm3-YT-ZKw"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconUser_image" translatesAutoresizingMaskIntoConstraints="NO" id="K4d-SF-3Jo">
-                                <rect key="frame" x="44" y="276.5" width="24" height="21"/>
+                                <rect key="frame" x="43.5" y="276.5" width="24" height="21"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gO3-80-wJD">
-                                <rect key="frame" x="75" y="277.5" width="252" height="23"/>
+                                <rect key="frame" x="74.5" y="277.5" width="252.5" height="23"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="18"/>
@@ -295,17 +294,17 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWC-36-qJ0">
-                                <rect key="frame" x="75" y="299.5" width="252" height="1"/>
+                                <rect key="frame" x="74.5" y="299.5" width="252.5" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="uVY-On-y2r"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconEmail_image" translatesAutoresizingMaskIntoConstraints="NO" id="PRt-YT-2Kn">
-                                <rect key="frame" x="46" y="349" width="20" height="17"/>
+                                <rect key="frame" x="45.5" y="349" width="20" height="17"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RYJ-lL-Tcd">
-                                <rect key="frame" x="74" y="349" width="252" height="23"/>
+                                <rect key="frame" x="73.5" y="349" width="252.5" height="23"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="18"/>
@@ -317,14 +316,14 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pud-9L-U1t">
-                                <rect key="frame" x="74" y="371" width="252" height="1"/>
+                                <rect key="frame" x="73.5" y="371" width="252.5" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconPass_image" translatesAutoresizingMaskIntoConstraints="NO" id="nYU-9J-lpb">
-                                <rect key="frame" x="46" y="417" width="20" height="20"/>
+                                <rect key="frame" x="45.5" y="417" width="20" height="20"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fj9-U5-HYX">
-                                <rect key="frame" x="74" y="420" width="252" height="23"/>
+                                <rect key="frame" x="73.5" y="420" width="252.5" height="23"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="18"/>
@@ -336,7 +335,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exI-so-ffM">
-                                <rect key="frame" x="74" y="442" width="252" height="1"/>
+                                <rect key="frame" x="73.5" y="442" width="252.5" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ata-MT-YEd">
@@ -363,7 +362,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nYU-9J-lpb" firstAttribute="centerY" secondItem="3VP-2R-Kdu" secondAttribute="centerY" multiplier="1.28" id="0Nf-eH-i0q"/>
                             <constraint firstItem="3VP-2R-Kdu" firstAttribute="centerY" secondItem="r5D-mv-7qb" secondAttribute="centerY" id="1D3-yf-goA"/>
@@ -417,7 +416,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KOx-bd-Bc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2912.8000000000002" y="120.98950524737631"/>
+            <point key="canvasLocation" x="3050" y="121"/>
+        </scene>
+        <!--Authentication Container View Controller-->
+        <scene sceneID="NA2-tv-oT9">
+            <objects>
+                <viewController id="4IL-UE-W8c" customClass="AuthenticationContainerViewController" customModule="OhMyBoxSellersIos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bv2-mG-f41"/>
+                        <viewControllerLayoutGuide type="bottom" id="LMe-lB-4B6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GAW-nj-qAN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="wJ6-qP-brQ" userLabel="backgroundImage">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueBlur_image" translatesAutoresizingMaskIntoConstraints="NO" id="vQZ-g2-9FB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roseBlur_image" translatesAutoresizingMaskIntoConstraints="NO" id="xy3-Su-flQ" userLabel="Background Image Rose">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shT-QR-Qcv">
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="XjA-il-pAm" kind="embed" id="1Pg-44-tUb"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wJ6-qP-brQ" firstAttribute="centerX" secondItem="GAW-nj-qAN" secondAttribute="centerX" id="3SV-hx-AQ4"/>
+                            <constraint firstItem="wJ6-qP-brQ" firstAttribute="centerY" secondItem="GAW-nj-qAN" secondAttribute="centerY" id="79v-Xd-sQ6"/>
+                            <constraint firstItem="wJ6-qP-brQ" firstAttribute="height" secondItem="GAW-nj-qAN" secondAttribute="height" id="AKZ-X0-jyO"/>
+                            <constraint firstItem="xy3-Su-flQ" firstAttribute="centerY" secondItem="vQZ-g2-9FB" secondAttribute="centerY" id="Bea-Eg-pOj"/>
+                            <constraint firstItem="xy3-Su-flQ" firstAttribute="width" secondItem="vQZ-g2-9FB" secondAttribute="width" id="J3t-uW-59y"/>
+                            <constraint firstItem="vQZ-g2-9FB" firstAttribute="width" secondItem="wJ6-qP-brQ" secondAttribute="width" id="PB8-ie-DZM"/>
+                            <constraint firstItem="xy3-Su-flQ" firstAttribute="centerX" secondItem="vQZ-g2-9FB" secondAttribute="centerX" id="SRR-KR-m2i"/>
+                            <constraint firstItem="shT-QR-Qcv" firstAttribute="width" secondItem="GAW-nj-qAN" secondAttribute="width" id="W2F-jQ-kxZ"/>
+                            <constraint firstItem="vQZ-g2-9FB" firstAttribute="centerX" secondItem="wJ6-qP-brQ" secondAttribute="centerX" id="WjP-CR-TCv"/>
+                            <constraint firstItem="xy3-Su-flQ" firstAttribute="height" secondItem="vQZ-g2-9FB" secondAttribute="height" id="YTq-ZB-8Vi"/>
+                            <constraint firstItem="shT-QR-Qcv" firstAttribute="centerX" secondItem="GAW-nj-qAN" secondAttribute="centerX" id="ZJJ-7y-E7u"/>
+                            <constraint firstItem="vQZ-g2-9FB" firstAttribute="height" secondItem="wJ6-qP-brQ" secondAttribute="height" id="gUO-Ml-4i0"/>
+                            <constraint firstItem="shT-QR-Qcv" firstAttribute="height" secondItem="GAW-nj-qAN" secondAttribute="height" id="ixS-4E-eEd"/>
+                            <constraint firstItem="wJ6-qP-brQ" firstAttribute="width" secondItem="GAW-nj-qAN" secondAttribute="width" id="qWh-mg-gWF"/>
+                            <constraint firstItem="vQZ-g2-9FB" firstAttribute="centerY" secondItem="wJ6-qP-brQ" secondAttribute="centerY" id="xh5-98-PX0"/>
+                            <constraint firstItem="shT-QR-Qcv" firstAttribute="centerY" secondItem="GAW-nj-qAN" secondAttribute="centerY" id="y8a-fe-ltS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageBlue" destination="vQZ-g2-9FB" id="uDM-JH-6CH"/>
+                        <outlet property="pinkBackgroundImage" destination="xy3-Su-flQ" id="sSa-Z2-ANp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V0l-jH-WCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="586" y="121"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="F2M-qY-m3l">
@@ -430,12 +486,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="uO1-TX-Z7O" kind="relationship" relationship="rootViewController" id="kGd-lR-CqD"/>
+                        <segue destination="uO1-TX-Z7O" kind="relationship" relationship="rootViewController" id="gHJ-rD-RCW"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psb-5p-C1Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1124" y="120.98950524737631"/>
+            <point key="canvasLocation" x="1433" y="121"/>
         </scene>
     </scenes>
     <resources>
@@ -448,7 +504,4 @@
         <image name="logo_image" width="202" height="151"/>
         <image name="roseBlur_image" width="375" height="667"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Tpa-fa-IGW"/>
-    </inferredMetricsTieBreakers>
 </document>

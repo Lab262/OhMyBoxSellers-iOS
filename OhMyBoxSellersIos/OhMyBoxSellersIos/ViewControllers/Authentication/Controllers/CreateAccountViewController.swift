@@ -10,14 +10,26 @@ import UIKit
 
 class CreateAccountViewController: UIViewController {
     
+    
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-  
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func backToLogin(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.view.alpha = 0
+        })
+        self.navigationController!.popViewController(animated: true)
     }
+  
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIView.animate(withDuration: 0.5, animations: {
+            self.view.alpha = 1
+        })
+    }
+
 
     @IBAction func registerUser(_ sender: Any) {
         if let msgError = verifyInformations(){

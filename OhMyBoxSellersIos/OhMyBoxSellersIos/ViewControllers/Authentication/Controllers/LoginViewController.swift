@@ -17,50 +17,22 @@ let KEY_CONFIRM_PASS = "confirmationPass"
 class LoginViewController: UIViewController {
     
     
-    @IBOutlet weak var pinkBackgroundImage: UIImageView!
-    @IBOutlet weak var backgroundImageBlue: UIImageView!
+
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     var dictionaryTextFields = Dictionary <String, String>()
 
-    
-    func doBackgroundChangeAnimation() {
-        
-        //Author - André Brandão
-        UIView.animate(withDuration: 5.0, delay: 0.0, options: .curveEaseInOut, animations: {
-            
-            if self.backgroundImageBlue.alpha == 1 {
-                self.backgroundImageBlue.alpha = 0
-            } else {
-                self.backgroundImageBlue.alpha = 1
-            }
-            if self.pinkBackgroundImage.alpha == 1 {
-                self.pinkBackgroundImage.alpha = 0
-            } else {
-                self.pinkBackgroundImage.alpha = 1
-            }
 
-        }) { (finished) in
-            
-            if finished {
-                self.doBackgroundChangeAnimation()
-            }
-        }
-        
-    }
+    @IBOutlet weak var squareOhMyBox: UIView!
+    @IBOutlet weak var sellersSquare: UIView!
+    @IBOutlet weak var squareLogin: UIView!
     
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         FBSDKLoginManager().logOut()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.doBackgroundChangeAnimation()
-    }
-
     @IBAction func loginApp(_ sender: AnyObject) {
         
         if let msgError = self.verifyInformations() {
@@ -168,9 +140,46 @@ class LoginViewController: UIViewController {
         self.dictionaryTextFields[KEY_PASS] = passwordTextField.text
         self.dictionaryTextFields[KEY_EMAIL] = loginTextField.text
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let _ = segue.destination as? CreateAccountViewController {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.view.alpha = 0
+            })
+        }
+    }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIView.animate(withDuration: 0.5, animations: {
+            self.view.alpha = 1
+        })
+        self.doBackgroundChangeAnimation()
+    }
+    
+    func doBackgroundChangeAnimation() {
+        
+        //Author - André Brandão
+        UIView.animate(withDuration: 5.0, delay: 0.0, options: .curveEaseInOut, animations: {
+            
+            if self.sellersSquare.backgroundColor == UIColor.squaresViewBlueColor {
+                self.sellersSquare.backgroundColor = UIColor.squaresViewPinkColor
+                self.squareOhMyBox.backgroundColor = UIColor.squaresViewPinkColor
+                self.squareLogin.backgroundColor = UIColor.squaresButtonPinkColor
+            } else {
+                self.sellersSquare.backgroundColor = UIColor.squaresViewBlueColor
+                self.squareOhMyBox.backgroundColor = UIColor.squaresViewBlueColor
+                self.squareLogin.backgroundColor = UIColor.squaresButtonBlueColor
+            }
+            
+        }) { (finished) in
+            
+            if finished {
+                self.doBackgroundChangeAnimation()
+            }
+        }
+        
     }
     
 }
