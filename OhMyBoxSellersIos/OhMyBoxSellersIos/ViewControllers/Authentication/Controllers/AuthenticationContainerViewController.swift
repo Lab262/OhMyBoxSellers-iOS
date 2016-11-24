@@ -14,6 +14,10 @@ class AuthenticationContainerViewController: UIViewController {
     @IBOutlet weak var pinkBackgroundImage: UIImageView!
     @IBOutlet weak var backgroundImageBlue: UIImageView!
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.window?.endEditing(true)
+    }
+    
     func doBackgroundChangeAnimation() {
         
         //Author - André Brandão

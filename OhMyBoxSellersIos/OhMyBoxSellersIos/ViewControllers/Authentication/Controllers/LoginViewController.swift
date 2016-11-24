@@ -122,13 +122,13 @@ class LoginViewController: UIViewController {
         
         if self.dictionaryTextFields[KEY_EMAIL] == nil || self.dictionaryTextFields[KEY_EMAIL] == "" {
             
-            msgErro = "Email inválido"
+            msgErro = "Ei, você precisa informa um e-mail"
             return msgErro
         }
         
         if self.dictionaryTextFields[KEY_PASS] == nil || self.dictionaryTextFields[KEY_PASS] == "" {
             
-            msgErro = "Senha inválida"
+            msgErro = "Ei, você precisa informa uma senha"
             return msgErro
         }
         
