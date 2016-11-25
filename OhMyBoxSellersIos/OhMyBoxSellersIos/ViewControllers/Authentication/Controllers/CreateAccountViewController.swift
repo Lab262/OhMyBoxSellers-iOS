@@ -10,9 +10,18 @@ import UIKit
 
 class CreateAccountViewController: UIViewController {
     
-    @IBOutlet weak var tableView: TextInputTableView!
+    var brandToCreate = Brand()
+    var userToCreate = User()
     
-    var inputFieldsData = ["foi","foi","foi"]
+    var inputFieldsData =  [
+        (icon: #imageLiteral(resourceName: "iconBrandName") , placeholderText: "nome da marca", filledText: ""),
+        (icon: #imageLiteral(resourceName: "iconBrandDescription") , placeholderText: "descrição", filledText: ""),
+        (icon: #imageLiteral(resourceName: "iconPhone") , placeholderText: "telefone", filledText: ""),
+        (icon: #imageLiteral(resourceName: "iconEmail_image") , placeholderText: "email", filledText: ""),
+        (icon: #imageLiteral(resourceName: "iconPass_image") , placeholderText: "senha", filledText: "")
+    ]
+    
+    @IBOutlet weak var tableView: TextInputTableView!
     
     @IBAction func backToLogin(_ sender: Any) {
         UIView.animate(withDuration: 0.5, animations: {
@@ -31,34 +40,6 @@ class CreateAccountViewController: UIViewController {
     
     
     @IBAction func registerUser(_ sender: Any) {
-        if let msgError = verifyInformations(){
-            self.present(ViewUtil.alertControllerWithTitle(_title:"erroo", _withMessage:msgError), animated: true, completion: nil)
-            
-            return
-        }
-        
-        //        let user = User(_name: self.nameTextField.text!, _email:self.emailTextField.text!)
-        //
-        //        UserRequest.createAccountUser(user:user, pass:self.passwordTextField.text!) { (success,msg) in
-        //                if (success){
-        //
-        //                    self.present( self.alertControllerActionWithTitle("Sucesso!!", _withMessage:msg), animated: true, completion: nil)
-        //
-        //                }else {
-        //                    self.present(ViewUtil.alertControllerWithTitle(_title: "Erro", _withMessage:msg), animated: true, completion: nil)
-        //                }
-        //
-        //
-        //        }
-        
-        
-    }
-    
-    func verifyInformations() -> String? {
-        
-        let msgErro: String? = "Missing fields"
-        
-        return msgErro
         
     }
     
@@ -88,8 +69,7 @@ extension CreateAccountViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SignUpFieldCell.cellIdentifier) as! SignUpFieldCell
         
-        cell.cellData = (icon: #imageLiteral(resourceName: "iconPass_image"), placeholderText: "Senha", filledText: "")
-        
+        cell.cellData = self.inputFieldsData[indexPath.row]
         return cell
     }
     
@@ -98,14 +78,24 @@ extension CreateAccountViewController: UITableViewDelegate, UITableViewDataSourc
         
         let header = tableView.dequeueReusableCell(withIdentifier: SignUpHeaderCell.cellIdentifier) as! SignUpHeaderCell
         
-        
         //        header.cellData = #imageLiteral(resourceName: "registerFotoPlaceholder")
         
         return header
     }
     
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        let footer = tableView.dequeueReusableCell(withIdentifier: FormFieldFooterActionCell.cellIdentifier) as! FormFieldFooterActionCell
+        footer.formFieldActionCellDelegate = self
+        return footer
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 150
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 231
+        return 251
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -113,11 +103,60 @@ extension CreateAccountViewController: UITableViewDelegate, UITableViewDataSourc
     }
 }
 
-extension CreateAccountViewController : UITextFieldDelegate {
+extension CreateAccountViewController: FormFieldActionCellDelegate {
+    internal func sendForm() {
+        if self.getFieldsDataAndValidate() == true {
+            self.registerUser(self)
+        }
+    }
+}
+
+extension CreateAccountViewController : FormFieldCellDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.setupTextFields()
+    }
+    
+    func getFieldsDataAndValidate() -> Bool{
+        
+        var dataArray = [String]()
+        
+        for (index, _) in self.inputFieldsData.enumerated() {
+            let currentCellIndexPath = IndexPath(row: index, section: 0)
+            let cell = tableView.cellForRow(at: currentCellIndexPath) as! SignUpFieldCell
+            
+            if cell.textField.text == "" {
+                let  msgError = "Está faltando o campo " + cell.cellData!.placeholderText
+                self.present(ViewUtil.alertControllerWithTitle(_title: "Cuidado !", _withMessage: msgError), animated: true, completion: nil)
+                return false
+            }
+
+            dataArray.append(cell.textField.text!)
+            
+            switch index {
+            case 0:
+                brandToCreate.name = cell.textField.text!
+                break
+            case 1:
+                brandToCreate.myDescription = cell.textField.text!
+                break
+            case 2:
+                brandToCreate.brandPhone = cell.textField.text!
+                break
+            case 3:
+                userToCreate.email = cell.textField.text!
+                break
+            case 4:
+                userToCreate.password = cell.textField.text!
+                break
+            default:
+                break
+            }
+        }
+        
+        return true
+        
     }
     
     func setupTextFields() {
@@ -127,7 +166,7 @@ extension CreateAccountViewController : UITextFieldDelegate {
             let currentCellIndexPath = IndexPath(row: i, section: 0)
             if let cell = tableView.cellForRow(at: currentCellIndexPath) as? SignUpFieldCell {
                 
-                cell.textField.delegate = self
+                cell.formFieldCellDelegate = self
                 
                 let lastCellIndexPath = IndexPath(row: i - 1, section: 0)
                 if let lastCell = tableView.cellForRow(at: lastCellIndexPath) as? SignUpFieldCell {
@@ -139,20 +178,22 @@ extension CreateAccountViewController : UITextFieldDelegate {
                 }
             }
         }
+    }
+    
+    func formFieldCellShouldReturn(_ cell: SignUpFieldCell) -> Bool {
+        
+        switch cell.textField.returnKeyType {
+        case .done:
+            self.view.window?.endEditing(true)
+            self.sendForm()
+            break
+        default:
+            cell.textField.nextField?.becomeFirstResponder()
+        }
+        
+        return true
         
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        switch textField.returnKeyType {
-        case .done:
-            self.view.window?.endEditing(true)
-            self.registerUser(self)
-            break
-        default:
-            textField.nextField?.becomeFirstResponder()
-        }
-        return true
-    }
     
 }
