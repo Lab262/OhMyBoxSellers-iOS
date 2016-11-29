@@ -16,7 +16,8 @@ class CreateBrandViewController: UIViewController {
     var inputFieldsData =  [
         (icon: #imageLiteral(resourceName: "iconBrandName") , placeholderText: "nome da marca", filledText: ""),
         (icon: #imageLiteral(resourceName: "iconBrandDescription") , placeholderText: "descrição", filledText: ""),
-        (icon: #imageLiteral(resourceName: "iconPhone") , placeholderText: "telefone", filledText: "")
+        (icon: #imageLiteral(resourceName: "iconPhone") , placeholderText: "telefone", filledText: ""),
+        (icon: #imageLiteral(resourceName: "iconPhone") , placeholderText: "email", filledText: "")
     ]
     
     @IBOutlet weak var tableView: TextInputTableView!
@@ -35,24 +36,21 @@ class CreateBrandViewController: UIViewController {
             self.view.alpha = 1
         })
     }
+}
+
+extension CreateBrandViewController: FormFieldActionCellDelegate {
     
-    
-    @IBAction func registerUser(_ sender: Any) {
-       
-        
+    func sendForm() {
+        if self.getFieldsDataAndValidate() == true {
+            //send image before 
+//            self.brandToCreate.saveInCloud() {
+//                (error,newBrand: Brand?) in
+//                
+//                
+//            }
+        }
     }
-    
-    func alertControllerActionWithTitle (_ _title: String, _withMessage _message: String) -> UIAlertController {
-        
-        let alert = UIAlertController(title: _title, message: _message, preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
-            //self.present(ViewUtil.viewControllerFromStoryboardWithIdentifier("Main")!, animated: true, completion: nil)
-        }))
-        return alert
-    }
-    
-    
+
 }
 
 extension CreateBrandViewController: UITableViewDelegate, UITableViewDataSource{
@@ -77,7 +75,7 @@ extension CreateBrandViewController: UITableViewDelegate, UITableViewDataSource{
         
         let header = tableView.dequeueReusableCell(withIdentifier: SignUpHeaderCell.cellIdentifier) as! SignUpHeaderCell
         
-        //        header.cellData = #imageLiteral(resourceName: "registerFotoPlaceholder")
+//                header.cellData = #imageLiteral(resourceName: "registerFotoPlaceholder")
         
         return header
     }
@@ -102,14 +100,6 @@ extension CreateBrandViewController: UITableViewDelegate, UITableViewDataSource{
     }
 }
 
-extension CreateBrandViewController: FormFieldActionCellDelegate {
-    internal func sendForm() {
-        if self.getFieldsDataAndValidate() == true {
-            self.registerUser(self)
-        }
-    }
-}
-
 extension CreateBrandViewController : FormFieldCellDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
@@ -118,8 +108,6 @@ extension CreateBrandViewController : FormFieldCellDelegate {
     }
     
     func getFieldsDataAndValidate() -> Bool{
-        
-        var dataArray = [String]()
         
         for (index, _) in self.inputFieldsData.enumerated() {
             let currentCellIndexPath = IndexPath(row: index, section: 0)
@@ -131,8 +119,6 @@ extension CreateBrandViewController : FormFieldCellDelegate {
                 return false
             }
 
-            dataArray.append(cell.textField.text!)
-            
             switch index {
             case 0:
                 brandToCreate.name = cell.textField.text!
@@ -144,11 +130,8 @@ extension CreateBrandViewController : FormFieldCellDelegate {
                 brandToCreate.brandPhone = cell.textField.text!
                 break
             case 3:
-                userToCreate.email = cell.textField.text!
-                break
-            case 4:
-                userToCreate.password = cell.textField.text!
-                break
+                brandToCreate.email = cell.textField.text!
+            break
             default:
                 break
             }

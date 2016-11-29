@@ -196,10 +196,10 @@
 		A489B1F41DDA7D0300B239D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A4D8255A1DE3D05100A11B56 /* CreateBrandViewController.swift */,
-				A4D8255B1DE3D05100A11B56 /* LoginViewController.swift */,
 				A44D00C51DE71EDE001571E2 /* AuthenticationContainerViewController.swift */,
+				A4D8255B1DE3D05100A11B56 /* LoginViewController.swift */,
 				A4422AD71DED03E300A2593B /* CreateAccountViewController.swift */,
+				A4D8255A1DE3D05100A11B56 /* CreateBrandViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

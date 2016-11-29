@@ -179,13 +179,7 @@ extension LoginViewController {
         
         if let brandArray = brands, brandArray.count < 1 {
             
-            let registerBrandController = ViewUtil.viewControllerFromStoryboardWithIdentifier("Authentication", identifier: "CreateBrandViewController") as! CreateBrandViewController
-            
-            registerBrandController.inputFieldsData = registerBrandController.inputFieldsData.filter({ (textFieldData) -> Bool in
-                return textFieldData.placeholderText != "email"
-                    && textFieldData.placeholderText != "senha"
-            })
-            
+            let registerBrandController = ViewUtil.viewControllerFromStoryboardWithIdentifier("Authentication", identifier: "CreateBrandViewController") as! CreateBrandViewController            
             self.navigationController?.pushViewController(registerBrandController, animated: true)
             
         } else {
