@@ -18,7 +18,7 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var buttonSquare: UIView!
     
-
+    
     @IBAction func registerUser(_ sender: Any) {
         if let msgError = verifyInformations(){
             self.present(ViewUtil.alertControllerWithTitle(_title:"erroo", _withMessage:msgError), animated: true, completion: nil)
@@ -26,19 +26,28 @@ class CreateAccountViewController: UIViewController {
             return
         }
         
-//        let user = User(_name: self.nameTextField.text!, _email:self.emailTextField.text!)
-//        
-//        UserRequest.createAccountUser(user:user, pass:self.passwordTextField.text!) { (success,msg) in
-//            if (success){
-//                
-//                self.present( self.alertControllerActionWithTitle("Sucesso!!", _withMessage:msg), animated: true, completion: nil)
-//                
-//            }else {
-//                self.present(ViewUtil.alertControllerWithTitle(_title: "Erro", _withMessage:msg), animated: true, completion: nil)
-//            }
+        let newUser = User()
+        newUser.name = self.nameTextField.text
+        newUser.email = self.emailTextField.text
+        newUser.password = self.passwordTextField.text
         
+        newUser.saveInCloud { (error, newUser: User?) in
             
-//        }
+            if (error == nil && newUser != nil){
+                
+                self.present( self.alertControllerActionWithTitle("Sucesso!!", _withMessage:"Abra o link de verificação que foi enviado para seu email em \(newUser!.email!) e depois faça o login"), animated: true, completion: nil)
+                
+            }else {
+                
+                var errorMsg = error?.detail ?? "Response error"
+                
+                if error?.statusCode == 403 {
+                    errorMsg = "Email/Senha já está sendo usado(a)"
+                }
+                
+                self.present(ViewUtil.alertControllerWithTitle(_title: "Erro", _withMessage:errorMsg), animated: true, completion: nil)
+            }
+        }
     }
     
     func verifyInformations() -> String? {
@@ -73,8 +82,9 @@ class CreateAccountViewController: UIViewController {
         let alert = UIAlertController(title: _title, message: _message, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
-            //self.present(ViewUtil.viewControllerFromStoryboardWithIdentifier("Main")!, animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }))
+        
         return alert
     }
     
@@ -121,21 +131,21 @@ class CreateAccountViewController: UIViewController {
                     let name = "\(data["first_name"] as! String) \(data["last_name"])"
                     
                     FFAuthRequests.loginUserWithSocialMedia(
-                    socialMediaId: socialMediaId,
-                    email: email,
-                    name: name,
-                    socialMediaType: .facebook,
-                    socialMediaPasswordServerSecret: "AQWgd$j[QGe]Bh.Ugkf>?B3y696?2$#B2xwfN3hrVhFrE348g",
-                    autoStoreAuthTokenData: true) { (error, tokenReturnData) in
-                        
-                        if error == nil,
-                            let user = tokenReturnData?["user"] as? NSDictionary,
-                            let userId = user["id"] as? Int {
-                            self.getUserBrands(userId:  "\(userId)")
-                        } else {
-                            self.view.unload()
-                            self.present(ViewUtil.alertControllerWithTitle(_title: "Erro", _withMessage: error!.detail!), animated: true, completion: nil)
-                        }
+                        socialMediaId: socialMediaId,
+                        email: email,
+                        name: name,
+                        socialMediaType: .facebook,
+                        socialMediaPasswordServerSecret: "AQWgd$j[QGe]Bh.Ugkf>?B3y696?2$#B2xwfN3hrVhFrE348g",
+                        autoStoreAuthTokenData: true) { (error, tokenReturnData) in
+                            
+                            if error == nil,
+                                let user = tokenReturnData?["user"] as? NSDictionary,
+                                let userId = user["id"] as? Int {
+                                self.getUserBrands(userId:  "\(userId)")
+                            } else {
+                                self.view.unload()
+                                self.present(ViewUtil.alertControllerWithTitle(_title: "Erro", _withMessage: error!.detail!), animated: true, completion: nil)
+                            }
                     }
                 }
             })

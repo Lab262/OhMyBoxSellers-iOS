@@ -38,6 +38,7 @@ class CreateBrandViewController: UIViewController {
     
     
     @IBAction func registerUser(_ sender: Any) {
+       
         
     }
     
@@ -152,9 +153,7 @@ extension CreateBrandViewController : FormFieldCellDelegate {
                 break
             }
         }
-        
         return true
-        
     }
     
     func setupTextFields() {

@@ -150,7 +150,17 @@ extension LoginViewController {
                 let userId = user["id"] as? Int {
                 self.getUserBrands(userId:  "\(userId)")
             } else {
-                self.present(ViewUtil.alertControllerWithTitle(_title: "Erro", _withMessage:error?.detail ?? "Response error"), animated: true, completion: nil)
+                var errorMsg = error?.detail ?? "Response error"
+                
+                if error?.statusCode == 403 {
+                    errorMsg = "Email não verificado. Entre no email \(self.loginTextField.text!) e clique no link de verificação de email 😬"
+                }
+                
+                if error?.statusCode == 422 {
+                    errorMsg = "Email/Senha inválido(a)"
+                }
+                
+                self.present(ViewUtil.alertControllerWithTitle(_title: "Erro", _withMessage: errorMsg), animated: true, completion: nil)
             }
         }
     }
