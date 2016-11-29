@@ -7,39 +7,64 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import FBSDKCoreKit
+import FalconFrameworkIOSSDK
 
 class CreateAccountViewController: UIViewController {
     
-    var brandToCreate = Brand()
-    var userToCreate = User()
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var buttonSquare: UIView!
     
-    var inputFieldsData =  [
-        (icon: #imageLiteral(resourceName: "iconBrandName") , placeholderText: "nome da marca", filledText: ""),
-        (icon: #imageLiteral(resourceName: "iconBrandDescription") , placeholderText: "descrição", filledText: ""),
-        (icon: #imageLiteral(resourceName: "iconPhone") , placeholderText: "telefone", filledText: ""),
-        (icon: #imageLiteral(resourceName: "iconEmail_image") , placeholderText: "email", filledText: ""),
-        (icon: #imageLiteral(resourceName: "iconPass_image") , placeholderText: "senha", filledText: "")
-    ]
-    
-    @IBOutlet weak var tableView: TextInputTableView!
-    
-    @IBAction func backToLogin(_ sender: Any) {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.view.alpha = 0
-        })
-        self.navigationController!.popViewController(animated: true)
-    }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        UIView.animate(withDuration: 0.5, animations: {
-            self.view.alpha = 1
-        })
-    }
-    
-    
+
     @IBAction func registerUser(_ sender: Any) {
+        if let msgError = verifyInformations(){
+            self.present(ViewUtil.alertControllerWithTitle(_title:"erroo", _withMessage:msgError), animated: true, completion: nil)
+            
+            return
+        }
+        
+//        let user = User(_name: self.nameTextField.text!, _email:self.emailTextField.text!)
+//        
+//        UserRequest.createAccountUser(user:user, pass:self.passwordTextField.text!) { (success,msg) in
+//            if (success){
+//                
+//                self.present( self.alertControllerActionWithTitle("Sucesso!!", _withMessage:msg), animated: true, completion: nil)
+//                
+//            }else {
+//                self.present(ViewUtil.alertControllerWithTitle(_title: "Erro", _withMessage:msg), animated: true, completion: nil)
+//            }
+        
+            
+//        }
+    }
+    
+    func verifyInformations() -> String? {
+        
+        var msgErro: String?
+        
+        if self.emailTextField.text == nil || self.emailTextField.text == "" {
+            
+            msgErro = "Email inválido"
+            
+            return msgErro
+        }
+        
+        if self.passwordTextField.text == nil ||  self.passwordTextField.text == "" {
+            
+            msgErro = "Senha inválida"
+            
+            return msgErro
+        }
+        if self.nameTextField.text == nil || self.nameTextField.text == "" {
+            
+            msgErro = "Nome inválido"
+            
+            return msgErro
+        }
+        return msgErro
         
     }
     
@@ -53,147 +78,151 @@ class CreateAccountViewController: UIViewController {
         return alert
     }
     
-    
-}
-
-extension CreateAccountViewController: UITableViewDelegate, UITableViewDataSource{
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.inputFieldsData.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SignUpFieldCell.cellIdentifier) as! SignUpFieldCell
+    @IBAction func loginWithFacebook(_ sender: AnyObject) {
+        let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
         
-        cell.cellData = self.inputFieldsData[indexPath.row]
-        return cell
-    }
-    
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let header = tableView.dequeueReusableCell(withIdentifier: SignUpHeaderCell.cellIdentifier) as! SignUpHeaderCell
-        
-        //        header.cellData = #imageLiteral(resourceName: "registerFotoPlaceholder")
-        
-        return header
-    }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        
-        let footer = tableView.dequeueReusableCell(withIdentifier: FormFieldFooterActionCell.cellIdentifier) as! FormFieldFooterActionCell
-        footer.formFieldActionCellDelegate = self
-        return footer
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 150
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 251
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 65
-    }
-}
-
-extension CreateAccountViewController: FormFieldActionCellDelegate {
-    internal func sendForm() {
-        if self.getFieldsDataAndValidate() == true {
-            self.registerUser(self)
-        }
-    }
-}
-
-extension CreateAccountViewController : FormFieldCellDelegate {
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.setupTextFields()
-    }
-    
-    func getFieldsDataAndValidate() -> Bool{
-        
-        var dataArray = [String]()
-        
-        for (index, _) in self.inputFieldsData.enumerated() {
-            let currentCellIndexPath = IndexPath(row: index, section: 0)
-            let cell = tableView.cellForRow(at: currentCellIndexPath) as! SignUpFieldCell
+        fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
             
-            if cell.textField.text == "" {
-                let  msgError = "Está faltando o campo " + cell.cellData!.placeholderText
-                self.present(ViewUtil.alertControllerWithTitle(_title: "Cuidado !", _withMessage: msgError), animated: true, completion: nil)
-                return false
-            }
-
-            dataArray.append(cell.textField.text!)
-            
-            switch index {
-            case 0:
-                brandToCreate.name = cell.textField.text!
-                break
-            case 1:
-                brandToCreate.myDescription = cell.textField.text!
-                break
-            case 2:
-                brandToCreate.brandPhone = cell.textField.text!
-                break
-            case 3:
-                userToCreate.email = cell.textField.text!
-                break
-            case 4:
-                userToCreate.password = cell.textField.text!
-                break
-            default:
-                break
-            }
-        }
-        
-        return true
-        
-    }
-    
-    func setupTextFields() {
-        
-        for i in 0..<self.inputFieldsData.count {
-            
-            let currentCellIndexPath = IndexPath(row: i, section: 0)
-            if let cell = tableView.cellForRow(at: currentCellIndexPath) as? SignUpFieldCell {
+            if error == nil {
+                self.view.loadAnimation()
+                let fbloginresult : FBSDKLoginManagerLoginResult = result!
                 
-                cell.formFieldCellDelegate = self
-                
-                let lastCellIndexPath = IndexPath(row: i - 1, section: 0)
-                if let lastCell = tableView.cellForRow(at: lastCellIndexPath) as? SignUpFieldCell {
-                    lastCell.textField.nextField = cell.textField
+                if (result?.isCancelled)! {
+                    self.view.unload()
+                    return
                 }
                 
-                if i == self.inputFieldsData.count - 1 {
-                    cell.textField.returnKeyType = .done
+                if(fbloginresult.grantedPermissions.contains("email")) {
+                    
+                    self.returnUserData()
+                    
                 }
+            } else {
+                
+            }
+            
+        }
+        
+        
+        
+    }
+    func returnUserData(){
+        
+        if((FBSDKAccessToken.current()) != nil){
+            
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+                
+                if (error == nil) {
+                    
+                    let data:[String:AnyObject] = result as! [String : AnyObject]
+                    
+                    let socialMediaId = data["id"] as! String
+                    let email = data["email"] as! String
+                    let name = "\(data["first_name"] as! String) \(data["last_name"])"
+                    
+                    FFAuthRequests.loginUserWithSocialMedia(
+                    socialMediaId: socialMediaId,
+                    email: email,
+                    name: name,
+                    socialMediaType: .facebook,
+                    socialMediaPasswordServerSecret: "AQWgd$j[QGe]Bh.Ugkf>?B3y696?2$#B2xwfN3hrVhFrE348g",
+                    autoStoreAuthTokenData: true) { (error, tokenReturnData) in
+                        
+                        if error == nil,
+                            let user = tokenReturnData?["user"] as? NSDictionary,
+                            let userId = user["id"] as? Int {
+                            self.getUserBrands(userId:  "\(userId)")
+                        } else {
+                            self.view.unload()
+                            self.present(ViewUtil.alertControllerWithTitle(_title: "Erro", _withMessage: error!.detail!), animated: true, completion: nil)
+                        }
+                    }
+                }
+            })
+        }
+    }
+    
+    
+    @IBAction func showLogin(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func getUserBrands(userId: String) {
+        
+        let brandOfTheUserQuery = FFQuery().filterWhere(property: "id", condition: .isInSet, value: "(SELECT \"public\".\"UserHasBrands\".\"BrandId\" from \"public\".\"UserHasBrands\" WHERE \"public\".\"UserHasBrands\".\"UserId\" = \(userId))")
+        
+        Brand.findAllInCloud(queryParams: brandOfTheUserQuery) {
+            (error, brands: [Brand]?) in
+            self.showNextScreenBasedOnBrandData(brands: brands)
+        }
+    }
+    
+    func showNextScreenBasedOnBrandData(brands: [Brand]?) {
+        
+        if let brandArray = brands, brandArray.count < 1 {
+            
+            let registerBrandController = ViewUtil.viewControllerFromStoryboardWithIdentifier("Authentication", identifier: "CreateBrandViewController") as! CreateBrandViewController
+            
+            registerBrandController.inputFieldsData = registerBrandController.inputFieldsData.filter({ (textFieldData) -> Bool in
+                return textFieldData.placeholderText != "email"
+                    && textFieldData.placeholderText != "senha"
+            })
+            
+            self.navigationController?.pushViewController(registerBrandController, animated: true)
+            
+        } else {
+            self.present(ViewUtil.viewControllerFromStoryboardWithIdentifier("Home")!, animated: true, completion: nil)
+        }
+        
+    }
+    
+}
+
+extension CreateAccountViewController:UITextFieldDelegate{
+    
+    
+    
+}
+
+//Mark: Animations
+extension CreateAccountViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let _ = segue.destination as? LoginViewController {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.view.alpha = 0
+            })
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIView.animate(withDuration: 0.5, animations: {
+            self.view.alpha = 1
+        })
+        self.doBackgroundChangeAnimation()
+    }
+    
+    func doBackgroundChangeAnimation() {
+        
+        //Author - André Brandão
+        UIView.animate(withDuration: 5.0, delay: 0.0, options: .curveEaseInOut, animations: {
+            
+            if self.buttonSquare.backgroundColor == UIColor.squaresButtonBlueColor {
+                
+                self.buttonSquare.backgroundColor = UIColor.squaresButtonPinkColor
+                
+            } else {
+                
+                self.buttonSquare.backgroundColor = UIColor.squaresButtonBlueColor
+            }
+            
+        }) { (finished) in
+            
+            if finished {
+                self.doBackgroundChangeAnimation()
             }
         }
-    }
-    
-    func formFieldCellShouldReturn(_ cell: SignUpFieldCell) -> Bool {
-        
-        switch cell.textField.returnKeyType {
-        case .done:
-            self.view.window?.endEditing(true)
-            self.sendForm()
-            break
-        default:
-            cell.textField.nextField?.becomeFirstResponder()
-        }
-        
-        return true
         
     }
-    
-    
 }

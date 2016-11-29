@@ -12,7 +12,7 @@ class Brand: FFModel {
     
     var name: String? = ""
     var myDescription: String? = ""
-    var discount: String? = ""
+    var discount: Int? = 0
     var brandPhone: String? = ""
 
 }

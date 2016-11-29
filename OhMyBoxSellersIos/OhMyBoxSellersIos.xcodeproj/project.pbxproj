@@ -15,6 +15,7 @@
 		A41836A11DE8D054007ECEDD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41836A01DE8D054007ECEDD /* User.swift */; };
 		A41836A31DE8D067007ECEDD /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41836A21DE8D067007ECEDD /* Brand.swift */; };
 		A427680C1DD3A09D00363343 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A427680B1DD3A09D00363343 /* UIColorExtension.swift */; };
+		A4422AD81DED03E300A2593B /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4422AD71DED03E300A2593B /* CreateAccountViewController.swift */; };
 		A44967761DDA300100990008 /* DefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44967751DDA300100990008 /* DefaultsHelper.swift */; };
 		A44D00C61DE71EDE001571E2 /* AuthenticationContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44D00C51DE71EDE001571E2 /* AuthenticationContainerViewController.swift */; };
 		A44D00C91DE73448001571E2 /* SignUpHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44D00C81DE73448001571E2 /* SignUpHeaderCell.swift */; };
@@ -38,7 +39,7 @@
 		A4D825571DE3CFA900A11B56 /* Axis Extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A4D825531DE3CFA900A11B56 /* Axis Extrabold.otf */; };
 		A4D825581DE3CFA900A11B56 /* Muli-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4D825551DE3CFA900A11B56 /* Muli-Light.ttf */; };
 		A4D825591DE3CFA900A11B56 /* Muli-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4D825561DE3CFA900A11B56 /* Muli-Regular.ttf */; };
-		A4D8255C1DE3D05100A11B56 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D8255A1DE3D05100A11B56 /* CreateAccountViewController.swift */; };
+		A4D8255C1DE3D05100A11B56 /* CreateBrandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D8255A1DE3D05100A11B56 /* CreateBrandViewController.swift */; };
 		A4D8255D1DE3D05100A11B56 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D8255B1DE3D05100A11B56 /* LoginViewController.swift */; };
 		A4D825621DE3D11400A11B56 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D8255E1DE3D11400A11B56 /* Bolts.framework */; };
 		A4D825631DE3D11400A11B56 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D8255F1DE3D11400A11B56 /* FBSDKCoreKit.framework */; };
@@ -76,6 +77,7 @@
 		A41836A01DE8D054007ECEDD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A41836A21DE8D067007ECEDD /* Brand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
 		A427680B1DD3A09D00363343 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		A4422AD71DED03E300A2593B /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		A44967751DDA300100990008 /* DefaultsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsHelper.swift; sourceTree = "<group>"; };
 		A44D00C51DE71EDE001571E2 /* AuthenticationContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationContainerViewController.swift; sourceTree = "<group>"; };
 		A44D00C81DE73448001571E2 /* SignUpHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpHeaderCell.swift; sourceTree = "<group>"; };
@@ -99,7 +101,7 @@
 		A4D825531DE3CFA900A11B56 /* Axis Extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Axis Extrabold.otf"; sourceTree = "<group>"; };
 		A4D825551DE3CFA900A11B56 /* Muli-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Light.ttf"; sourceTree = "<group>"; };
 		A4D825561DE3CFA900A11B56 /* Muli-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Regular.ttf"; sourceTree = "<group>"; };
-		A4D8255A1DE3D05100A11B56 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		A4D8255A1DE3D05100A11B56 /* CreateBrandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBrandViewController.swift; sourceTree = "<group>"; };
 		A4D8255B1DE3D05100A11B56 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A4D8255E1DE3D11400A11B56 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A4D8255F1DE3D11400A11B56 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -194,9 +196,10 @@
 		A489B1F41DDA7D0300B239D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A4D8255A1DE3D05100A11B56 /* CreateAccountViewController.swift */,
+				A4D8255A1DE3D05100A11B56 /* CreateBrandViewController.swift */,
 				A4D8255B1DE3D05100A11B56 /* LoginViewController.swift */,
 				A44D00C51DE71EDE001571E2 /* AuthenticationContainerViewController.swift */,
+				A4422AD71DED03E300A2593B /* CreateAccountViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -670,11 +673,12 @@
 				A4AFBB021DD272A700F270C7 /* UIApplication+Navigation.swift in Sources */,
 				A40A251A1DCB681A00DF9523 /* UIView+Animations.swift in Sources */,
 				A44967761DDA300100990008 /* DefaultsHelper.swift in Sources */,
-				A4D8255C1DE3D05100A11B56 /* CreateAccountViewController.swift in Sources */,
+				A4D8255C1DE3D05100A11B56 /* CreateBrandViewController.swift in Sources */,
 				A44D00CB1DE7345C001571E2 /* SignUpFieldCell.swift in Sources */,
 				A44D00CE1DE73978001571E2 /* TextInputScrollView.swift in Sources */,
 				A41836A31DE8D067007ECEDD /* Brand.swift in Sources */,
 				A41836A11DE8D054007ECEDD /* User.swift in Sources */,
+				A4422AD81DED03E300A2593B /* CreateAccountViewController.swift in Sources */,
 				A40A252B1DCBD4C000DF9523 /* HomeMainViewController.swift in Sources */,
 				A4AFBB0D1DD35D4600F270C7 /* Colors.swift in Sources */,
 				A4D5DA231DDEBC7900EB9EC5 /* URLS.swift in Sources */,
