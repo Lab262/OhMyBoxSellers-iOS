@@ -8,16 +8,20 @@
 
 import UIKit
 
-class SignUpHeaderCell: UITableViewCell {
+class SignUpHeaderCell: UITableViewCell  {
     
     static let cellIdentifier = "SignUpHeaderCell"
     
-    @IBOutlet weak var brandImgView: UIImageView!
+    @IBOutlet weak var brandImgView: UIImageViewWithPicker!
     
     var cellData: UIImage? {
         didSet {
             self.setupCell()
         }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
     
     func setupCell() {
@@ -27,8 +31,7 @@ class SignUpHeaderCell: UITableViewCell {
         } else{
             self.brandImgView.image = #imageLiteral(resourceName: "registerFotoPlaceholder")
         }
-        
     }
-
+  
     
 }

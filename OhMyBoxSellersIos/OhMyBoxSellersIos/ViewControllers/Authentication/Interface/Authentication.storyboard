@@ -78,6 +78,9 @@
                                 <state key="normal" title="ESQUECI A SENHA">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="o6t-HN-zRY" kind="show" id="Bya-nK-6gp"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconUser_image" translatesAutoresizingMaskIntoConstraints="NO" id="lh9-Nv-06y">
                                 <rect key="frame" x="37.5" y="306.5" width="24" height="21"/>
@@ -275,7 +278,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastrar Loja" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRq-w0-JcZ">
-                                        <rect key="frame" x="40" y="30.5" width="295" height="21"/>
+                                        <rect key="frame" x="40" y="31" width="295" height="20"/>
                                         <fontDescription key="fontDescription" name="AXIS-ExtraBold" family="AXIS" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -302,7 +305,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="231"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="registerFotoPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="e6l-a6-uPe">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="registerFotoPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="e6l-a6-uPe" customClass="UIImageViewWithPicker" customModule="OhMyBoxSellersIos" customModuleProvider="target">
                                                     <rect key="frame" x="0.5" y="8" width="375" height="195"/>
                                                 </imageView>
                                             </subviews>

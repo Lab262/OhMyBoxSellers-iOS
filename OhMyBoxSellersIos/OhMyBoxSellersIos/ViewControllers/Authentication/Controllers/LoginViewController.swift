@@ -21,17 +21,15 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     var dictionaryTextFields = Dictionary <String, String>()
-    
-    
+        
     @IBOutlet weak var squareOhMyBox: UIView!
     @IBOutlet weak var sellersSquare: UIView!
     @IBOutlet weak var squareLogin: UIView!
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FBSDKLoginManager().logOut()
+        FBSDKLoginManager().logOut()        
     }
     
     @IBAction func loginApp(_ sender: AnyObject) {

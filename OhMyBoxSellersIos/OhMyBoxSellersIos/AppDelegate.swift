@@ -11,6 +11,7 @@ import Fabric
 import Crashlytics
 import FBSDKCoreKit
 import FalconFrameworkIOSSDK
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,6 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let vcToShow = storyboard.instantiateInitialViewController()
             self.window?.rootViewController = vcToShow
         }
+        
+        FIRApp.configure()
+        
+        
+        
         // Override point for customization after application launch.
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }

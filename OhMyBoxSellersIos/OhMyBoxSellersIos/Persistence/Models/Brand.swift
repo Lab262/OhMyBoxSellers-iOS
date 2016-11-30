@@ -14,5 +14,5 @@ class Brand: FFModel {
     var myDescription: String? = ""
     var discount: Int? = 0
     var brandPhone: String? = ""
-
+    var email: String? = ""
 }

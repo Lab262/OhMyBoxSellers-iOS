@@ -8,7 +8,8 @@ target 'OhMyBoxSellersIos' do
     pod 'FalconFrameworkIOSSDK', :git => 'https://gitlab.com/LAB262/FalconFrameworkIOSSDK.git'
     pod 'Fabric'
     pod 'Crashlytics'
-  # Pods for OhMyBoxSellersIos
+    pod 'Firebase/Storage'
+    pod 'SDWebImage', '~>3.8'
 
   target 'OhMyBoxSellersIosTests' do
     inherit! :search_paths

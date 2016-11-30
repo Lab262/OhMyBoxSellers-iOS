@@ -13,6 +13,7 @@ class CreateBrandViewController: UIViewController {
     var brandToCreate = Brand()
     var userToCreate = User()
     
+    var headerImage = #imageLiteral(resourceName: "registerFotoPlaceholder")
     var inputFieldsData =  [
         (icon: #imageLiteral(resourceName: "iconBrandName") , placeholderText: "nome da marca", filledText: ""),
         (icon: #imageLiteral(resourceName: "iconBrandDescription") , placeholderText: "descrição", filledText: ""),
@@ -42,7 +43,7 @@ extension CreateBrandViewController: FormFieldActionCellDelegate {
     
     func sendForm() {
         if self.getFieldsDataAndValidate() == true {
-            //send image before 
+            //send image before
 //            self.brandToCreate.saveInCloud() {
 //                (error,newBrand: Brand?) in
 //                
@@ -74,9 +75,8 @@ extension CreateBrandViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let header = tableView.dequeueReusableCell(withIdentifier: SignUpHeaderCell.cellIdentifier) as! SignUpHeaderCell
-        
-//                header.cellData = #imageLiteral(resourceName: "registerFotoPlaceholder")
-        
+        header.brandImgView.delegate = self
+        header.cellData = headerImage
         return header
     }
     
@@ -97,6 +97,13 @@ extension CreateBrandViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 65
+    }
+}
+
+extension CreateBrandViewController: UIImageViewWithPickerDelegate {
+    
+    func didPickEditedImage(image: UIImage) {
+        self.headerImage = image
     }
 }
 

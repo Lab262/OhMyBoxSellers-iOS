@@ -95,5 +95,9 @@
             </array>
         </dict>
     </array>
+    <key>NSCameraUsageDescription</key>
+    <string>O OhMyBox precisa acessar sua camera, autorizar ? 😀</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>O OhMyBox precisa acessar sua fototeca, autorizar ? 😀</string>
 </dict>
 </plist>

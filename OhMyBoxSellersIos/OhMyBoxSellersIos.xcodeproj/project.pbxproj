@@ -24,6 +24,9 @@
 		A44D00CF1DE73978001571E2 /* UITextField+NextResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44D00CD1DE73978001571E2 /* UITextField+NextResponder.swift */; };
 		A44D00D11DE73ED8001571E2 /* TextInputTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44D00D01DE73ED8001571E2 /* TextInputTableView.swift */; };
 		A44D00D31DE7F285001571E2 /* FormFieldFooterActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44D00D21DE7F285001571E2 /* FormFieldFooterActionCell.swift */; };
+		A45A55901DED3DDE0088C39A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A45A558F1DED3DDE0088C39A /* GoogleService-Info.plist */; };
+		A45A55931DEE15A70088C39A /* ImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A55921DEE15A70088C39A /* ImageStorage.swift */; };
+		A45A55961DEE5B770088C39A /* UIImageViewWithPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A55951DEE5B770088C39A /* UIImageViewWithPicker.swift */; };
 		A489B1F71DDA7D1100B239D5 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A489B1F61DDA7D1100B239D5 /* Authentication.storyboard */; };
 		A4AFBB021DD272A700F270C7 /* UIApplication+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AFBB011DD272A700F270C7 /* UIApplication+Navigation.swift */; };
 		A4AFBB0D1DD35D4600F270C7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AFBB0C1DD35D4600F270C7 /* Colors.swift */; };
@@ -86,6 +89,10 @@
 		A44D00CD1DE73978001571E2 /* UITextField+NextResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+NextResponder.swift"; sourceTree = "<group>"; };
 		A44D00D01DE73ED8001571E2 /* TextInputTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputTableView.swift; sourceTree = "<group>"; };
 		A44D00D21DE7F285001571E2 /* FormFieldFooterActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormFieldFooterActionCell.swift; sourceTree = "<group>"; };
+		A45A558F1DED3DDE0088C39A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A45A55911DEE06A10088C39A /* OhMyBoxSellersIos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OhMyBoxSellersIos.entitlements; sourceTree = "<group>"; };
+		A45A55921DEE15A70088C39A /* ImageStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStorage.swift; sourceTree = "<group>"; };
+		A45A55951DEE5B770088C39A /* UIImageViewWithPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewWithPicker.swift; sourceTree = "<group>"; };
 		A489B1F61DDA7D1100B239D5 /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		A4AFBB011DD272A700F270C7 /* UIApplication+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Navigation.swift"; sourceTree = "<group>"; };
 		A4AFBB0C1DD35D4600F270C7 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -300,6 +307,7 @@
 				A44D00CC1DE73978001571E2 /* TextInputScrollView.swift */,
 				A44D00D01DE73ED8001571E2 /* TextInputTableView.swift */,
 				A44D00CD1DE73978001571E2 /* UITextField+NextResponder.swift */,
+				A45A55951DEE5B770088C39A /* UIImageViewWithPicker.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -325,6 +333,7 @@
 		A4E462F81DCAEAC200A611C0 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				A45A55921DEE15A70088C39A /* ImageStorage.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -345,6 +354,7 @@
 			children = (
 				A44E0C5D1DD092650028F06C /* Fonts */,
 				A4D825691DE3D3DC00A11B56 /* Assets.xcassets */,
+				A45A558F1DED3DDE0088C39A /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -372,6 +382,7 @@
 		A4F89B281DA809B100949A35 /* OhMyBoxSellersIos */ = {
 			isa = PBXGroup;
 			children = (
+				A45A55911DEE06A10088C39A /* OhMyBoxSellersIos.entitlements */,
 				A4E462F41DCAEAC200A611C0 /* Constants */,
 				A4E462F51DCAEAC200A611C0 /* Extensions */,
 				A4E462F61DCAEAC200A611C0 /* Persistence */,
@@ -481,6 +492,11 @@
 						DevelopmentTeam = B865ENT4P3;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					A4F89B391DA809B100949A35 = {
 						CreatedOnToolsVersion = 8.0;
@@ -516,6 +532,7 @@
 			files = (
 				A4D8254C1DE3CECB00A11B56 /* OFL.txt in Resources */,
 				A4CB02671DD261B200B01A6B /* IconNavigationBar.xib in Resources */,
+				A45A55901DED3DDE0088C39A /* GoogleService-Info.plist in Resources */,
 				A4D825591DE3CFA900A11B56 /* Muli-Regular.ttf in Resources */,
 				A4D825511DE3CECB00A11B56 /* Poppins-SemiBold.ttf in Resources */,
 				A4D8256A1DE3D3DC00A11B56 /* Assets.xcassets in Resources */,
@@ -668,11 +685,13 @@
 			files = (
 				A44D00C91DE73448001571E2 /* SignUpHeaderCell.swift in Sources */,
 				A4D8255D1DE3D05100A11B56 /* LoginViewController.swift in Sources */,
+				A45A55931DEE15A70088C39A /* ImageStorage.swift in Sources */,
 				A4CB02691DD261D900B01A6B /* IconNavigationBar.swift in Sources */,
 				A4F89B2A1DA809B100949A35 /* AppDelegate.swift in Sources */,
 				A4AFBB021DD272A700F270C7 /* UIApplication+Navigation.swift in Sources */,
 				A40A251A1DCB681A00DF9523 /* UIView+Animations.swift in Sources */,
 				A44967761DDA300100990008 /* DefaultsHelper.swift in Sources */,
+				A45A55961DEE5B770088C39A /* UIImageViewWithPicker.swift in Sources */,
 				A4D8255C1DE3D05100A11B56 /* CreateBrandViewController.swift in Sources */,
 				A44D00CB1DE7345C001571E2 /* SignUpFieldCell.swift in Sources */,
 				A44D00CE1DE73978001571E2 /* TextInputScrollView.swift in Sources */,
@@ -826,6 +845,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OhMyBoxSellersIos/OhMyBoxSellersIos.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -841,6 +861,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -851,6 +872,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OhMyBoxSellersIos/OhMyBoxSellersIos.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = B865ENT4P3;
@@ -865,6 +887,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

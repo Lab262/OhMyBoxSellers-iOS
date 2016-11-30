@@ -152,7 +152,6 @@ class CreateAccountViewController: UIViewController {
         }
     }
     
-    
     @IBAction func showLogin(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -188,11 +187,7 @@ class CreateAccountViewController: UIViewController {
     
 }
 
-extension CreateAccountViewController:UITextFieldDelegate{
-    
-    
-    
-}
+extension CreateAccountViewController: UITextFieldDelegate {}
 
 //Mark: Animations
 extension CreateAccountViewController {
