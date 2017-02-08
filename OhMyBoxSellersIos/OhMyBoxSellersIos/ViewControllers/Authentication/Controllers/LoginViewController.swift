@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
     @IBAction func loginApp(_ sender: AnyObject) {
         
         if let msgError = self.verifyInformations() {
-            self.present(ViewUtil.alertControllerWithTitle(_title: "Erro", _withMessage: msgError), animated: true, completion: nil)
+            self.present(ViewUtil.alertControllerWithTitle("Erro", _withMessage: msgError), animated: true, completion: nil)
             return
         } else {
             self.getRequestLogin()
@@ -126,10 +126,10 @@ extension LoginViewController {
                         if error == nil,
                             let user = tokenReturnData?["user"] as? NSDictionary,
                             let userId = user["id"] as? Int {
-                            self.getUserBrands(userId:  "\(userId)")
+                            self.getUserBrands("\(userId)")
                         } else {
                             self.view.unload()
-                            self.present(ViewUtil.alertControllerWithTitle(_title: "Erro", _withMessage: error!.detail!), animated: true, completion: nil)
+                            self.present(ViewUtil.alertControllerWithTitle("Erro", _withMessage: error!.detail!), animated: true, completion: nil)
                         }
                     }
                 }
@@ -146,7 +146,7 @@ extension LoginViewController {
             if error == nil,
                 let user = tokenReturnData?["user"] as? NSDictionary,
                 let userId = user["id"] as? Int {
-                self.getUserBrands(userId:  "\(userId)")
+                self.getUserBrands("\(userId)")
             } else {
                 var errorMsg = error?.detail ?? "Response error"
                 
@@ -158,22 +158,22 @@ extension LoginViewController {
                     errorMsg = "Email/Senha inválido(a)"
                 }
                 
-                self.present(ViewUtil.alertControllerWithTitle(_title: "Erro", _withMessage: errorMsg), animated: true, completion: nil)
+                self.present(ViewUtil.alertControllerWithTitle("Erro", _withMessage: errorMsg), animated: true, completion: nil)
             }
         }
     }
     
-    func getUserBrands(userId: String) {
+    func getUserBrands(_ userId: String) {
         
         let brandOfTheUserQuery = FFQuery().filterWhere(property: "id", condition: .isInSet, value: "(SELECT \"public\".\"UserHasBrands\".\"BrandId\" from \"public\".\"UserHasBrands\" WHERE \"public\".\"UserHasBrands\".\"UserId\" = \(userId))")
         
         Brand.findAllInCloud(queryParams: brandOfTheUserQuery) {
             (error, brands: [Brand]?) in
-            self.showNextScreenBasedOnBrandData(brands: brands)
+            self.showNextScreenBasedOnBrandData(brands)
         }
     }
     
-    func showNextScreenBasedOnBrandData(brands: [Brand]?) {
+    func showNextScreenBasedOnBrandData(_ brands: [Brand]?) {
         
         if let brandArray = brands, brandArray.count < 1 {
             

@@ -15,7 +15,7 @@ class ImageStorage: NSObject {
     static let storage = FIRStorage.storage()
     static let storageRef = storage.reference(forURL: "gs://ohmybox-4ea4e.appspot.com")
 
-    static func uploadImage(imageToUpload: UIImage!,
+    static func uploadImage(_ imageToUpload: UIImage!,
                             inFolder folder: String,
                             completion: ((FIRStorageMetadata?,Error?) -> Void)?) -> FIRStorageUploadTask {
         
@@ -34,7 +34,7 @@ class ImageStorage: NSObject {
 }
 
 extension UIImageView {
-    func setImageFromUrl(urlString: String,
+    func setImageFromUrl(_ urlString: String,
                                 placeholderImage: UIImage? = UIImage()) {
         
         let completionBlock: SDWebImageCompletionBlock =  { (image, error, cacheType, url) in

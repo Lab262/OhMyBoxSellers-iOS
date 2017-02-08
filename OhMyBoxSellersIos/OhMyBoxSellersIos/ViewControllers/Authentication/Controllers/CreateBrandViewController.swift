@@ -102,7 +102,7 @@ extension CreateBrandViewController: UITableViewDelegate, UITableViewDataSource{
 
 extension CreateBrandViewController: UIImageViewWithPickerDelegate {
     
-    func didPickEditedImage(image: UIImage) {
+    func didPickEditedImage(_ image: UIImage) {
         self.headerImage = image
     }
 }
@@ -122,7 +122,7 @@ extension CreateBrandViewController : FormFieldCellDelegate {
             
             if cell.textField.text == "" {
                 let  msgError = "Está faltando o campo " + cell.cellData!.placeholderText
-                self.present(ViewUtil.alertControllerWithTitle(_title: "Cuidado !", _withMessage: msgError), animated: true, completion: nil)
+                self.present(ViewUtil.alertControllerWithTitle("Cuidado !", _withMessage: msgError), animated: true, completion: nil)
                 return false
             }
 

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4AF67983571B3521F7815ECF /* Pods_OhMyBoxSellersIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4740BB8B9F69EC21C95B9451 /* Pods_OhMyBoxSellersIos.framework */; };
 		4EE890349CF141E54F460029 /* Pods_OhMyBoxSellersIosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6115D89A9D141691FD587E70 /* Pods_OhMyBoxSellersIosTests.framework */; };
 		A40A25181DCB5C2C00DF9523 /* UIView+IBInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A25171DCB5C2C00DF9523 /* UIView+IBInspector.swift */; };
 		A40A251A1DCB681A00DF9523 /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A25191DCB681A00DF9523 /* UIView+Animations.swift */; };
@@ -55,6 +54,7 @@
 		A4F89B341DA809B100949A35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4F89B321DA809B100949A35 /* LaunchScreen.storyboard */; };
 		A4F89B3F1DA809B100949A35 /* OhMyBoxSellersIosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F89B3E1DA809B100949A35 /* OhMyBoxSellersIosTests.swift */; };
 		A4FE063B1DD0A13E00BFDC4D /* Dictionary+Indexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FE063A1DD0A13E00BFDC4D /* Dictionary+Indexable.swift */; };
+		A898074A99F6F63D95B3E6A0 /* Pods_OhMyBoxSellersIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4740BB8B9F69EC21C95B9451 /* Pods_OhMyBoxSellersIos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,11 +132,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AF67983571B3521F7815ECF /* Pods_OhMyBoxSellersIos.framework in Frameworks */,
 				A4D825631DE3D11400A11B56 /* FBSDKCoreKit.framework in Frameworks */,
 				A4D825651DE3D11400A11B56 /* FBSDKShareKit.framework in Frameworks */,
 				A4D825641DE3D11400A11B56 /* FBSDKLoginKit.framework in Frameworks */,
 				A4D825621DE3D11400A11B56 /* Bolts.framework in Frameworks */,
+				A898074A99F6F63D95B3E6A0 /* Pods_OhMyBoxSellersIos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,7 +490,7 @@
 					A4F89B251DA809B100949A35 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = B865ENT4P3;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -501,6 +501,7 @@
 					A4F89B391DA809B100949A35 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = B865ENT4P3;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						TestTargetID = A4F89B251DA809B100949A35;
 					};
