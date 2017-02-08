@@ -10,29 +10,13 @@ import UIKit
 
 extension UIColor {
     
-    static var squaresViewBlueColor: UIColor  {
-        get {
-            return UIColor.colorWithHexString("44F1DD")
-        }
-    }
+    static let squaresViewBlueColor: UIColor = UIColor.colorWithHexString("44F1DD")
     
-    static var squaresButtonBlueColor: UIColor  {
-        get {
-            return UIColor.colorWithHexString("B198D1")
-        }
-    }
+    static let squaresButtonBlueColor: UIColor = UIColor.colorWithHexString("B198D1")
     
-    static var squaresViewPinkColor: UIColor  {
-        get {
-            return UIColor.colorWithHexString("E03D7B")
-        }
-    }
+    static let squaresViewPinkColor: UIColor = UIColor.colorWithHexString("E03D7B")
     
-    static var squaresButtonPinkColor: UIColor  {
-        get {
-            return UIColor.colorWithHexString("E03D7B")
-        }
-    }
+    static let squaresButtonPinkColor: UIColor = UIColor.colorWithHexString("E03D7B")
   
 }
 
