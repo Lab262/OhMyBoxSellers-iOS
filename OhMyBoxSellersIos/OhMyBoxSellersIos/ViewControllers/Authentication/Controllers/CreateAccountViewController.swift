@@ -21,7 +21,7 @@ class CreateAccountViewController: UIViewController {
     
     @IBAction func registerUser(_ sender: Any) {
         if let msgError = verifyInformations(){
-            self.present(ViewUtil.alertControllerWithTitle(_title:"erroo", _withMessage:msgError), animated: true, completion: nil)
+            self.present(ViewUtil.alertControllerWithTitle("erroo", _withMessage:msgError), animated: true, completion: nil)
             
             return
         }
@@ -45,7 +45,7 @@ class CreateAccountViewController: UIViewController {
                     errorMsg = "Email/Senha já está sendo usado(a)"
                 }
                 
-                self.present(ViewUtil.alertControllerWithTitle(_title: "Erro", _withMessage:errorMsg), animated: true, completion: nil)
+                self.present(ViewUtil.alertControllerWithTitle("Erro", _withMessage:errorMsg), animated: true, completion: nil)
             }
         }
     }
@@ -82,7 +82,7 @@ class CreateAccountViewController: UIViewController {
         let alert = UIAlertController(title: _title, message: _message, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
-            self.navigationController?.popViewController(animated: true)
+            _ = self.navigationController?.popViewController(animated: true)
         }))
         
         return alert
@@ -141,10 +141,10 @@ class CreateAccountViewController: UIViewController {
                             if error == nil,
                                 let user = tokenReturnData?["user"] as? NSDictionary,
                                 let userId = user["id"] as? Int {
-                                self.getUserBrands(userId:  "\(userId)")
+                                self.getUserBrands("\(userId)")
                             } else {
                                 self.view.unload()
-                                self.present(ViewUtil.alertControllerWithTitle(_title: "Erro", _withMessage: error!.detail!), animated: true, completion: nil)
+                                self.present(ViewUtil.alertControllerWithTitle("Erro", _withMessage: error!.detail!), animated: true, completion: nil)
                             }
                     }
                 }
@@ -153,20 +153,20 @@ class CreateAccountViewController: UIViewController {
     }
     
     @IBAction func showLogin(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
-    func getUserBrands(userId: String) {
+    func getUserBrands(_ userId: String) {
         
         let brandOfTheUserQuery = FFQuery().filterWhere(property: "id", condition: .isInSet, value: "(SELECT \"public\".\"UserHasBrands\".\"BrandId\" from \"public\".\"UserHasBrands\" WHERE \"public\".\"UserHasBrands\".\"UserId\" = \(userId))")
         
         Brand.findAllInCloud(queryParams: brandOfTheUserQuery) {
             (error, brands: [Brand]?) in
-            self.showNextScreenBasedOnBrandData(brands: brands)
+            self.showNextScreenBasedOnBrandData(brands)
         }
     }
     
-    func showNextScreenBasedOnBrandData(brands: [Brand]?) {
+    func showNextScreenBasedOnBrandData(_ brands: [Brand]?) {
         
         if let brandArray = brands, brandArray.count < 1 {
             

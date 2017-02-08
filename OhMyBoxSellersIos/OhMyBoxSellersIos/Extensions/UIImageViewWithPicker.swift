@@ -8,7 +8,7 @@
 
 import UIKit
 protocol UIImageViewWithPickerDelegate {
-    func didPickEditedImage(image: UIImage)
+    func didPickEditedImage(_ image: UIImage)
 }
 
 class UIImageViewWithPicker: UIImageView {
@@ -55,7 +55,7 @@ extension UIImageViewWithPicker: UIImagePickerControllerDelegate {
         let image = info[UIImagePickerControllerEditedImage] as! UIImage
         self.image = image
         self.currentVC?.dismiss(animated: true, completion: nil)
-        self.delegate?.didPickEditedImage(image: image)
+        self.delegate?.didPickEditedImage(image)
     }
     
     func showPhotoLibraryPicker() {

@@ -10,11 +10,11 @@ import UIKit
 
 extension Dictionary {
     
-    func keyAtIndex(index: Int) -> String {
+    func keyAtIndex(_ index: Int) -> String {
         return Array(self.keys)[index] as! String
     }
 
-    func dataAtKeyAtIndex(index: Int) -> AnyObject{
+    func dataAtKeyAtIndex(_ index: Int) -> AnyObject{
         let key = Array(self.keys)[index]
         return   self[key] as AnyObject
     }
