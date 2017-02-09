@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CCE867D1E4CE9370001DA73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CCE867C1E4CE9370001DA73 /* Main.storyboard */; };
 		4EE890349CF141E54F460029 /* Pods_OhMyBoxSellersIosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6115D89A9D141691FD587E70 /* Pods_OhMyBoxSellersIosTests.framework */; };
 		A40A25181DCB5C2C00DF9523 /* UIView+IBInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A25171DCB5C2C00DF9523 /* UIView+IBInspector.swift */; };
 		A40A251A1DCB681A00DF9523 /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A25191DCB681A00DF9523 /* UIView+Animations.swift */; };
@@ -70,6 +71,7 @@
 /* Begin PBXFileReference section */
 		3F07268A3E6B9CC51F50285A /* Pods-OhMyBoxSellersIosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OhMyBoxSellersIosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OhMyBoxSellersIosTests/Pods-OhMyBoxSellersIosTests.release.xcconfig"; sourceTree = "<group>"; };
 		4740BB8B9F69EC21C95B9451 /* Pods_OhMyBoxSellersIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OhMyBoxSellersIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CCE867C1E4CE9370001DA73 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ViewControllers/Main.storyboard; sourceTree = "<group>"; };
 		6115D89A9D141691FD587E70 /* Pods_OhMyBoxSellersIosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OhMyBoxSellersIosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66A6951243DC0AB8AA5FFBAD /* Pods-OhMyBoxSellersIosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OhMyBoxSellersIosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OhMyBoxSellersIosTests/Pods-OhMyBoxSellersIosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8649FC11B60E4ADD22B76989 /* Pods-OhMyBoxSellersIos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OhMyBoxSellersIos.release.xcconfig"; path = "Pods/Target Support Files/Pods-OhMyBoxSellersIos/Pods-OhMyBoxSellersIos.release.xcconfig"; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 				A4E462E71DCAEA7F00A611C0 /* ViewControllers */,
 				A4F89B291DA809B100949A35 /* AppDelegate.swift */,
 				A4F89B321DA809B100949A35 /* LaunchScreen.storyboard */,
+				4CCE867C1E4CE9370001DA73 /* Main.storyboard */,
 				A4F89B351DA809B100949A35 /* Info.plist */,
 			);
 			path = OhMyBoxSellersIos;
@@ -489,7 +492,7 @@
 				TargetAttributes = {
 					A4F89B251DA809B100949A35 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = B865ENT4P3;
+						DevelopmentTeam = BEVC4JDNZX;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -542,6 +545,7 @@
 				A489B1F71DDA7D1100B239D5 /* Authentication.storyboard in Resources */,
 				A4E462FD1DCAEAF800A611C0 /* Home.storyboard in Resources */,
 				A4D825581DE3CFA900A11B56 /* Muli-Light.ttf in Resources */,
+				4CCE867D1E4CE9370001DA73 /* Main.storyboard in Resources */,
 				A4D8254F1DE3CECB00A11B56 /* Poppins-Medium.ttf in Resources */,
 				A4F89B341DA809B100949A35 /* LaunchScreen.storyboard in Resources */,
 				A4D825501DE3CECB00A11B56 /* Poppins-Regular.ttf in Resources */,
@@ -850,7 +854,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = B865ENT4P3;
+				DEVELOPMENT_TEAM = BEVC4JDNZX;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OhMyBoxSellersIos/Vendor",
@@ -876,7 +880,7 @@
 				CODE_SIGN_ENTITLEMENTS = OhMyBoxSellersIos/OhMyBoxSellersIos.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = B865ENT4P3;
+				DEVELOPMENT_TEAM = BEVC4JDNZX;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OhMyBoxSellersIos/Vendor",

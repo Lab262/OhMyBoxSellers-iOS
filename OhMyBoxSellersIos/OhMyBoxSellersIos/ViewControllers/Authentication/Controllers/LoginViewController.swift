@@ -34,12 +34,13 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginApp(_ sender: AnyObject) {
         
-        if let msgError = self.verifyInformations() {
-            self.present(ViewUtil.alertControllerWithTitle("Erro", _withMessage: msgError), animated: true, completion: nil)
-            return
-        } else {
-            self.getRequestLogin()
-        }
+//        if let msgError = self.verifyInformations() {
+//            self.present(ViewUtil.alertControllerWithTitle("Erro", _withMessage: msgError), animated: true, completion: nil)
+//            return
+//        } else {
+//            self.getRequestLogin()
+//        }
+        self.present(ViewUtil.viewControllerFromStoryboardWithIdentifier("Main")!, animated: true, completion: nil)
     }
     
     @IBAction func loginWithFacebook(_ sender: AnyObject) {
