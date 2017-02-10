@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Light.ttf">
+            <string>Poppins-Light</string>
+        </array>
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Rgg-DJ-HMl" customClass="TagView2" customModule="OhMyBox" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="303" height="75"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tag2_image" translatesAutoresizingMaskIntoConstraints="NO" id="EAh-CK-7bb">
+                    <rect key="frame" x="-0.5" y="-0.5" width="303" height="76"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="EAh-CK-7bb" secondAttribute="height" multiplier="298:75" id="h3o-bg-LHX"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorita" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pb-2M-TaK">
+                    <rect key="frame" x="23.5" y="15" width="74" height="30"/>
+                    <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cool Store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u88-kW-21X">
+                    <rect key="frame" x="23.5" y="38" width="86" height="28"/>
+                    <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hy5-Ld-jHV">
+                    <rect key="frame" x="166.5" y="17" width="121.5" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Hy5-Ld-jHV" secondAttribute="height" multiplier="121:42" id="etV-Wb-g4G"/>
+                    </constraints>
+                    <state key="normal" image="containerFollow_button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="clickedFollowButton:" destination="Rgg-DJ-HMl" eventType="touchUpInside" id="XtN-ij-6lx"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seguir" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ps-YB-xmZ">
+                    <rect key="frame" x="201" y="24" width="53" height="28"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                    </accessibility>
+                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
+                    <color key="textColor" red="0.14117647059999999" green="0.098039215690000001" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="u88-kW-21X" firstAttribute="centerY" secondItem="EAh-CK-7bb" secondAttribute="centerY" multiplier="1.4" id="9Wo-Jt-mFB"/>
+                <constraint firstItem="EAh-CK-7bb" firstAttribute="centerY" secondItem="Rgg-DJ-HMl" secondAttribute="centerY" id="EG1-RF-uWq"/>
+                <constraint firstItem="EAh-CK-7bb" firstAttribute="centerX" secondItem="Rgg-DJ-HMl" secondAttribute="centerX" id="Fyw-NG-745"/>
+                <constraint firstItem="4pb-2M-TaK" firstAttribute="centerY" secondItem="EAh-CK-7bb" secondAttribute="centerY" multiplier="0.8" id="JCC-ab-RnA"/>
+                <constraint firstItem="9Ps-YB-xmZ" firstAttribute="centerY" secondItem="Hy5-Ld-jHV" secondAttribute="centerY" id="NLE-tc-7Rl"/>
+                <constraint firstItem="4pb-2M-TaK" firstAttribute="centerX" secondItem="EAh-CK-7bb" secondAttribute="centerX" multiplier="0.4" id="UmP-l4-iZU"/>
+                <constraint firstItem="9Ps-YB-xmZ" firstAttribute="centerX" secondItem="Hy5-Ld-jHV" secondAttribute="centerX" id="hCx-fe-Bmg"/>
+                <constraint firstItem="EAh-CK-7bb" firstAttribute="width" secondItem="Rgg-DJ-HMl" secondAttribute="width" id="kPe-JF-RWS"/>
+                <constraint firstItem="u88-kW-21X" firstAttribute="leading" secondItem="4pb-2M-TaK" secondAttribute="leading" id="lKU-Dc-ySK"/>
+                <constraint firstItem="Hy5-Ld-jHV" firstAttribute="width" secondItem="EAh-CK-7bb" secondAttribute="width" multiplier="0.4" id="saC-Qv-Uw9"/>
+                <constraint firstItem="Hy5-Ld-jHV" firstAttribute="centerY" secondItem="EAh-CK-7bb" secondAttribute="centerY" id="tIY-OT-imu"/>
+                <constraint firstItem="Hy5-Ld-jHV" firstAttribute="centerX" secondItem="EAh-CK-7bb" secondAttribute="centerX" multiplier="1.5" id="vnD-Wy-zps"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="followButton" destination="Hy5-Ld-jHV" id="vgd-WU-taf"/>
+                <outlet property="followLabel" destination="9Ps-YB-xmZ" id="Ads-o1-04C"/>
+                <outlet property="subTitleLabel" destination="u88-kW-21X" id="7Ob-Jf-nIG"/>
+                <outlet property="titleLabel" destination="4pb-2M-TaK" id="bhp-xi-CJp"/>
+            </connections>
+            <point key="canvasLocation" x="81.5" y="42.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="containerFollow_button" width="112" height="42"/>
+        <image name="tag2_image" width="262" height="65"/>
+    </resources>
+</document>

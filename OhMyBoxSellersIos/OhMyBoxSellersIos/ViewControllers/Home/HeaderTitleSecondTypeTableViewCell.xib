@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Axis Extrabold.otf">
+            <string>AXIS-ExtraBold</string>
+        </array>
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerSecondTypeCell" rowHeight="70" id="KGk-i7-Jjw" customClass="HeaderTitleSecondTypeTableViewCell" customModule="OhMyBox" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconHeaderOrange_image" translatesAutoresizingMaskIntoConstraints="NO" id="4ux-B0-cpe">
+                        <rect key="frame" x="8" y="23" width="15" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="23" id="mH4-s3-UOX"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destaques" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iui-wl-FFK">
+                        <rect key="frame" x="31" y="22" width="138" height="26"/>
+                        <fontDescription key="fontDescription" name="AXIS-ExtraBold" family="AXIS" pointSize="22"/>
+                        <color key="textColor" red="0.14117647058823529" green="0.098039215686274508" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaZ-LC-4tL">
+                        <rect key="frame" x="276" y="25.5" width="86" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="g6e-Cs-t6O"/>
+                            <constraint firstAttribute="width" constant="86" id="tPH-de-yhX"/>
+                        </constraints>
+                        <state key="normal" image="container_button">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ver tudo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c63-6C-ppp">
+                        <rect key="frame" x="290.5" y="26.5" width="56.5" height="21.5"/>
+                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="13"/>
+                        <color key="textColor" red="0.14117647059999999" green="0.098039215690000001" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="4ux-B0-cpe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="15" id="E7T-80-uYD"/>
+                    <constraint firstItem="c63-6C-ppp" firstAttribute="centerX" secondItem="PaZ-LC-4tL" secondAttribute="centerX" id="Gbr-3H-Qp0"/>
+                    <constraint firstItem="c63-6C-ppp" firstAttribute="centerY" secondItem="PaZ-LC-4tL" secondAttribute="centerY" id="MTz-48-wo5"/>
+                    <constraint firstItem="Iui-wl-FFK" firstAttribute="centerY" secondItem="4ux-B0-cpe" secondAttribute="centerY" id="Ugz-yu-fnl"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="c63-6C-ppp" secondAttribute="trailing" constant="20" id="Uw3-gb-cAj"/>
+                    <constraint firstItem="4ux-B0-cpe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="kWw-TV-Zd3"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="4ux-B0-cpe" secondAttribute="bottom" constant="15" id="qX7-ct-xA7"/>
+                    <constraint firstItem="c63-6C-ppp" firstAttribute="bottom" secondItem="Iui-wl-FFK" secondAttribute="bottom" id="s3t-yV-yq9"/>
+                    <constraint firstItem="Iui-wl-FFK" firstAttribute="leading" secondItem="4ux-B0-cpe" secondAttribute="trailing" constant="8" id="seU-mY-dXh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="iconImage" destination="4ux-B0-cpe" id="8ry-eR-fw0"/>
+                <outlet property="showAll" destination="PaZ-LC-4tL" id="mfm-fl-7zJ"/>
+                <outlet property="titleButtonLabel" destination="Iui-wl-FFK" id="Wq8-3E-uCJ"/>
+                <outlet property="titleLabel" destination="Iui-wl-FFK" id="st0-VV-7ri"/>
+            </connections>
+            <point key="canvasLocation" x="121.5" y="177"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="container_button" width="86" height="24"/>
+        <image name="iconHeaderOrange_image" width="15" height="23"/>
+    </resources>
+</document>
