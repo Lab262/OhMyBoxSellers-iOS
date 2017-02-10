@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+@IBDesignable
 class IconNavigationBar: UIView {
 
     @IBOutlet var view: UIView!
@@ -16,6 +16,7 @@ class IconNavigationBar: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var titleIcon: UIImageView!
     @IBOutlet weak var rightIcon: UIImageView!
+    @IBOutlet weak var rightIcon2: UIImageView!
     
     
     @IBAction func leftAction(_ sender: Any) {
@@ -36,7 +37,7 @@ class IconNavigationBar: UIView {
     }
     
     func nibInit() {
-        Bundle.main.loadNibNamed("IconNavigationBar", owner: self, options: nil)
+        view = Bundle.main.loadNibNamed("IconNavigationBar", owner: self, options: nil)![0] as! UIView
         self.addSubview(view)
         view.frame = self.bounds
     }
@@ -65,6 +66,15 @@ class IconNavigationBar: UIView {
         }
         get {
             return self.rightIcon.image
+        }
+    }
+    
+    @IBInspectable var rightBarIcon2Image: UIImage? {
+        set {
+            self.rightIcon2.image = newValue
+        }
+        get {
+            return self.rightIcon2.image
         }
     }
 
