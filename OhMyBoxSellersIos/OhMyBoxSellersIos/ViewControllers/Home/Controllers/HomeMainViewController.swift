@@ -10,17 +10,22 @@ import UIKit
 
 class HomeMainViewController: UIViewController {
     
+    let productCategories: [(name: String, count: Int)] = [("Blusas", 30), ("Calças", 13), ("Acessórios", 7), ("Vestidos", 9), ("Sapatos", 8)]
+    
+    let productCount = 120
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UINib.init(nibName: "HeaderTitleTableViewCell", bundle: nil), forCellReuseIdentifier: HeaderTitleTableViewCell.identifier)
+        registerHeaderNibs()
     }
     
-    let productCategories: [(name: String, count: Int)] = [("Blusas", 30), ("Calças", 13), ("Acessórios", 7), ("Vestidos", 9), ("Sapatos", 8)]
-    
-    let productCount = 120
+    func registerHeaderNibs() {
+        tableView.register(UINib(nibName: "HeaderTitleTableViewCell", bundle: nil), forCellReuseIdentifier: HeaderTitleTableViewCell.identifier)
+        tableView.register(UINib(nibName: "HeaderTitleSecondTypeTableViewCell", bundle: nil), forCellReuseIdentifier: HeaderTitleSecondTypeTableViewCell.identifier)
+    }
 
     @IBAction func logout(_ sender: Any) {
         
@@ -70,14 +75,23 @@ extension HomeMainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let header = tableView.dequeueReusableCell(withIdentifier: HeaderTitleTableViewCell.identifier) as! HeaderTitleTableViewCell
+        let header: UIView
         
         switch section {
         case 0:
-            header.firstTitleLineLabel.text = "Você tem"
-            header.secondTitleLineLabel.text = "\(productCount) produtos"
-            header.iconImage.image = #imageLiteral(resourceName: "header_icon")
-        case 1: break
+            let headerCell = tableView.dequeueReusableCell(withIdentifier: HeaderTitleTableViewCell.identifier) as! HeaderTitleTableViewCell
+            headerCell.firstTitleLineLabel.text = "Você tem"
+            headerCell.secondTitleLineLabel.text = "\(productCount) produtos"
+            headerCell.iconImage.image = #imageLiteral(resourceName: "header_icon")
+            
+            header = headerCell
+        case 1:
+            
+            let headerCell = tableView.dequeueReusableCell(withIdentifier: HeaderTitleSecondTypeTableViewCell.identifier) as! HeaderTitleSecondTypeTableViewCell
+            headerCell.titleLabel.text = "Coleções"
+            headerCell.iconImage.image = #imageLiteral(resourceName: "header_icon")
+            
+            header = headerCell
         default: return nil
         }
         
