@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class IconNavigationBar: UIView {
 
     @IBOutlet var view: UIView!
@@ -25,7 +24,6 @@ class IconNavigationBar: UIView {
             navController.popViewController(animated: true)
         }
     }
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)

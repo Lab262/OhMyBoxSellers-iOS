@@ -58,6 +58,9 @@ class ViewUtil: NSObject {
 
 extension UIView {
     
+    static func heightScaleProportion() -> CGFloat {
+        return UIScreen.main.bounds.height / 667.0
+    }
     
     func loadAnimation(_ duration: TimeInterval = 0.2) {
         
