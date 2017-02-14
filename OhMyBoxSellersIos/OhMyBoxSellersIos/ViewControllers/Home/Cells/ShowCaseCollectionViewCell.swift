@@ -18,7 +18,7 @@ class ShowCaseCollectionViewCell: UICollectionViewCell {
     var tagView3: TagView3?
     var tagView4: TagView4?
     var tagView5: TagView5?
-    var tagType: Int? {
+    var tagType: Int = 0 {
         didSet {
            self.initializeTagView()
         }
@@ -34,15 +34,15 @@ class ShowCaseCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        if tagType! == 0 {
+        if tagType == 0 {
             
             return
-        }else if tagType! == 1 {
+        }else if tagType == 1 {
             
             self.tagView?.center = CGPoint(x: self.frame.width/2-45, y: self.frame.height/2+125)
             self.addSubview(tagView!)
             
-        } else if tagType! == 2 {
+        } else if tagType == 2 {
             
             let widthTagView2 = self.frame.width*0.860 // width cell / width tag
             let heightTagView2  = widthTagView2*0.247
@@ -52,14 +52,14 @@ class ShowCaseCollectionViewCell: UICollectionViewCell {
           
             
             
-        } else if tagType! == 3 {
+        } else if tagType == 3 {
             
 
             tagView3?.center = CGPoint(x: self.frame.width/3.25, y: self.frame.height/1.25)
             
             self.addSubview(tagView3!)
             
-        } else if tagType! == 4 {
+        } else if tagType == 4 {
 
             self.tagView4?.center = CGPoint(x: self.frame.width/2.45, y: self.frame.height/1.25)
             self.tagView4?.collectionBrandName.text = "Neon Go"
@@ -81,16 +81,16 @@ class ShowCaseCollectionViewCell: UICollectionViewCell {
     }
     func initializeTagView(){
         
-        if tagType! == 0 {
+        if tagType == 0 {
             return
             
-        } else if tagType! == 1 {
+        } else if tagType == 1 {
             
             self.tagView?.removeFromSuperview()
             self.tagView = TagView.instanceFromNib() as? TagView
           
             
-        } else if tagType! == 2 {
+        } else if tagType == 2 {
             
             self.tagView2?.removeFromSuperview()
             self.tagView2 = TagView2.instanceFromNib() as? TagView2
@@ -100,13 +100,13 @@ class ShowCaseCollectionViewCell: UICollectionViewCell {
  
             self.addSubview(tagView2!)
             
-        } else if tagType! == 3 {
+        } else if tagType == 3 {
             
             self.tagView3?.removeFromSuperview()
             self.tagView3 = TagView3.instanceFromNib() as? TagView3
   
             
-        } else if tagType! == 4 {
+        } else if tagType == 4 {
             
             self.tagView4?.removeFromSuperview()
             self.tagView4 = TagView4.instanceFromNib() as? TagView4

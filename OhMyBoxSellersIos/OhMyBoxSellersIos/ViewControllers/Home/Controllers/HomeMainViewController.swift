@@ -48,7 +48,7 @@ extension HomeMainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0: return productCategories.count
-        case 1: return 0
+        case 1: return 1
         default: return 0
         }
     }
@@ -63,14 +63,20 @@ extension HomeMainViewController: UITableViewDataSource, UITableViewDelegate {
             
             return cell
             
-        case 1: break
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: ClosetTableViewCell.identifier) as! ClosetTableViewCell
+            return cell
         default: break
         }
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 11.0 + 46.0 * view.frame.height / 667.0
+        switch indexPath.section {
+        case 0: return 11.0 + 46.0 * UIView.heightScaleProportion()
+        case 1: return 408.0 * UIView.widthScaleProportion()
+        default: return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -99,7 +105,11 @@ extension HomeMainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 76.0
+        switch section {
+        case 0: return 105.0
+        case 1: return 55.0
+        default: return 0
+        }
     }
     
 }

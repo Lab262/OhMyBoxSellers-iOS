@@ -62,6 +62,10 @@ extension UIView {
         return UIScreen.main.bounds.height / 667.0
     }
     
+    static func widthScaleProportion() -> CGFloat {
+        return UIScreen.main.bounds.width / 375.0
+    }
+    
     func loadAnimation(_ duration: TimeInterval = 0.2) {
         
         if let _ = viewWithTag(10) {
