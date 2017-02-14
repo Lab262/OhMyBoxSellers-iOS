@@ -18,10 +18,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Home-->
+        <!--produtos-->
         <scene sceneID="Cmc-ZP-QAw">
             <objects>
-                <viewController title="Home" automaticallyAdjustsScrollViewInsets="NO" id="105-PQ-HyF" customClass="HomeMainViewController" customModule="OhMyBoxSellersIos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="produtos" automaticallyAdjustsScrollViewInsets="NO" id="105-PQ-HyF" customClass="HomeMainViewController" customModule="OhMyBoxSellersIos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K15-Uy-eME"/>
                         <viewControllerLayoutGuide type="bottom" id="14P-mJ-kvk"/>

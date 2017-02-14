@@ -20,6 +20,12 @@ class HomeMainViewController: UIViewController {
         super.viewDidLoad()
         
         registerHeaderNibs()
+        setUpTabBarItem()
+    }
+    
+    func setUpTabBarItem() {
+        tabBarItem.image = #imageLiteral(resourceName: "productsIconDeselected_button").withRenderingMode(.alwaysOriginal)
+        tabBarItem.selectedImage = #imageLiteral(resourceName: "productsIconSelected_button").withRenderingMode(.alwaysOriginal)
     }
     
     func registerHeaderNibs() {
