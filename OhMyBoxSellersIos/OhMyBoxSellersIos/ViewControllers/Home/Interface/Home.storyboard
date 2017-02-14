@@ -38,8 +38,8 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="titleLabelText" value="meus produtos"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="rightBarIcon2Image" value="searchIcon"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="rightBarIconImage" value="moreButton"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="rightBarIcon2Image" value="searchIcon"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qwJ-3d-Efe">
@@ -153,7 +153,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="moreButton" width="9" height="10"/>
+        <image name="moreButton" width="20" height="19"/>
         <image name="searchIcon" width="20" height="20"/>
     </resources>
 </document>
