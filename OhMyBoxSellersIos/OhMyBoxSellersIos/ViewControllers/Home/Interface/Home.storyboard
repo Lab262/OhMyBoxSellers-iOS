@@ -45,7 +45,7 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="rightBarIcon2Image" value="searchIcon"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qwJ-3d-Efe">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qwJ-3d-Efe">
                                 <rect key="frame" x="0.0" y="84" width="375" height="583"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -157,10 +157,10 @@
             </objects>
             <point key="canvasLocation" x="1160.8" y="250.52473763118442"/>
         </scene>
-        <!--View Controller-->
+        <!--Category Products View Controller-->
         <scene sceneID="gso-b3-Mp4">
             <objects>
-                <viewController id="1Il-TH-oTC" sceneMemberID="viewController">
+                <viewController id="1Il-TH-oTC" customClass="CategoryProductsViewController" customModule="OhMyBoxSellersIos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rzt-io-WH5"/>
                         <viewControllerLayoutGuide type="bottom" id="Mra-pN-Exk"/>
@@ -215,6 +215,10 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="1Il-TH-oTC" id="q2O-cy-7Kw"/>
+                                    <outlet property="delegate" destination="1Il-TH-oTC" id="azm-mC-FqR"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -237,6 +241,10 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="collectionView" destination="2tD-EQ-7Gk" id="jaK-Dd-IFq"/>
+                        <outlet property="productsCountLabel" destination="FkI-Xs-TXP" id="eoL-nm-JTY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X1B-Bd-1pI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

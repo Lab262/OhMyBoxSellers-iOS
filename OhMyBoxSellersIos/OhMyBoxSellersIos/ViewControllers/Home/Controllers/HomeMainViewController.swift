@@ -45,7 +45,7 @@ class HomeMainViewController: UIViewController {
     }
 }
 
-extension HomeMainViewController: UITableViewDataSource, UITableViewDelegate {
+extension HomeMainViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -76,6 +76,10 @@ extension HomeMainViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return UITableViewCell()
     }
+    
+}
+
+extension HomeMainViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
@@ -118,4 +122,7 @@ extension HomeMainViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: SegueIdentifiers.homeMainToCategoryProducts, sender: self)
+    }
 }

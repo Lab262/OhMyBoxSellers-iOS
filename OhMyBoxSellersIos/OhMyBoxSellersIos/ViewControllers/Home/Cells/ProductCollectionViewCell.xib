@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Light.ttf">
+            <string>Poppins-Light</string>
+        </array>
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProductCollectionViewCell" customModule="OhMyBoxSellersIos" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="183" height="325"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tho-dU-QrK">
+                    <rect key="frame" x="5" y="244" width="173" height="81"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.75294117647058822" green="0.75294117647058822" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhX-aA-Jq2">
+                    <rect key="frame" x="13" y="258" width="45" height="30"/>
+                    <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySV-7i-SLy">
+                    <rect key="frame" x="13" y="288" width="29" height="30"/>
+                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3F-iC-Uze">
+                    <rect key="frame" x="5" y="0.0" width="173" height="249"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shirt_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="2Pk-7X-9oE">
+                            <rect key="frame" x="0.0" y="0.0" width="173" height="249"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="249" id="RI8-iw-X4d"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="2Pk-7X-9oE" secondAttribute="trailing" id="FuX-zZ-vfm"/>
+                        <constraint firstAttribute="height" constant="249" id="JPL-gm-zB5"/>
+                        <constraint firstItem="2Pk-7X-9oE" firstAttribute="top" secondItem="M3F-iC-Uze" secondAttribute="top" id="cZP-9K-Ysn"/>
+                        <constraint firstItem="2Pk-7X-9oE" firstAttribute="leading" secondItem="M3F-iC-Uze" secondAttribute="leading" id="gf3-gb-B6z"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="0.13"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="M3F-iC-Uze" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="1xo-S5-xzt"/>
+                <constraint firstItem="tho-dU-QrK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="GOp-LF-dT3"/>
+                <constraint firstAttribute="trailing" secondItem="M3F-iC-Uze" secondAttribute="trailing" constant="5" id="Gwh-3f-1yu"/>
+                <constraint firstItem="IhX-aA-Jq2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="13" id="LNZ-fd-mNE"/>
+                <constraint firstItem="M3F-iC-Uze" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="erE-yu-QFw"/>
+                <constraint firstAttribute="trailing" secondItem="tho-dU-QrK" secondAttribute="trailing" constant="5" id="kPv-pe-S1o"/>
+                <constraint firstItem="ySV-7i-SLy" firstAttribute="leading" secondItem="IhX-aA-Jq2" secondAttribute="leading" id="owP-ez-Kvd"/>
+                <constraint firstAttribute="bottom" secondItem="tho-dU-QrK" secondAttribute="bottom" id="pue-xb-erL"/>
+                <constraint firstItem="tho-dU-QrK" firstAttribute="top" secondItem="M3F-iC-Uze" secondAttribute="bottom" constant="-5" id="rOW-Bm-icx"/>
+                <constraint firstItem="ySV-7i-SLy" firstAttribute="top" secondItem="IhX-aA-Jq2" secondAttribute="bottom" id="ucO-sS-HUw"/>
+                <constraint firstItem="IhX-aA-Jq2" firstAttribute="top" secondItem="M3F-iC-Uze" secondAttribute="bottom" constant="9" id="ulh-Ap-ze4"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="nameLabel" destination="IhX-aA-Jq2" id="S0T-hC-aM9"/>
+                <outlet property="photoImageView" destination="2Pk-7X-9oE" id="iTq-x1-iu0"/>
+                <outlet property="priceLabel" destination="ySV-7i-SLy" id="LPs-KX-QNA"/>
+            </connections>
+            <point key="canvasLocation" x="25.5" y="51.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="shirt_placeholder" width="900" height="1080"/>
+    </resources>
+</document>
