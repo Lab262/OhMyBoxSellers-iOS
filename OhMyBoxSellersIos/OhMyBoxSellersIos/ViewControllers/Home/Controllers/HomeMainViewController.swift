@@ -24,8 +24,8 @@ class HomeMainViewController: UIViewController {
     }
     
     func setUpTabBarItem() {
-        tabBarItem.image = #imageLiteral(resourceName: "productsIconDeselected_button").withRenderingMode(.alwaysOriginal)
-        tabBarItem.selectedImage = #imageLiteral(resourceName: "productsIconSelected_button").withRenderingMode(.alwaysOriginal)
+        navigationController?.tabBarItem.image = #imageLiteral(resourceName: "productsIconDeselected_button").withRenderingMode(.alwaysOriginal)
+        navigationController?.tabBarItem.selectedImage = #imageLiteral(resourceName: "productsIconSelected_button").withRenderingMode(.alwaysOriginal)
     }
     
     func registerHeaderNibs() {

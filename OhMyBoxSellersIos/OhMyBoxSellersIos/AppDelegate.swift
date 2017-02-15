@@ -37,7 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
         
-        
+        if let tabBarFont = UIFont(name: "Muli", size: 10) {
+            UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: tabBarFont], for: .normal)
+        }
         
         // Override point for customization after application launch.
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
