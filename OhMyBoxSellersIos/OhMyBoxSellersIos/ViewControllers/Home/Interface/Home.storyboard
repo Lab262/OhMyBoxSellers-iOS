@@ -19,6 +19,9 @@
         <array key="Poppins-Medium.ttf">
             <string>Poppins-Medium</string>
         </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--produtos-->
@@ -49,7 +52,7 @@
                                 <rect key="frame" x="0.0" y="84" width="375" height="534"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCategoryCell" id="eMu-Tl-nX4" customClass="ProductCategoryTableViewCell" customModule="OhMyBoxSellersIos" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="productCategoryCell" id="eMu-Tl-nX4" customClass="ProductCategoryTableViewCell" customModule="OhMyBoxSellersIos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eMu-Tl-nX4" id="FnV-l4-9yI">
@@ -94,7 +97,7 @@
                                             <outlet property="view" destination="bhB-SL-sid" id="oKA-LS-kHI"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="closetCell" rowHeight="408" id="2sT-SB-rVg" customClass="ClosetTableViewCell" customModule="OhMyBoxSellersIos" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="closetCell" rowHeight="408" id="2sT-SB-rVg" customClass="ClosetTableViewCell" customModule="OhMyBoxSellersIos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="408"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2sT-SB-rVg" id="gxb-Sj-owo">
@@ -182,8 +185,8 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="leftButtonIconImage" value="arrow_Button"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peças" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkI-Xs-TXP">
-                                <rect key="frame" x="16" y="78" width="58" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 peças" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkI-Xs-TXP">
+                                <rect key="frame" x="16" y="78" width="89" height="32"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="19"/>
                                 <color key="textColor" red="0.52156862745098043" green="0.44313725490196076" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -201,6 +204,7 @@
                                     <constraint firstAttribute="height" constant="28" id="39L-j6-9ax"/>
                                     <constraint firstAttribute="width" secondItem="d5f-OU-SjL" secondAttribute="height" multiplier="91:28" id="hdd-FL-FtZ"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
                                 <state key="normal" title="Filtro" backgroundImage="filter_button_background">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -243,6 +247,7 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="collectionView" destination="2tD-EQ-7Gk" id="jaK-Dd-IFq"/>
+                        <outlet property="filterButton" destination="d5f-OU-SjL" id="xpP-1L-tag"/>
                         <outlet property="productsCountLabel" destination="FkI-Xs-TXP" id="eoL-nm-JTY"/>
                     </connections>
                 </viewController>
@@ -253,7 +258,7 @@
         <!--produtos-->
         <scene sceneID="jjG-62-lcw">
             <objects>
-                <navigationController title="produtos" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="TKE-mp-nBL" sceneMemberID="viewController">
+                <navigationController title="produtos" automaticallyAdjustsScrollViewInsets="NO" id="TKE-mp-nBL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mjn-Mi-2ew">

@@ -32,7 +32,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mOr-Pj-gOQ">
-                    <rect key="frame" x="103.5" y="27.5" width="25" height="25"/>
+                    <rect key="frame" x="93" y="27.5" width="25" height="25"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="25" id="7W8-eZ-w2e"/>
                         <constraint firstAttribute="height" constant="25" id="WzY-eq-lvb"/>
@@ -52,7 +52,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notificação" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zTA-DZ-yQ8">
-                    <rect key="frame" x="136" y="30" width="124" height="20"/>
+                    <rect key="frame" x="125.5" y="30" width="124" height="20"/>
                     <fontDescription key="fontDescription" name="AXIS-ExtraBold" family="AXIS" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -85,7 +85,7 @@
                 <constraint firstItem="34E-pe-8Yc" firstAttribute="height" secondItem="OUO-SG-gwc" secondAttribute="height" multiplier="2" id="3CW-lE-U6a"/>
                 <constraint firstItem="yag-QZ-NA2" firstAttribute="width" secondItem="yag-QZ-NA2" secondAttribute="height" multiplier="1:1" id="5gD-wi-cSh"/>
                 <constraint firstItem="mOr-Pj-gOQ" firstAttribute="centerY" secondItem="zTA-DZ-yQ8" secondAttribute="centerY" id="MJq-FR-oGw"/>
-                <constraint firstItem="zTA-DZ-yQ8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="10" id="Nit-iI-VMJ"/>
+                <constraint firstItem="zTA-DZ-yQ8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Nit-iI-VMJ"/>
                 <constraint firstItem="34E-pe-8Yc" firstAttribute="width" secondItem="OUO-SG-gwc" secondAttribute="width" multiplier="2" id="O8m-HL-5uJ"/>
                 <constraint firstItem="OUO-SG-gwc" firstAttribute="centerY" secondItem="zTA-DZ-yQ8" secondAttribute="centerY" id="S30-sV-onr"/>
                 <constraint firstItem="34E-pe-8Yc" firstAttribute="centerY" secondItem="OUO-SG-gwc" secondAttribute="centerY" id="Tcp-ZG-SWv"/>

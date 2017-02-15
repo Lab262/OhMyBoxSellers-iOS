@@ -12,10 +12,16 @@ class CategoryProductsViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var productsCountLabel: UILabel!
+    @IBOutlet weak var filterButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNibs()
+        setUpOutlets()
+    }
+    
+    func setUpOutlets() {
+        filterButton.setAttributedTitle(filterButton.titleLabel?.text?.with(characterSpacing: 2.3), for: .normal)
     }
     
     func registerNibs() {
@@ -45,6 +51,8 @@ extension CategoryProductsViewController: UICollectionViewDataSource, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.identifier, for: indexPath) as! ProductCollectionViewCell
         
+        cell.name = "BLUSA FLUFFY"
+        cell.price = 50.0
         return cell
     }
     

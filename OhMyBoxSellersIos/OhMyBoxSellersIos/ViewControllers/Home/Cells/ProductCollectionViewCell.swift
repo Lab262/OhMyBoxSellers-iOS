@@ -16,4 +16,21 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
+    
+    var name: String? {
+        didSet {
+            nameLabel.attributedText = name?.with(characterSpacing: 1.68)
+        }
+    }
+    
+    var price: Double? {
+        didSet {
+            if let price = price {
+                let priceString = String(format: "R$ %.2lf", price).replacingOccurrences(of: ".", with: ",")
+                priceLabel.attributedText = priceString.with(characterSpacing: 1.68)
+            } else {
+                priceLabel.attributedText = nil
+            }
+        }
+    }
 }
