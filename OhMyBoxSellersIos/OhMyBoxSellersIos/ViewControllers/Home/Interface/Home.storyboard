@@ -46,7 +46,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qwJ-3d-Efe">
-                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="534"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCategoryCell" id="eMu-Tl-nX4" customClass="ProductCategoryTableViewCell" customModule="OhMyBoxSellersIos" customModuleProvider="target">
@@ -139,11 +139,11 @@
                         <constraints>
                             <constraint firstItem="qwJ-3d-Efe" firstAttribute="leading" secondItem="XYh-2c-5bo" secondAttribute="leading" id="Eru-Tz-ghi"/>
                             <constraint firstAttribute="trailing" secondItem="qwJ-3d-Efe" secondAttribute="trailing" id="G42-xf-ucR"/>
+                            <constraint firstItem="14P-mJ-kvk" firstAttribute="top" secondItem="qwJ-3d-Efe" secondAttribute="bottom" id="Odb-uy-57D"/>
                             <constraint firstItem="qwJ-3d-Efe" firstAttribute="top" secondItem="nD9-YC-nHg" secondAttribute="bottom" constant="20" id="Yjq-Ud-8Mc"/>
                             <constraint firstItem="nD9-YC-nHg" firstAttribute="top" secondItem="XYh-2c-5bo" secondAttribute="top" id="mib-vS-bJy"/>
                             <constraint firstAttribute="trailing" secondItem="nD9-YC-nHg" secondAttribute="trailing" id="pe3-XH-BsA"/>
                             <constraint firstItem="nD9-YC-nHg" firstAttribute="leading" secondItem="XYh-2c-5bo" secondAttribute="leading" id="pta-Ya-EB1"/>
-                            <constraint firstItem="14P-mJ-kvk" firstAttribute="top" secondItem="qwJ-3d-Efe" secondAttribute="bottom" id="xqO-Jv-gGB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ifj-xs-b92"/>
@@ -206,9 +206,9 @@
                                 </state>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2tD-EQ-7Gk">
-                                <rect key="frame" x="0.0" y="134" width="375" height="533"/>
+                                <rect key="frame" x="0.0" y="134" width="375" height="484"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aAy-5J-ZHQ">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="22" minimumInteritemSpacing="9" id="aAy-5J-ZHQ">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -235,7 +235,7 @@
                             <constraint firstItem="N5F-TV-Jho" firstAttribute="leading" secondItem="hzy-Hc-iyb" secondAttribute="leading" id="cej-KF-1OW"/>
                             <constraint firstItem="N5F-TV-Jho" firstAttribute="top" secondItem="7Cq-jV-omf" secondAttribute="bottom" id="chO-fX-HdZ"/>
                             <constraint firstAttribute="trailing" secondItem="7Cq-jV-omf" secondAttribute="trailing" id="diE-nP-0zf"/>
-                            <constraint firstAttribute="bottom" secondItem="2tD-EQ-7Gk" secondAttribute="bottom" id="q3w-RG-sxb"/>
+                            <constraint firstItem="Mra-pN-Exk" firstAttribute="top" secondItem="2tD-EQ-7Gk" secondAttribute="bottom" id="ejp-3i-Dr8"/>
                             <constraint firstItem="d5f-OU-SjL" firstAttribute="top" secondItem="N5F-TV-Jho" secondAttribute="bottom" constant="17" id="rer-Xt-Yb3"/>
                         </constraints>
                     </view>
@@ -248,14 +248,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X1B-Bd-1pI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1946" y="-400"/>
+            <point key="canvasLocation" x="1944.8" y="-400.74962518740631"/>
         </scene>
         <!--produtos-->
         <scene sceneID="jjG-62-lcw">
             <objects>
                 <navigationController title="produtos" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="TKE-mp-nBL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Mjn-Mi-2ew">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mjn-Mi-2ew">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
