@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -31,10 +30,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nD9-YC-nHg" customClass="IconNavigationBar" customModule="OhMyBoxSellersIos" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="nD9-YC-nHg" secondAttribute="height" multiplier="375:88" id="Llt-wi-7f0"/>
+                                    <constraint firstAttribute="height" constant="64" id="wO2-St-HFJ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="titleLabelText" value="meus produtos"/>
@@ -43,7 +42,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qwJ-3d-Efe">
-                                <rect key="frame" x="0.0" y="88" width="375" height="579"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCategoryCell" id="eMu-Tl-nX4" customClass="ProductCategoryTableViewCell" customModule="OhMyBoxSellersIos" customModuleProvider="target">
@@ -136,7 +135,7 @@
                         <constraints>
                             <constraint firstItem="qwJ-3d-Efe" firstAttribute="leading" secondItem="XYh-2c-5bo" secondAttribute="leading" id="Eru-Tz-ghi"/>
                             <constraint firstAttribute="trailing" secondItem="qwJ-3d-Efe" secondAttribute="trailing" id="G42-xf-ucR"/>
-                            <constraint firstItem="qwJ-3d-Efe" firstAttribute="top" secondItem="nD9-YC-nHg" secondAttribute="bottom" id="Yjq-Ud-8Mc"/>
+                            <constraint firstItem="qwJ-3d-Efe" firstAttribute="top" secondItem="nD9-YC-nHg" secondAttribute="bottom" constant="20" id="Yjq-Ud-8Mc"/>
                             <constraint firstItem="nD9-YC-nHg" firstAttribute="top" secondItem="XYh-2c-5bo" secondAttribute="top" id="mib-vS-bJy"/>
                             <constraint firstAttribute="trailing" secondItem="nD9-YC-nHg" secondAttribute="trailing" id="pe3-XH-BsA"/>
                             <constraint firstItem="nD9-YC-nHg" firstAttribute="leading" secondItem="XYh-2c-5bo" secondAttribute="leading" id="pta-Ya-EB1"/>
@@ -153,12 +152,49 @@
             </objects>
             <point key="canvasLocation" x="1160.8" y="250.52473763118442"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="gso-b3-Mp4">
+            <objects>
+                <viewController id="1Il-TH-oTC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rzt-io-WH5"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mra-pN-Exk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hzy-Hc-iyb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Cq-jV-omf" customClass="IconNavigationBar" customModule="OhMyBoxSellersIos" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="qnU-XY-aXq"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLabelText" value="meus produtos"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="rightBarIconImage" value="moreButton"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="rightBarIcon2Image" value="searchIcon"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7Cq-jV-omf" firstAttribute="leading" secondItem="hzy-Hc-iyb" secondAttribute="leading" id="1Yg-gY-vfM"/>
+                            <constraint firstItem="7Cq-jV-omf" firstAttribute="top" secondItem="hzy-Hc-iyb" secondAttribute="top" id="RCv-ww-9Du"/>
+                            <constraint firstAttribute="trailing" secondItem="7Cq-jV-omf" secondAttribute="trailing" id="diE-nP-0zf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X1B-Bd-1pI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2329" y="251"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="jjG-62-lcw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="TKE-mp-nBL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mjn-Mi-2ew">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Mjn-Mi-2ew">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
