@@ -40,6 +40,19 @@ class IconNavigationBar: UIView {
         view.frame = self.bounds
     }
     
+    var titleFont: UIFont? {
+        set {
+            if let newValue = newValue {
+                titleLabel.font = newValue
+            } else {
+                titleLabel.font = UIFont.systemFont(ofSize: 17)
+            }
+        }
+        get {
+            return titleLabel.font
+        }
+    }
+    
     @IBInspectable var leftButtonIconImage: UIImage? {
         set {
             self.leftButtonIcon.image = newValue
