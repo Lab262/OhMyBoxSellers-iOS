@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -14,6 +15,9 @@
         </array>
         <array key="Muli-Light.ttf">
             <string>Muli-Light</string>
+        </array>
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
         </array>
     </customFonts>
     <scenes>
@@ -146,6 +150,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="qwJ-3d-Efe" id="gb2-Yq-Vc2"/>
+                        <segue destination="1Il-TH-oTC" kind="show" identifier="goToCategoryProducts" id="vcE-2s-VRP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PF8-My-x17" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -171,30 +176,78 @@
                                     <constraint firstAttribute="height" constant="64" id="qnU-XY-aXq"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLabelText" value="meus produtos"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLabelText" value="blusas"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="rightBarIconImage" value="moreButton"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="rightBarIcon2Image" value="searchIcon"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftButtonIconImage" value="arrow_Button"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peças" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkI-Xs-TXP">
+                                <rect key="frame" x="16" y="78" width="58" height="32"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="19"/>
+                                <color key="textColor" red="0.52156862745098043" green="0.44313725490196076" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N5F-TV-Jho">
+                                <rect key="frame" x="0.0" y="64" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="EIr-4V-wLc"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5f-OU-SjL">
+                                <rect key="frame" x="268" y="82" width="91" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="39L-j6-9ax"/>
+                                    <constraint firstAttribute="width" secondItem="d5f-OU-SjL" secondAttribute="height" multiplier="91:28" id="hdd-FL-FtZ"/>
+                                </constraints>
+                                <state key="normal" title="Filtro" backgroundImage="filter_button_background">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2tD-EQ-7Gk">
+                                <rect key="frame" x="0.0" y="134" width="375" height="533"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aAy-5J-ZHQ">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7Cq-jV-omf" firstAttribute="leading" secondItem="hzy-Hc-iyb" secondAttribute="leading" id="1Yg-gY-vfM"/>
+                            <constraint firstItem="FkI-Xs-TXP" firstAttribute="top" secondItem="N5F-TV-Jho" secondAttribute="bottom" constant="13" id="87B-gV-oxX"/>
+                            <constraint firstItem="FkI-Xs-TXP" firstAttribute="leading" secondItem="hzy-Hc-iyb" secondAttribute="leading" constant="16" id="DPv-jH-z4Z"/>
                             <constraint firstItem="7Cq-jV-omf" firstAttribute="top" secondItem="hzy-Hc-iyb" secondAttribute="top" id="RCv-ww-9Du"/>
+                            <constraint firstAttribute="trailing" secondItem="2tD-EQ-7Gk" secondAttribute="trailing" id="Upn-7Q-eIN"/>
+                            <constraint firstAttribute="trailing" secondItem="N5F-TV-Jho" secondAttribute="trailing" id="VEw-tj-DT2"/>
+                            <constraint firstAttribute="trailing" secondItem="d5f-OU-SjL" secondAttribute="trailing" constant="16" id="XIm-OG-6ic"/>
+                            <constraint firstItem="2tD-EQ-7Gk" firstAttribute="top" secondItem="d5f-OU-SjL" secondAttribute="bottom" constant="24" id="bqg-YE-mFs"/>
+                            <constraint firstItem="2tD-EQ-7Gk" firstAttribute="leading" secondItem="hzy-Hc-iyb" secondAttribute="leading" id="cIl-q0-xQc"/>
+                            <constraint firstItem="N5F-TV-Jho" firstAttribute="leading" secondItem="hzy-Hc-iyb" secondAttribute="leading" id="cej-KF-1OW"/>
+                            <constraint firstItem="N5F-TV-Jho" firstAttribute="top" secondItem="7Cq-jV-omf" secondAttribute="bottom" id="chO-fX-HdZ"/>
                             <constraint firstAttribute="trailing" secondItem="7Cq-jV-omf" secondAttribute="trailing" id="diE-nP-0zf"/>
+                            <constraint firstAttribute="bottom" secondItem="2tD-EQ-7Gk" secondAttribute="bottom" id="q3w-RG-sxb"/>
+                            <constraint firstItem="d5f-OU-SjL" firstAttribute="top" secondItem="N5F-TV-Jho" secondAttribute="bottom" constant="17" id="rer-Xt-Yb3"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X1B-Bd-1pI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2329" y="251"/>
+            <point key="canvasLocation" x="1946" y="-400"/>
         </scene>
         <!--produtos-->
         <scene sceneID="jjG-62-lcw">
             <objects>
                 <navigationController title="produtos" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="TKE-mp-nBL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mjn-Mi-2ew">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Mjn-Mi-2ew">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -209,6 +262,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow_Button" width="11" height="18"/>
+        <image name="filter_button_background" width="91" height="28"/>
         <image name="moreButton" width="20" height="19"/>
         <image name="searchIcon" width="20" height="20"/>
     </resources>

@@ -26,6 +26,7 @@
 		4C216B301E521F04003FB257 /* TagView5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C216B1E1E521F04003FB257 /* TagView5.swift */; };
 		4C216B311E521F04003FB257 /* TagView5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C216B1F1E521F04003FB257 /* TagView5.xib */; };
 		4C216B321E521F04003FB257 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C216B201E521F04003FB257 /* TagView.swift */; };
+		4CAA91741E54D3330030AE90 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA91731E54D3330030AE90 /* Constants.swift */; };
 		4CCE867D1E4CE9370001DA73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CCE867C1E4CE9370001DA73 /* Main.storyboard */; };
 		4CCE86AD1E4CEFF50001DA73 /* CenterCellCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCE86AA1E4CEFF50001DA73 /* CenterCellCollectionViewFlowLayout.swift */; };
 		4CCE86AE1E4CEFF50001DA73 /* ScaledVisibleCellsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCE86AC1E4CEFF50001DA73 /* ScaledVisibleCellsCollectionView.swift */; };
@@ -112,6 +113,7 @@
 		4C216B1E1E521F04003FB257 /* TagView5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView5.swift; sourceTree = "<group>"; };
 		4C216B1F1E521F04003FB257 /* TagView5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagView5.xib; sourceTree = "<group>"; };
 		4C216B201E521F04003FB257 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		4CAA91731E54D3330030AE90 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4CCE867C1E4CE9370001DA73 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ViewControllers/Main.storyboard; sourceTree = "<group>"; };
 		4CCE86AA1E4CEFF50001DA73 /* CenterCellCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterCellCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		4CCE86AB1E4CEFF50001DA73 /* ScaledVisibleCellsCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaledVisibleCellsCollectionView.h; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 			children = (
 				A4AFBB0C1DD35D4600F270C7 /* Colors.swift */,
 				A4D5DA221DDEBC7900EB9EC5 /* URLS.swift */,
+				4CAA91731E54D3330030AE90 /* Constants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -804,6 +807,7 @@
 				A44967761DDA300100990008 /* DefaultsHelper.swift in Sources */,
 				A45A55961DEE5B770088C39A /* UIImageViewWithPicker.swift in Sources */,
 				A4D8255C1DE3D05100A11B56 /* CreateBrandViewController.swift in Sources */,
+				4CAA91741E54D3330030AE90 /* Constants.swift in Sources */,
 				A44D00CB1DE7345C001571E2 /* SignUpFieldCell.swift in Sources */,
 				A44D00CE1DE73978001571E2 /* TextInputScrollView.swift in Sources */,
 				4C216B2A1E521F04003FB257 /* TagView2.swift in Sources */,

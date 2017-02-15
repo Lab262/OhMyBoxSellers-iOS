@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+//MARK - Segue Identifiers
+struct SegueIdentifiers {
+    static let homeMainToCategoryProducts = "goToCategoryProducts"
+}
