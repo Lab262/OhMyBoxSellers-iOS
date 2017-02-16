@@ -28,10 +28,11 @@ class CategoryProductsViewController: UIViewController {
         collectionPickerController.delegate = self
         collectionPickerView.delegate = collectionPickerController
         collectionPickerView.dataSource = collectionPickerController
+        collectionPickerController.collectionView = collectionPickerView
         
         let marginInset = view.frame.width/2 - collectionPickerController(collectionPickerController, sizeForItemAt: 0).width/2
         
-        collectionPickerView.contentInset = UIEdgeInsets(top: 0, left: marginInset, bottom: 0, right: marginInset)
+        (collectionPickerView.collectionViewLayout as! UICollectionViewFlowLayout).sectionInset = UIEdgeInsets(top: 0, left: marginInset, bottom: 0, right: marginInset)
     }
     
     func setUpOutlets() {
@@ -83,13 +84,18 @@ extension CategoryProductsViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: height)
         
     }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        let marginInset = view.frame.width/2 - collectionPickerController(collectionPickerController, sizeForItemAt: 0).width/2
+//        return UIEdgeInsets(top: 0, left: marginInset, bottom: 0, right: marginInset)
+//    }
     
 }
 
 extension CategoryProductsViewController: CollectionPickerDelegate {
     
     func numberOfOptions(in collectionPickerController: CollectionPickerController) -> Int {
-        return 3
+        return 5
     }
     
     func collectionPickerController(_ collectionPickerController: CollectionPickerController, titleForOptionAt index: Int) -> String {
@@ -98,8 +104,7 @@ extension CategoryProductsViewController: CollectionPickerDelegate {
         switch index {
         case 0: title = "TUDO"
         case 1: title = "CROPPED"
-        case 2: title = "WHATEVER"
-        default: title = ""
+        default: title = "WHATEVER"
         }
         
         return title

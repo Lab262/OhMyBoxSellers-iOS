@@ -163,7 +163,7 @@
         <!--Category Products View Controller-->
         <scene sceneID="gso-b3-Mp4">
             <objects>
-                <viewController id="1Il-TH-oTC" customClass="CategoryProductsViewController" customModule="OhMyBoxSellersIos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="1Il-TH-oTC" customClass="CategoryProductsViewController" customModule="OhMyBoxSellersIos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rzt-io-WH5"/>
                         <viewControllerLayoutGuide type="bottom" id="Mra-pN-Exk"/>
@@ -186,20 +186,20 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 peças" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkI-Xs-TXP">
-                                <rect key="frame" x="16" y="128" width="89" height="32"/>
+                                <rect key="frame" x="16" y="134" width="89" height="32"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="19"/>
                                 <color key="textColor" red="0.52156862745098043" green="0.44313725490196076" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N5F-TV-Jho">
-                                <rect key="frame" x="0.0" y="114" width="375" height="1"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="1"/>
                                 <color key="backgroundColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="EIr-4V-wLc"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5f-OU-SjL">
-                                <rect key="frame" x="268" y="132" width="91" height="28"/>
+                                <rect key="frame" x="268" y="138" width="91" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="39L-j6-9ax"/>
                                     <constraint firstAttribute="width" secondItem="d5f-OU-SjL" secondAttribute="height" multiplier="91:28" id="hdd-FL-FtZ"/>
@@ -210,7 +210,7 @@
                                 </state>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2tD-EQ-7Gk">
-                                <rect key="frame" x="0.0" y="184" width="375" height="434"/>
+                                <rect key="frame" x="0.0" y="190" width="375" height="428"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="22" minimumInteritemSpacing="9" id="aAy-5J-ZHQ">
                                     <size key="itemSize" width="50" height="50"/>
@@ -225,7 +225,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ogp-NJ-Ut9">
-                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="70" width="375" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="gUz-p8-26l"/>
@@ -242,7 +242,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7Cq-jV-omf" firstAttribute="leading" secondItem="hzy-Hc-iyb" secondAttribute="leading" id="1Yg-gY-vfM"/>
-                            <constraint firstItem="ogp-NJ-Ut9" firstAttribute="top" secondItem="7Cq-jV-omf" secondAttribute="bottom" id="Bi8-FW-ong"/>
+                            <constraint firstItem="ogp-NJ-Ut9" firstAttribute="top" secondItem="7Cq-jV-omf" secondAttribute="bottom" constant="6" id="Bi8-FW-ong"/>
                             <constraint firstItem="FkI-Xs-TXP" firstAttribute="leading" secondItem="hzy-Hc-iyb" secondAttribute="leading" constant="16" id="DPv-jH-z4Z"/>
                             <constraint firstItem="7Cq-jV-omf" firstAttribute="top" secondItem="hzy-Hc-iyb" secondAttribute="top" id="RCv-ww-9Du"/>
                             <constraint firstAttribute="trailing" secondItem="ogp-NJ-Ut9" secondAttribute="trailing" id="RWE-lO-MHI"/>

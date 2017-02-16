@@ -22,6 +22,9 @@ protocol CollectionPickerDelegate: class {
 class CollectionPickerController: NSObject, UICollectionViewDataSource {
     
     weak open var delegate: CollectionPickerDelegate?
+    weak open var collectionView: UICollectionView!
+    
+    var selectedIndexPath: IndexPath!
     
     override init() {
         super.init()
@@ -52,7 +55,48 @@ class CollectionPickerController: NSObject, UICollectionViewDataSource {
 
 extension CollectionPickerController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.collectionPickerController(self, handlerForOptionAt: indexPath.item)?()
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+//        collectionView.layoutIfNeeded()
+        
+        deselectAllItems()
+    }
+
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        updateSelection()
+    }
+    
+    func deselectAllItems() {
+        if let indexes = collectionView.indexPathsForSelectedItems {
+            for index in indexes {
+                collectionView.deselectItem(at: index, animated: false)
+            }
+        }
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            updateSelection()
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if collectionView.indexPathsForSelectedItems == nil {
+            updateSelection()
+        } else if collectionView.indexPathsForSelectedItems!.isEmpty {
+            updateSelection()
+        }
+    }
+    
+    func updateSelection() {
+        let currentIndex = Int(collectionView.contentOffset.x / delegate!.collectionPickerController(self, sizeForItemAt: 0).width)
+        let currentIndexPath = IndexPath(item: currentIndex, section: 0)
+        
+        if currentIndexPath != selectedIndexPath {
+            delegate?.collectionPickerController(self, handlerForOptionAt: currentIndex)?()
+            selectedIndexPath = currentIndexPath
+        }
+        
+        collectionView.scrollToItem(at: currentIndexPath, at: .centeredHorizontally, animated: true)
     }
 }
 
