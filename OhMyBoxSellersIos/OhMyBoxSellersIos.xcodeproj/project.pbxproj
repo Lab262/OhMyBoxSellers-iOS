@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C1777EF1E5610A100B05D45 /* CollectionPickerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C1777EE1E5610A100B05D45 /* CollectionPickerViewCell.xib */; };
+		4C1777F31E5617AB00B05D45 /* CollectionPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1777F21E5617AB00B05D45 /* CollectionPickerController.swift */; };
+		4C1777F51E561D0A00B05D45 /* CollectionPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1777F41E561D0A00B05D45 /* CollectionPickerViewCell.swift */; };
 		4C216B0E1E521EF2003FB257 /* ProductCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C216B0D1E521EF2003FB257 /* ProductCategoryTableViewCell.swift */; };
 		4C216B211E521F04003FB257 /* ShowCaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C216B0F1E521F04003FB257 /* ShowCaseCollectionViewCell.swift */; };
 		4C216B221E521F04003FB257 /* ShowCaseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C216B101E521F04003FB257 /* ShowCaseCollectionViewCell.xib */; };
@@ -98,6 +101,9 @@
 /* Begin PBXFileReference section */
 		3F07268A3E6B9CC51F50285A /* Pods-OhMyBoxSellersIosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OhMyBoxSellersIosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OhMyBoxSellersIosTests/Pods-OhMyBoxSellersIosTests.release.xcconfig"; sourceTree = "<group>"; };
 		4740BB8B9F69EC21C95B9451 /* Pods_OhMyBoxSellersIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OhMyBoxSellersIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C1777EE1E5610A100B05D45 /* CollectionPickerViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionPickerViewCell.xib; sourceTree = "<group>"; };
+		4C1777F21E5617AB00B05D45 /* CollectionPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionPickerController.swift; sourceTree = "<group>"; };
+		4C1777F41E561D0A00B05D45 /* CollectionPickerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionPickerViewCell.swift; sourceTree = "<group>"; };
 		4C216B0D1E521EF2003FB257 /* ProductCategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		4C216B0F1E521F04003FB257 /* ShowCaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowCaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		4C216B101E521F04003FB257 /* ShowCaseCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowCaseCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -217,6 +223,16 @@
 				3F07268A3E6B9CC51F50285A /* Pods-OhMyBoxSellersIosTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		4C1777ED1E56108A00B05D45 /* CollectionPicker */ = {
+			isa = PBXGroup;
+			children = (
+				4C1777EE1E5610A100B05D45 /* CollectionPickerViewCell.xib */,
+				4C1777F41E561D0A00B05D45 /* CollectionPickerViewCell.swift */,
+				4C1777F21E5617AB00B05D45 /* CollectionPickerController.swift */,
+			);
+			name = CollectionPicker;
 			sourceTree = "<group>";
 		};
 		4CD82AD01E5233270095D762 /* Tags */ = {
@@ -515,6 +531,7 @@
 		A4FE062A1DD0954400BFDC4D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4C1777ED1E56108A00B05D45 /* CollectionPicker */,
 				4CD82AD21E5233500095D762 /* Cells */,
 				4CD82AD11E5233450095D762 /* Headers */,
 				4CD82AD01E5233270095D762 /* Tags */,
@@ -658,6 +675,7 @@
 				4C216B261E521F04003FB257 /* HeaderTitleTableViewCell.xib in Resources */,
 				4C216B311E521F04003FB257 /* TagView5.xib in Resources */,
 				A4D825581DE3CFA900A11B56 /* Muli-Light.ttf in Resources */,
+				4C1777EF1E5610A100B05D45 /* CollectionPickerViewCell.xib in Resources */,
 				4CCE867D1E4CE9370001DA73 /* Main.storyboard in Resources */,
 				A4D8254F1DE3CECB00A11B56 /* Poppins-Medium.ttf in Resources */,
 				A4F89B341DA809B100949A35 /* LaunchScreen.storyboard in Resources */,
@@ -819,6 +837,7 @@
 				4CE942B11E536AB2005E1B0C /* ClosetTableViewCell.swift in Sources */,
 				A44967761DDA300100990008 /* DefaultsHelper.swift in Sources */,
 				A45A55961DEE5B770088C39A /* UIImageViewWithPicker.swift in Sources */,
+				4C1777F31E5617AB00B05D45 /* CollectionPickerController.swift in Sources */,
 				A4D8255C1DE3D05100A11B56 /* CreateBrandViewController.swift in Sources */,
 				4CAA91741E54D3330030AE90 /* Constants.swift in Sources */,
 				4C5EC9561E54EFE800B28C61 /* ProductCollectionViewCell.swift in Sources */,
@@ -847,6 +866,7 @@
 				A44D00CF1DE73978001571E2 /* UITextField+NextResponder.swift in Sources */,
 				A40A25181DCB5C2C00DF9523 /* UIView+IBInspector.swift in Sources */,
 				A4D825671DE3D29900A11B56 /* ViewUtil.swift in Sources */,
+				4C1777F51E561D0A00B05D45 /* CollectionPickerViewCell.swift in Sources */,
 				4C216B2C1E521F04003FB257 /* TagView3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
