@@ -8,13 +8,13 @@
 
 import UIKit
 
+typealias CollectionPickerOptionHandler = () -> ()
+
 protocol CollectionPickerDelegate: class {
-    
-    typealias OptionHandler = (Int) -> ()
-    
+
     func numberOfOptions(in collectionPickerController: CollectionPickerController) -> Int
     func collectionPickerController(_ collectionPickerController: CollectionPickerController, titleForOptionAt index: Int) -> String
-    func collectionPickerController(_ collectionPickerController: CollectionPickerController, handlerForOptionAt index: Int) -> OptionHandler
+    func collectionPickerController(_ collectionPickerController: CollectionPickerController, handlerForOptionAt index: Int) -> CollectionPickerOptionHandler?
     func collectionPickerController(_ collectionPickerController: CollectionPickerController, sizeForItemAt index: Int) -> CGSize
     
 }
@@ -22,6 +22,10 @@ protocol CollectionPickerDelegate: class {
 class CollectionPickerController: NSObject, UICollectionViewDataSource {
     
     weak open var delegate: CollectionPickerDelegate?
+    
+    override init() {
+        super.init()
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let delegate = delegate {
@@ -43,6 +47,12 @@ class CollectionPickerController: NSObject, UICollectionViewDataSource {
         cell.title = title
         
         return cell
+    }
+}
+
+extension CollectionPickerController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.collectionPickerController(self, handlerForOptionAt: indexPath.item)?()
     }
 }
 
