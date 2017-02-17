@@ -8,8 +8,17 @@
 
 import UIKit
 
-class CategoryProductsViewController: UIViewController {
+typealias Product = (name: String, price: Double)
 
+class CategoryProductsViewController: UIViewController {
+    
+    var products: [Product] = [("BLUSA FLUFFY", 50.0), ("GO GREEN", 50.0), ("CASA DA MÃE", 50.0), ("PANO MESMO", 50.0)]
+    
+    var selectedProduct: Product {
+        let indexPath = collectionView.indexPathsForSelectedItems![0]
+        return products[indexPath.item]
+    }
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var productsCountLabel: UILabel!
     @IBOutlet weak var filterButton: UIButton!
@@ -44,30 +53,27 @@ class CategoryProductsViewController: UIViewController {
         collectionPickerView.register(UINib.init(nibName: "CollectionPickerViewCell", bundle: nil), forCellWithReuseIdentifier: CollectionPickerViewCell.identifier)
     }
     
-
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == SegueIdentifiers.categoryProductsToProduct {
+            
+        }
     }
-    */
-
+    
 }
 
 extension CategoryProductsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.identifier, for: indexPath) as! ProductCollectionViewCell
+        let product = products[indexPath.item]
         
-        cell.name = "BLUSA FLUFFY"
-        cell.price = 50.0
+        cell.name = product.name
+        cell.price = product.price
         return cell
     }
     
@@ -82,13 +88,7 @@ extension CategoryProductsViewController: UICollectionViewDelegateFlowLayout {
         let height = 325 * UIView.heightScaleProportion()
         
         return CGSize(width: width, height: height)
-        
     }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        let marginInset = view.frame.width/2 - collectionPickerController(collectionPickerController, sizeForItemAt: 0).width/2
-//        return UIEdgeInsets(top: 0, left: marginInset, bottom: 0, right: marginInset)
-//    }
     
 }
 

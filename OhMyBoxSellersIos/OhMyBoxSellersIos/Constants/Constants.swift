@@ -11,4 +11,5 @@ import Foundation
 //MARK - Segue Identifiers
 struct SegueIdentifiers {
     static let homeMainToCategoryProducts = "goToCategoryProducts"
+    static let categoryProductsToProduct = "goToProduct"
 }
