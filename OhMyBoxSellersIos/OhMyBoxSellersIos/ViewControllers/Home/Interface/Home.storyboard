@@ -63,13 +63,13 @@
                                                     <rect key="frame" x="17" y="6" width="341" height="32"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8um-86-6hZ">
-                                                            <rect key="frame" x="14" y="3.5" width="76.5" height="26"/>
+                                                            <rect key="frame" x="14" y="3" width="77" height="27"/>
                                                             <fontDescription key="fontDescription" name="AXIS-ExtraBold" family="AXIS" pointSize="22"/>
                                                             <color key="textColor" red="0.36078431372549019" green="0.24705882352941178" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRT-eQ-Ncm">
-                                                            <rect key="frame" x="281" y="4.5" width="49" height="23.5"/>
+                                                            <rect key="frame" x="281" y="4" width="49" height="24"/>
                                                             <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="19"/>
                                                             <color key="textColor" red="0.52156862745098043" green="0.44313725490196076" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -276,11 +276,62 @@
                         <outlet property="collectionView" destination="2tD-EQ-7Gk" id="jaK-Dd-IFq"/>
                         <outlet property="filterButton" destination="d5f-OU-SjL" id="xpP-1L-tag"/>
                         <outlet property="productsCountLabel" destination="FkI-Xs-TXP" id="eoL-nm-JTY"/>
+                        <segue destination="vrv-xF-vbq" kind="show" identifier="goToProduct" id="N5L-IF-377"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X1B-Bd-1pI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1944.8" y="-400.74962518740631"/>
+        </scene>
+        <!--Product View Controller-->
+        <scene sceneID="xeI-2D-l6Z">
+            <objects>
+                <viewController id="vrv-xF-vbq" customClass="ProductViewController" customModule="OhMyBoxSellersIos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="58n-5w-aEg"/>
+                        <viewControllerLayoutGuide type="bottom" id="uDa-H7-ssu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XO8-9k-7FF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H9p-qL-nJL" customClass="IconNavigationBar" customModule="OhMyBoxSellersIos" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="nc4-wx-lT7"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftButtonIconImage" value="arrow_Button"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CPV-Yv-5iR">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vrv-xF-vbq" id="FKh-aC-ywP"/>
+                                    <outlet property="delegate" destination="vrv-xF-vbq" id="W1o-45-ZrV"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CPV-Yv-5iR" firstAttribute="leading" secondItem="XO8-9k-7FF" secondAttribute="leading" id="0iX-2o-D2R"/>
+                            <constraint firstAttribute="trailing" secondItem="CPV-Yv-5iR" secondAttribute="trailing" id="866-K1-G3O"/>
+                            <constraint firstItem="uDa-H7-ssu" firstAttribute="top" secondItem="CPV-Yv-5iR" secondAttribute="bottom" id="H2n-OF-CWJ"/>
+                            <constraint firstAttribute="trailing" secondItem="H9p-qL-nJL" secondAttribute="trailing" id="OUK-h7-wkE"/>
+                            <constraint firstItem="H9p-qL-nJL" firstAttribute="top" secondItem="XO8-9k-7FF" secondAttribute="top" id="c2u-Js-eyZ"/>
+                            <constraint firstItem="CPV-Yv-5iR" firstAttribute="top" secondItem="H9p-qL-nJL" secondAttribute="bottom" id="fTN-aH-yWo"/>
+                            <constraint firstItem="H9p-qL-nJL" firstAttribute="leading" secondItem="XO8-9k-7FF" secondAttribute="leading" id="q3n-7y-Dpo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="CPV-Yv-5iR" id="PY3-A6-FEH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N9A-Zd-yHg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2738" y="-1142"/>
         </scene>
         <!--produtos-->
         <scene sceneID="jjG-62-lcw">
