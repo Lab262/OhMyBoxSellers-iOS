@@ -39,6 +39,9 @@ class CategoryProductsViewController: UIViewController {
         collectionPickerView.dataSource = collectionPickerController
         collectionPickerController.collectionView = collectionPickerView
         
+        let cellWidth = collectionPickerView.frame.width / 3
+        (collectionPickerView.collectionViewLayout as! CenterCellCollectionViewFlowLayout).centerOffset = CGPoint(x: cellWidth/2, y: 0)
+        
         let marginInset = view.frame.width/2 - collectionPickerController(collectionPickerController, sizeForItemAt: 0).width/2
         
         (collectionPickerView.collectionViewLayout as! UICollectionViewFlowLayout).sectionInset = UIEdgeInsets(top: 0, left: marginInset, bottom: 0, right: marginInset)

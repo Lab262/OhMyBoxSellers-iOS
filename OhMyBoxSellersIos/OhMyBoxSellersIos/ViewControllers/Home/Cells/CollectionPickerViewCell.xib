@@ -21,13 +21,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MK-NM-dI7">
-                    <rect key="frame" x="39.5" y="18" width="46.5" height="22.5"/>
+                    <rect key="frame" x="39.5" y="18.5" width="46.5" height="22.5"/>
                     <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="1" green="0.0078431372550000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="7MK-NM-dI7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="V0x-4r-0nd"/>
                 <constraint firstItem="7MK-NM-dI7" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="tCV-pr-3kX"/>

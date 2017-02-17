@@ -10,98 +10,93 @@ import UIKit
 
 class CenterCellCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
+    @IBInspectable var centerOffset = CGPoint()
     
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         
         if let cv = self.collectionView {
             
-            // descobrir celula atual
-            // descrobrir indexpath da celula atual
-            let cellSize = cv.visibleCells[0].frame.size
-            
             let isGoingLeft = velocity.x < 0
             let isGoingLeftMultiplier = isGoingLeft ? -1 : 1
             
-            let currentIndex = Int(((minimumLineSpacing + cv.contentOffset.x) / cellSize.width) + (isGoingLeft ? 1 : 0))
-            let proposedIndex = currentIndex + (1 * isGoingLeftMultiplier)
+            let offsetLocation = cv.contentOffset + CGPoint(x: sectionInset.left, y: sectionInset.top) + centerOffset
             
-            let currentIndexPath = IndexPath(item: currentIndex, section: 0)
-            let proposedIndexPath = IndexPath(item: proposedIndex, section: 0)
+            var currentIndexPath: IndexPath?
             
-//            let currentCellSize = cv.cellForItem(at: currentIndexPath)!.frame.size
-//            let nextCellSize = cv.cellForItem(at: currentIndexPath)!.frame.size
-            
-            // descobrir direção do scroll
-            
-            
-//            let focku = cv.convert(fock, to: cv.superview)
-            // pegar posição da proxima célula(relativa à direção) (posição relativa à collectionview [contentInset])
-            
-//            let offsetX = cellSize.width * CGFloat(proposedIndex) + minimumLineSpacing * CGFloat(proposedIndex)
-            
-            
-            if proposedIndex < 0 || proposedIndex > (cv.numberOfItems(inSection: 0) - 1) {
-                // se não tiver proxima ou anterior, retorna proposedContentOffset
-                return proposedContentOffset
+            if let ci = cv.indexPathForItem(at: offsetLocation) {
+                
+                currentIndexPath = ci
+                
+            } else if let cell = closestCell(to: offsetLocation, cv) {
+                
+                let ci = cv.indexPath(for: cell)!
+                currentIndexPath = ci
+                
             } else {
-                // retornar
-                let fock = cv.cellForItem(at: proposedIndexPath)!.frame
-                let offsetX = fock.origin.x - sectionInset.left
-                return CGPoint(x: offsetX, y: proposedContentOffset.y)
+                
+                return super.targetContentOffset(forProposedContentOffset: proposedContentOffset)
+            
             }
             
-//            let cvBounds = cv.bounds
-//            
-//            let cell = cv.visibleCells[0]
-//            let halfWidth = cell.bounds.size.width * 0.5;
-//            
-//            let proposedContentOffsetCenterX = proposedContentOffset.x + halfWidth;
-//            
-//            if let attributesForVisibleCells = self.layoutAttributesForElements(in: cvBounds) {
-//
-//                var candidateAttributes : UICollectionViewLayoutAttributes?
-//                for attributes in attributesForVisibleCells {
-//                    
-//                    // == Skip comparison with non-cell items (headers and footers) == //
-//                    if attributes.representedElementCategory != UICollectionElementCategory.cell {
-//                            continue
-//                    }
-//                    
-//                    
-//                    if (attributes.center.x == 0) || (attributes.center.x > (cv.contentOffset.x + halfWidth) && velocity.x < 0) {
-//                        continue
-//                    }
-//                    
-//                    // == First time in the loop == //
-//                    guard let candAttrs = candidateAttributes else {
-//                        candidateAttributes = attributes
-//                        continue
-//                    }
-//                    
-//                    let a = attributes.center.x - proposedContentOffsetCenterX
-//                    let b = candAttrs.center.x - proposedContentOffsetCenterX
-//                    
-//                    if fabsf(Float(a)) < fabsf(Float(b)) {
-//                        candidateAttributes = attributes;
-//                    }
-//                    
-//                    
-//                }
-//                
-////                 Beautification step , I don't know why it works!
-//                guard let candidateAttrs = candidateAttributes else {
-//                    return proposedContentOffset
-//                }
-//                
-//                return CGPoint(x: floor(candidateAttrs.center.x - halfWidth), y: proposedContentOffset.y)
-//                
-//            }
-//            
-//            
+            if let currentIndexPath = currentIndexPath {
+            
+                let currentIndex = currentIndexPath.item
+                let proposedIndex = currentIndex + (1 * isGoingLeftMultiplier)
+                
+                let proposedIndexPath: IndexPath
+                if velocity.x == 0 {
+                    proposedIndexPath = IndexPath(item: currentIndex, section: 0)
+                } else {
+                    proposedIndexPath = IndexPath(item: proposedIndex, section: 0)
+                }
+                
+                
+                if proposedIndexPath.item < 0 || proposedIndexPath.item > (cv.numberOfItems(inSection: 0) - 1) {
+                    // se não tiver proxima ou anterior, retorna proposedContentOffset
+                    return proposedContentOffset
+                } else {
+                    // retornar
+                    let proposedCell: UICollectionViewCell
+                    
+                    if let cell = cv.cellForItem(at: proposedIndexPath) {
+                        proposedCell = cell
+                    } else {
+                        
+                        proposedCell = cv.cellForItem(at: currentIndexPath)!
+                    }
+                    let offsetX = proposedCell.frame.origin.x - sectionInset.left
+                    return CGPoint(x: offsetX, y: proposedContentOffset.y)
+                }
+                
+            } else {
+                return proposedContentOffset
+            }
+            
+        } else {
+            
+            return super.targetContentOffset(forProposedContentOffset: proposedContentOffset)
+            
+        }
+    }
+    
+    func closestCell(to point: CGPoint, _ collectionView: UICollectionView) -> UICollectionViewCell? {
+        let cells = collectionView.visibleCells
+        
+        guard cells.count > 0 else {
+            return nil
         }
         
-        // fallback
-        return super.targetContentOffset(forProposedContentOffset: proposedContentOffset)
+        var closestCell: UICollectionViewCell = cells[0]
+        
+        for i in 1..<cells.count {
+            let cell = cells[i]
+            
+            if point.distance(to: cell.frame.origin) < point.distance(to: closestCell.frame.origin) {
+                closestCell = cell
+            }
+        }
+        
+        return closestCell
     }
    
 }
