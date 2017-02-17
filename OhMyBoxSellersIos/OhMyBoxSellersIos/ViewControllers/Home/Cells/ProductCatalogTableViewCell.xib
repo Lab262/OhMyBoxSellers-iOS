@@ -88,6 +88,11 @@
                     <constraint firstAttribute="trailing" secondItem="U03-CZ-Mkz" secondAttribute="trailing" id="wuQ-AE-I57"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="accessoryButton" destination="6DN-Cf-zYd" id="ue3-qv-jZu"/>
+                <outlet property="imagesCollectionView" destination="G6x-sl-CUh" id="m6N-tx-97d"/>
+                <outlet property="indexCollectionView" destination="mep-ac-uNd" id="iOJ-cq-gbF"/>
+            </connections>
             <point key="canvasLocation" x="24.5" y="52"/>
         </tableViewCell>
     </objects>

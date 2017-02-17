@@ -32,6 +32,10 @@
 		4C584DE41E5776D800EF3740 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C584DE31E5776D800EF3740 /* ProductViewController.swift */; };
 		4C584DE71E57796200EF3740 /* ProductCatalogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C584DE51E57796200EF3740 /* ProductCatalogTableViewCell.swift */; };
 		4C584DE81E57796200EF3740 /* ProductCatalogTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C584DE61E57796200EF3740 /* ProductCatalogTableViewCell.xib */; };
+		4C584DEC1E577BE900EF3740 /* ProductImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C584DEA1E577BE900EF3740 /* ProductImageCollectionViewCell.swift */; };
+		4C584DED1E577BE900EF3740 /* ProductImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C584DEB1E577BE900EF3740 /* ProductImageCollectionViewCell.xib */; };
+		4C584DF01E577C6000EF3740 /* PageIndexCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C584DEE1E577C6000EF3740 /* PageIndexCollectionViewCell.swift */; };
+		4C584DF11E577C6000EF3740 /* PageIndexCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C584DEF1E577C6000EF3740 /* PageIndexCollectionViewCell.xib */; };
 		4C5EC9521E54E38B00B28C61 /* CategoryProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EC9511E54E38B00B28C61 /* CategoryProductsViewController.swift */; };
 		4C5EC9541E54E67000B28C61 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C5EC9531E54E67000B28C61 /* ProductCollectionViewCell.xib */; };
 		4C5EC9561E54EFE800B28C61 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EC9551E54EFE800B28C61 /* ProductCollectionViewCell.swift */; };
@@ -129,6 +133,10 @@
 		4C584DE31E5776D800EF3740 /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		4C584DE51E57796200EF3740 /* ProductCatalogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCatalogTableViewCell.swift; sourceTree = "<group>"; };
 		4C584DE61E57796200EF3740 /* ProductCatalogTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCatalogTableViewCell.xib; sourceTree = "<group>"; };
+		4C584DEA1E577BE900EF3740 /* ProductImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		4C584DEB1E577BE900EF3740 /* ProductImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		4C584DEE1E577C6000EF3740 /* PageIndexCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageIndexCollectionViewCell.swift; sourceTree = "<group>"; };
+		4C584DEF1E577C6000EF3740 /* PageIndexCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageIndexCollectionViewCell.xib; sourceTree = "<group>"; };
 		4C5EC9511E54E38B00B28C61 /* CategoryProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryProductsViewController.swift; sourceTree = "<group>"; };
 		4C5EC9531E54E67000B28C61 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		4C5EC9551E54EFE800B28C61 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -246,6 +254,10 @@
 			children = (
 				4C584DE51E57796200EF3740 /* ProductCatalogTableViewCell.swift */,
 				4C584DE61E57796200EF3740 /* ProductCatalogTableViewCell.xib */,
+				4C584DEA1E577BE900EF3740 /* ProductImageCollectionViewCell.swift */,
+				4C584DEB1E577BE900EF3740 /* ProductImageCollectionViewCell.xib */,
+				4C584DEE1E577C6000EF3740 /* PageIndexCollectionViewCell.swift */,
+				4C584DEF1E577C6000EF3740 /* PageIndexCollectionViewCell.xib */,
 			);
 			name = ProductCatalog;
 			sourceTree = "<group>";
@@ -691,12 +703,14 @@
 				A4E462FD1DCAEAF800A611C0 /* Home.storyboard in Resources */,
 				4C216B2B1E521F04003FB257 /* TagView2.xib in Resources */,
 				4C216B261E521F04003FB257 /* HeaderTitleTableViewCell.xib in Resources */,
+				4C584DF11E577C6000EF3740 /* PageIndexCollectionViewCell.xib in Resources */,
 				4C216B311E521F04003FB257 /* TagView5.xib in Resources */,
 				A4D825581DE3CFA900A11B56 /* Muli-Light.ttf in Resources */,
 				4C1777EF1E5610A100B05D45 /* CollectionPickerViewCell.xib in Resources */,
 				4CCE867D1E4CE9370001DA73 /* Main.storyboard in Resources */,
 				A4D8254F1DE3CECB00A11B56 /* Poppins-Medium.ttf in Resources */,
 				A4F89B341DA809B100949A35 /* LaunchScreen.storyboard in Resources */,
+				4C584DED1E577BE900EF3740 /* ProductImageCollectionViewCell.xib in Resources */,
 				A4D825501DE3CECB00A11B56 /* Poppins-Regular.ttf in Resources */,
 				A4D825571DE3CFA900A11B56 /* Axis Extrabold.otf in Resources */,
 				4C216B221E521F04003FB257 /* ShowCaseCollectionViewCell.xib in Resources */,
@@ -846,11 +860,13 @@
 				A45A55931DEE15A70088C39A /* ImageStorage.swift in Sources */,
 				A4CB02691DD261D900B01A6B /* IconNavigationBar.swift in Sources */,
 				4C216B271E521F04003FB257 /* ShowCaseBrandTableViewCell.swift in Sources */,
+				4C584DF01E577C6000EF3740 /* PageIndexCollectionViewCell.swift in Sources */,
 				A4F89B2A1DA809B100949A35 /* AppDelegate.swift in Sources */,
 				A4AFBB021DD272A700F270C7 /* UIApplication+Navigation.swift in Sources */,
 				A40A251A1DCB681A00DF9523 /* UIView+Animations.swift in Sources */,
 				4C216B2E1E521F04003FB257 /* TagView4.swift in Sources */,
 				4C216B301E521F04003FB257 /* TagView5.swift in Sources */,
+				4C584DEC1E577BE900EF3740 /* ProductImageCollectionViewCell.swift in Sources */,
 				4C216B251E521F04003FB257 /* HeaderTitleTableViewCell.swift in Sources */,
 				4CE942B11E536AB2005E1B0C /* ClosetTableViewCell.swift in Sources */,
 				A44967761DDA300100990008 /* DefaultsHelper.swift in Sources */,
