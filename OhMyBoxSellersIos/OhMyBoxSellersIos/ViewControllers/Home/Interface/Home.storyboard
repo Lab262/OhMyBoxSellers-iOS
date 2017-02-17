@@ -186,7 +186,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 peças" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkI-Xs-TXP">
-                                <rect key="frame" x="16" y="134" width="89" height="32"/>
+                                <rect key="frame" x="16" y="134" width="88.5" height="31.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="19"/>
                                 <color key="textColor" red="0.52156862745098043" green="0.44313725490196076" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -238,12 +238,20 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="option_indicator" translatesAutoresizingMaskIntoConstraints="NO" id="VEL-z5-lcF">
+                                <rect key="frame" x="175" y="63" width="25" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VEL-z5-lcF" secondAttribute="height" multiplier="25:10" id="piL-q8-2E2"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7Cq-jV-omf" firstAttribute="leading" secondItem="hzy-Hc-iyb" secondAttribute="leading" id="1Yg-gY-vfM"/>
                             <constraint firstItem="ogp-NJ-Ut9" firstAttribute="top" secondItem="7Cq-jV-omf" secondAttribute="bottom" constant="6" id="Bi8-FW-ong"/>
                             <constraint firstItem="FkI-Xs-TXP" firstAttribute="leading" secondItem="hzy-Hc-iyb" secondAttribute="leading" constant="16" id="DPv-jH-z4Z"/>
+                            <constraint firstItem="VEL-z5-lcF" firstAttribute="centerX" secondItem="hzy-Hc-iyb" secondAttribute="centerX" id="E7a-vt-AeI"/>
+                            <constraint firstItem="ogp-NJ-Ut9" firstAttribute="top" secondItem="VEL-z5-lcF" secondAttribute="bottom" constant="-3" id="Hjv-nK-j4e"/>
                             <constraint firstItem="7Cq-jV-omf" firstAttribute="top" secondItem="hzy-Hc-iyb" secondAttribute="top" id="RCv-ww-9Du"/>
                             <constraint firstAttribute="trailing" secondItem="ogp-NJ-Ut9" secondAttribute="trailing" id="RWE-lO-MHI"/>
                             <constraint firstAttribute="trailing" secondItem="2tD-EQ-7Gk" secondAttribute="trailing" id="Upn-7Q-eIN"/>
@@ -256,6 +264,7 @@
                             <constraint firstItem="N5F-TV-Jho" firstAttribute="top" secondItem="ogp-NJ-Ut9" secondAttribute="bottom" id="dfc-ZH-um2"/>
                             <constraint firstAttribute="trailing" secondItem="7Cq-jV-omf" secondAttribute="trailing" id="diE-nP-0zf"/>
                             <constraint firstItem="Mra-pN-Exk" firstAttribute="top" secondItem="2tD-EQ-7Gk" secondAttribute="bottom" id="ejp-3i-Dr8"/>
+                            <constraint firstItem="VEL-z5-lcF" firstAttribute="top" secondItem="7Cq-jV-omf" secondAttribute="bottom" constant="-1" id="k8P-bf-6jo"/>
                             <constraint firstItem="FkI-Xs-TXP" firstAttribute="top" secondItem="N5F-TV-Jho" secondAttribute="bottom" constant="13" id="oGb-Xm-w5U"/>
                             <constraint firstItem="d5f-OU-SjL" firstAttribute="top" secondItem="N5F-TV-Jho" secondAttribute="bottom" constant="17" id="rer-Xt-Yb3"/>
                         </constraints>
@@ -297,6 +306,7 @@
         <image name="arrow_Button" width="11" height="18"/>
         <image name="filter_button_background" width="91" height="28"/>
         <image name="moreButton" width="20" height="19"/>
+        <image name="option_indicator" width="25" height="10"/>
         <image name="searchIcon" width="20" height="20"/>
     </resources>
 </document>
