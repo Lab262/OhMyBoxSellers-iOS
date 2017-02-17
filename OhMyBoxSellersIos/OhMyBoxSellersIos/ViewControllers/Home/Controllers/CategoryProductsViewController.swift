@@ -77,6 +77,9 @@ extension CategoryProductsViewController: UICollectionViewDataSource, UICollecti
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: SegueIdentifiers.categoryProductsToProduct, sender: self)
+    }
     
 }
 

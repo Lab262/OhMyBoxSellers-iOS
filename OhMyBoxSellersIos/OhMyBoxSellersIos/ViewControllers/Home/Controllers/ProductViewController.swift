@@ -14,8 +14,12 @@ class ProductViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        registerNibs()
         // Do any additional setup after loading the view.
+    }
+    
+    func registerNibs() {
+        tableView.register(UINib.init(nibName: "ProductCatalogTableViewCell", bundle: nil), forCellReuseIdentifier: ProductCatalogTableViewCell.identifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,7 +27,11 @@ class ProductViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func generateCatalogCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProductCatalogTableViewCell.identifier) as! ProductCatalogTableViewCell
+        return cell
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -34,4 +42,26 @@ class ProductViewController: UIViewController {
     }
     */
 
+}
+
+extension ProductViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return generateCatalogCell(tableView, cellForRowAt: indexPath)
+    }
+}
+
+extension ProductViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 420.0
+    }
 }

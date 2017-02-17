@@ -40,5 +40,9 @@ class PageIndexCollectionViewCell: UICollectionViewCell {
         textLabel.backgroundColor = PageIndexCollectionViewCell.unselectedBackgroundColor
         textLabel.textColor = PageIndexCollectionViewCell.unselectedTextColor
     }
+    
+    override func prepareForReuse() {
+        changeToUnselectedStyle()
+    }
 
 }

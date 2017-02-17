@@ -73,11 +73,12 @@ extension CollectionPickerController: UICollectionViewDelegate {
         }
     }
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if !decelerate {
-            updateSelection()
-        }
-    }
+    // Do not delete
+//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        if !decelerate {
+//            updateSelection()
+//        }
+//    }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if collectionView.indexPathsForSelectedItems == nil {
@@ -96,7 +97,7 @@ extension CollectionPickerController: UICollectionViewDelegate {
             selectedIndexPath = currentIndexPath
         }
         
-        collectionView.scrollToItem(at: currentIndexPath, at: .centeredHorizontally, animated: true)
+//        collectionView.scrollToItem(at: currentIndexPath, at: .centeredHorizontally, animated: true)
     }
 }
 
