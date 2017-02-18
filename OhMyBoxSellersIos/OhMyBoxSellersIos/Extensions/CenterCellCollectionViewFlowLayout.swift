@@ -14,72 +14,74 @@ class CenterCellCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         
+        let targetContentOffset: CGPoint
+        
         if let cv = self.collectionView {
             
-            let isGoingLeft = velocity.x < 0
-            let isGoingLeftMultiplier = isGoingLeft ? -1 : 1
+            let isGoingLeftMultiplier =  (velocity.x == 0) ? 0 : ((velocity.x < 0) ? -1 : 1)
             
             let offsetLocation = cv.contentOffset + CGPoint(x: sectionInset.left, y: sectionInset.top) + centerOffset
-            
-            var currentIndexPath: IndexPath?
-            
-            if let ci = cv.indexPathForItem(at: offsetLocation) {
-                
-                currentIndexPath = ci
-                
-            } else if let cell = closestCell(to: offsetLocation, cv) {
-                
-                let ci = cv.indexPath(for: cell)!
-                currentIndexPath = ci
-                
-            } else {
-                
-                return super.targetContentOffset(forProposedContentOffset: proposedContentOffset)
-            
-            }
+            let currentIndexPath = indexPath(in: cv, at: offsetLocation)
             
             if let currentIndexPath = currentIndexPath {
-            
-                let currentIndex = currentIndexPath.item
-                let proposedIndex = currentIndex + (1 * isGoingLeftMultiplier)
                 
-                let proposedIndexPath: IndexPath
-                if velocity.x == 0 {
-                    proposedIndexPath = IndexPath(item: currentIndex, section: 0)
-                } else {
-                    proposedIndexPath = IndexPath(item: proposedIndex, section: 0)
-                }
+                let proposedIndex = currentIndexPath.item + (1 * isGoingLeftMultiplier)
+                let proposedIndexPath = IndexPath(item: proposedIndex, section: 0)
                 
-                
-                if proposedIndexPath.item < 0 || proposedIndexPath.item > (cv.numberOfItems(inSection: 0) - 1) {
-                    // se não tiver proxima ou anterior, retorna proposedContentOffset
-                    return proposedContentOffset
-                } else {
-                    // retornar
-                    let proposedCell: UICollectionViewCell
+                // If the proposed index is between 0 and Max, it is valid
+                if proposedIndex >= 0 || proposedIndex <= (cv.numberOfItems(inSection: 0) - 1) {
                     
-                    if let cell = cv.cellForItem(at: proposedIndexPath) {
-                        proposedCell = cell
-                    } else {
-                        
-                        proposedCell = cv.cellForItem(at: currentIndexPath)!
-                    }
+                    let proposedCell = validCell(in: cv, doubty: proposedIndexPath, valid: currentIndexPath)
+                    
                     let offsetX = proposedCell.frame.origin.x - sectionInset.left
-                    return CGPoint(x: offsetX, y: proposedContentOffset.y)
+                    targetContentOffset = CGPoint(x: offsetX, y: proposedContentOffset.y)
+                    
+                } else {
+                    targetContentOffset = super.targetContentOffset(forProposedContentOffset: proposedContentOffset)
                 }
                 
             } else {
-                return proposedContentOffset
+                targetContentOffset = super.targetContentOffset(forProposedContentOffset: proposedContentOffset)
             }
             
         } else {
-            
-            return super.targetContentOffset(forProposedContentOffset: proposedContentOffset)
-            
+            targetContentOffset = super.targetContentOffset(forProposedContentOffset: proposedContentOffset)
         }
+        
+        return targetContentOffset
     }
     
-    func closestCell(to point: CGPoint, _ collectionView: UICollectionView) -> UICollectionViewCell? {
+    private func validCell(in collectionView: UICollectionView, doubty doubtyIndexPath: IndexPath, valid validIndexPath: IndexPath) -> UICollectionViewCell {
+        
+        let validCell: UICollectionViewCell
+        
+        if let cell = collectionView.cellForItem(at: doubtyIndexPath) {
+            validCell = cell
+        } else {
+            validCell = collectionView.cellForItem(at: validIndexPath)!
+        }
+        
+        return validCell
+    }
+    
+    private func indexPath(in collectionView: UICollectionView, at offsetLocation: CGPoint) -> IndexPath? {
+        
+        var currentIndexPath: IndexPath?
+        
+        if let ci = collectionView.indexPathForItem(at: offsetLocation) {
+            
+            currentIndexPath = ci
+            
+        } else if let cell = closestCell(to: offsetLocation, collectionView) {
+            
+            let ci = collectionView.indexPath(for: cell)!
+            currentIndexPath = ci
+        }
+        
+        return currentIndexPath
+    }
+    
+    private func closestCell(to point: CGPoint, _ collectionView: UICollectionView) -> UICollectionViewCell? {
         let cells = collectionView.visibleCells
         
         guard cells.count > 0 else {
@@ -98,5 +100,6 @@ class CenterCellCollectionViewFlowLayout: UICollectionViewFlowLayout {
         
         return closestCell
     }
-   
+    
+    
 }
