@@ -41,6 +41,8 @@
 		4C5EC9541E54E67000B28C61 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C5EC9531E54E67000B28C61 /* ProductCollectionViewCell.xib */; };
 		4C5EC9561E54EFE800B28C61 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EC9551E54EFE800B28C61 /* ProductCollectionViewCell.swift */; };
 		4C5EC9581E54FB0200B28C61 /* String+CharacterSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EC9571E54FB0200B28C61 /* String+CharacterSpacing.swift */; };
+		4C7FC0841E5B8B1E0086A861 /* ProductLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FC0821E5B8B1E0086A861 /* ProductLabelTableViewCell.swift */; };
+		4C7FC0851E5B8B1E0086A861 /* ProductLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C7FC0831E5B8B1E0086A861 /* ProductLabelTableViewCell.xib */; };
 		4CAA91741E54D3330030AE90 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA91731E54D3330030AE90 /* Constants.swift */; };
 		4CCE867D1E4CE9370001DA73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CCE867C1E4CE9370001DA73 /* Main.storyboard */; };
 		4CCE86AD1E4CEFF50001DA73 /* CenterCellCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCE86AA1E4CEFF50001DA73 /* CenterCellCollectionViewFlowLayout.swift */; };
@@ -143,6 +145,8 @@
 		4C5EC9531E54E67000B28C61 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		4C5EC9551E54EFE800B28C61 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		4C5EC9571E54FB0200B28C61 /* String+CharacterSpacing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+CharacterSpacing.swift"; sourceTree = "<group>"; };
+		4C7FC0821E5B8B1E0086A861 /* ProductLabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductLabelTableViewCell.swift; sourceTree = "<group>"; };
+		4C7FC0831E5B8B1E0086A861 /* ProductLabelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductLabelTableViewCell.xib; sourceTree = "<group>"; };
 		4CAA91731E54D3330030AE90 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4CCE867C1E4CE9370001DA73 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ViewControllers/Main.storyboard; sourceTree = "<group>"; };
 		4CCE86AA1E4CEFF50001DA73 /* CenterCellCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterCellCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -260,6 +264,8 @@
 				4C584DEB1E577BE900EF3740 /* ProductImageCollectionViewCell.xib */,
 				4C584DEE1E577C6000EF3740 /* PageIndexCollectionViewCell.swift */,
 				4C584DEF1E577C6000EF3740 /* PageIndexCollectionViewCell.xib */,
+				4C7FC0821E5B8B1E0086A861 /* ProductLabelTableViewCell.swift */,
+				4C7FC0831E5B8B1E0086A861 /* ProductLabelTableViewCell.xib */,
 			);
 			name = ProductCatalog;
 			sourceTree = "<group>";
@@ -690,6 +696,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C7FC0851E5B8B1E0086A861 /* ProductLabelTableViewCell.xib in Resources */,
 				A4D8254C1DE3CECB00A11B56 /* OFL.txt in Resources */,
 				4C216B2D1E521F04003FB257 /* TagView3.xib in Resources */,
 				A4CB02671DD261B200B01A6B /* IconNavigationBar.xib in Resources */,
@@ -867,6 +874,7 @@
 				4C584DF01E577C6000EF3740 /* PageIndexCollectionViewCell.swift in Sources */,
 				A4F89B2A1DA809B100949A35 /* AppDelegate.swift in Sources */,
 				A4AFBB021DD272A700F270C7 /* UIApplication+Navigation.swift in Sources */,
+				4C7FC0841E5B8B1E0086A861 /* ProductLabelTableViewCell.swift in Sources */,
 				A40A251A1DCB681A00DF9523 /* UIView+Animations.swift in Sources */,
 				4C216B2E1E521F04003FB257 /* TagView4.swift in Sources */,
 				4C216B301E521F04003FB257 /* TagView5.swift in Sources */,

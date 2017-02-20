@@ -11,6 +11,7 @@ import UIKit
 class ProductViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var product: Product!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,7 @@ class ProductViewController: UIViewController {
     
     func registerNibs() {
         tableView.register(UINib.init(nibName: "ProductCatalogTableViewCell", bundle: nil), forCellReuseIdentifier: ProductCatalogTableViewCell.identifier)
+        tableView.register(UINib.init(nibName: "ProductLabelTableViewCell", bundle: nil), forCellReuseIdentifier: ProductLabelTableViewCell.identifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +31,18 @@ class ProductViewController: UIViewController {
     
     func generateCatalogCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductCatalogTableViewCell.identifier) as! ProductCatalogTableViewCell
+        cell.shadowColor = UIColor.colorWithHexString("838383")
+        cell.shadowOpacity = 0.5
+        cell.shadowRadius = 5
+        
+        return cell
+    }
+    
+    func generateLabelCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProductLabelTableViewCell.identifier) as! ProductLabelTableViewCell
+        cell.name = product.name
+        cell.price = product.price
+        
         return cell
     }
     
@@ -51,17 +65,34 @@ extension ProductViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return generateCatalogCell(tableView, cellForRowAt: indexPath)
+        
+        let cell: UITableViewCell
+        
+        switch indexPath.row {
+        case 0: cell = generateCatalogCell(tableView, cellForRowAt: indexPath)
+        case 1: cell = generateLabelCell(tableView, cellForRowAt: indexPath)
+        default: cell = UITableViewCell()
+        }
+        return cell
     }
 }
 
 extension ProductViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 420.0
+        
+        let height: CGFloat
+        
+        switch indexPath.row {
+        case 0: height = 420.0
+        case 1: height = 107.0
+        default: height = 0
+        }
+        
+        return height
     }
 }

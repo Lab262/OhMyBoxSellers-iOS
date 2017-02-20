@@ -63,13 +63,13 @@
                                                     <rect key="frame" x="17" y="6" width="341" height="32"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8um-86-6hZ">
-                                                            <rect key="frame" x="14" y="3" width="77" height="27"/>
+                                                            <rect key="frame" x="14" y="3.5" width="76.5" height="26"/>
                                                             <fontDescription key="fontDescription" name="AXIS-ExtraBold" family="AXIS" pointSize="22"/>
                                                             <color key="textColor" red="0.36078431372549019" green="0.24705882352941178" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRT-eQ-Ncm">
-                                                            <rect key="frame" x="281" y="4" width="49" height="24"/>
+                                                            <rect key="frame" x="281" y="4.5" width="49" height="23.5"/>
                                                             <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="19"/>
                                                             <color key="textColor" red="0.52156862745098043" green="0.44313725490196076" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -305,7 +305,7 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="leftButtonIconImage" value="arrow_Button"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CPV-Yv-5iR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CPV-Yv-5iR">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>

@@ -59,7 +59,10 @@ class CategoryProductsViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SegueIdentifiers.categoryProductsToProduct {
+            let vc = segue.destination as! ProductViewController
             
+            let index = collectionView.indexPathsForSelectedItems![0].item
+            vc.product = products[index]
         }
     }
     

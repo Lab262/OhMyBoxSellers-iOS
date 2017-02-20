@@ -84,6 +84,17 @@
                             <constraint firstItem="mep-ac-uNd" firstAttribute="top" secondItem="U03-CZ-Mkz" secondAttribute="top" id="fVg-9g-iow"/>
                             <constraint firstAttribute="height" constant="41" id="tPy-b5-Ikh"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="0.19"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" red="0.51372549019607838" green="0.51372549019607838" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <constraints>
