@@ -12,6 +12,20 @@ class CenterCellCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     @IBInspectable var centerOffset = CGPoint()
     
+    var currentIndexPath: IndexPath? {
+        
+        let currentIndexPath: IndexPath?
+        
+        if let cv = collectionView {
+            let offsetLocation = cv.contentOffset + CGPoint(x: sectionInset.left, y: sectionInset.top) + centerOffset
+            currentIndexPath = indexPath(in: cv, at: offsetLocation)
+        } else {
+            currentIndexPath = nil
+        }
+        
+        return currentIndexPath
+    }
+    
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         
         let targetContentOffset: CGPoint

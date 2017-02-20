@@ -15,7 +15,7 @@ class ProductCatalogTableViewCell: UITableViewCell {
     let sizeForImageCell = CGSize(width: 375 * UIView.widthScaleProportion(), height: 379 * UIView.heightScaleProportion())
     let sizeForIndexCell = CGSize(width: 35, height: 30)
     
-    var photos: [UIImage] = [#imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder")]
+    var photos: [UIImage] = [#imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder")]
     
     @IBOutlet weak var imagesCollectionView: UICollectionView!
     @IBOutlet weak var indexCollectionView: UICollectionView!
@@ -35,6 +35,7 @@ class ProductCatalogTableViewCell: UITableViewCell {
         super.awakeFromNib()
         registerNibs()
         
+        (imagesCollectionView.collectionViewLayout as! CenterCellCollectionViewFlowLayout).centerOffset = CGPoint(x: imagesCollectionView.frame.size.width/2, y: 0)
         (indexCollectionView.collectionViewLayout as! UICollectionViewFlowLayout).sectionInset = UIEdgeInsets(top: 0, left: 22, bottom: 0, right: 22)
         // Initialization code
     }
@@ -66,8 +67,9 @@ class ProductCatalogTableViewCell: UITableViewCell {
     }
 
     func updateImagesCollectionViewSelection() {
-        self.imagesCollectionView.scrollToItem(at: IndexPath.init(item: self.selectedPage, section: 0), at: .centeredHorizontally, animated: true)
-        
+        if !imagesCollectionView.isDragging {
+            imagesCollectionView.scrollToItem(at: IndexPath.init(item: self.selectedPage, section: 0), at: .centeredHorizontally, animated: true)
+        }
     }
     
     func updateIndexCollectionViewSelection() {
@@ -151,11 +153,19 @@ extension ProductCatalogTableViewCell: UICollectionViewDelegate {
     }
     
     func updatePageIndex() {
-        let currentPage = Int(0.5 + (imagesCollectionView.contentOffset.x / imagesCollectionView.frame.size.width))
         
-        if currentPage != selectedPage {
-            selectedPage = currentPage
+        if let indexPath = (imagesCollectionView.collectionViewLayout as! CenterCellCollectionViewFlowLayout).currentIndexPath {
+            
+            let currentPage = indexPath.item
+            if currentPage != selectedPage {
+                selectedPage = currentPage
+            }
         }
+        
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        updatePageIndex()
     }
 }
 
