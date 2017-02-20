@@ -17,6 +17,9 @@ class ProductCatalogTableViewCell: UITableViewCell {
     
     var photos: [UIImage] = [#imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder"), #imageLiteral(resourceName: "shirt_placeholder")]
     
+    var isChangingPages = false
+    
+    
     @IBOutlet weak var imagesCollectionView: UICollectionView!
     @IBOutlet weak var indexCollectionView: UICollectionView!
     @IBOutlet weak var accessoryButton: UIButton!
@@ -127,6 +130,7 @@ extension ProductCatalogTableViewCell: UICollectionViewDelegate {
         if collectionView == indexCollectionView {
             (collectionView.cellForItem(at: indexPath) as! PageIndexCollectionViewCell).changeToSelectedStyle()
             selectedPage = indexPath.item
+            isChangingPages = true
         }
     }
     
@@ -138,10 +142,9 @@ extension ProductCatalogTableViewCell: UICollectionViewDelegate {
         }
     }
     
-    ///////
-    
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         updatePageIndex()
+        isChangingPages = false
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -165,7 +168,9 @@ extension ProductCatalogTableViewCell: UICollectionViewDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        updatePageIndex()
+        if !isChangingPages {
+            updatePageIndex()
+        }
     }
 }
 
