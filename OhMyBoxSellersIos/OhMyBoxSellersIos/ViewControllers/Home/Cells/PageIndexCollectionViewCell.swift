@@ -31,12 +31,12 @@ class PageIndexCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func changeToSelectedStyle() {
+    override func changeToSelectedStyle() {
         textLabel.backgroundColor = PageIndexCollectionViewCell.selectedBackgroundColor
         textLabel.textColor = PageIndexCollectionViewCell.selectedTextColor
     }
     
-    func changeToUnselectedStyle() {
+    override func changeToUnselectedStyle() {
         textLabel.backgroundColor = PageIndexCollectionViewCell.unselectedBackgroundColor
         textLabel.textColor = PageIndexCollectionViewCell.unselectedTextColor
     }

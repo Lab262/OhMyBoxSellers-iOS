@@ -22,6 +22,7 @@ class ProductViewController: UIViewController {
     func registerNibs() {
         tableView.register(UINib.init(nibName: "ProductCatalogTableViewCell", bundle: nil), forCellReuseIdentifier: ProductCatalogTableViewCell.identifier)
         tableView.register(UINib.init(nibName: "ProductLabelTableViewCell", bundle: nil), forCellReuseIdentifier: ProductLabelTableViewCell.identifier)
+        tableView.register(UINib.init(nibName: "ProductOptionsTableViewCell", bundle: nil), forCellReuseIdentifier: ProductOptionsTableViewCell.identifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +47,16 @@ class ProductViewController: UIViewController {
         return cell
     }
     
+    func generateOptionsCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProductOptionsTableViewCell.identifier) as! ProductOptionsTableViewCell
+        cell.colors = [.blue, .cyan, .darkGray, .green]
+        cell.sizes = ["PP", "M", "G", "GG"]
+        
+        cell.setUpInsets()
+        
+        return cell
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -65,7 +76,7 @@ extension ProductViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,6 +86,7 @@ extension ProductViewController: UITableViewDataSource {
         switch indexPath.row {
         case 0: cell = generateCatalogCell(tableView, cellForRowAt: indexPath)
         case 1: cell = generateLabelCell(tableView, cellForRowAt: indexPath)
+        case 2: cell = generateOptionsCell(tableView, cellForRowAt: indexPath)
         default: cell = UITableViewCell()
         }
         return cell
@@ -90,6 +102,7 @@ extension ProductViewController: UITableViewDelegate {
         switch indexPath.row {
         case 0: height = 420.0
         case 1: height = 107.0
+        case 2: height = 170.0
         default: height = 0
         }
         
