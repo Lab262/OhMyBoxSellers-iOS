@@ -23,6 +23,7 @@ class ProductViewController: UIViewController {
         tableView.register(UINib.init(nibName: "ProductCatalogTableViewCell", bundle: nil), forCellReuseIdentifier: ProductCatalogTableViewCell.identifier)
         tableView.register(UINib.init(nibName: "ProductLabelTableViewCell", bundle: nil), forCellReuseIdentifier: ProductLabelTableViewCell.identifier)
         tableView.register(UINib.init(nibName: "ProductOptionsTableViewCell", bundle: nil), forCellReuseIdentifier: ProductOptionsTableViewCell.identifier)
+        tableView.register(UINib.init(nibName: "LastUpdatedAtTableViewCell", bundle: nil), forCellReuseIdentifier: LastUpdatedAtTableViewCell.identifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,8 +58,12 @@ class ProductViewController: UIViewController {
         return cell
     }
     
-    func generateLastUpdatedCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+    func generateLastUpdatedAtCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: LastUpdatedAtTableViewCell.identifier) as! LastUpdatedAtTableViewCell
+        cell.lastUpdatedAt = Date()
+        
+        return cell
     }
     
     /*
@@ -76,11 +81,20 @@ class ProductViewController: UIViewController {
 extension ProductViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        
+        let numberOfRows: Int
+        
+        switch section {
+        case 0: numberOfRows = 3
+        case 1: numberOfRows = 1
+        default: numberOfRows = 0
+        }
+        
+        return numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -94,7 +108,7 @@ extension ProductViewController: UITableViewDataSource {
             case 2: cell = generateOptionsCell(tableView, cellForRowAt: indexPath)
             default: cell = UITableViewCell()
             }
-        case 1: cell = generateLabelCell(tableView, cellForRowAt: indexPath)
+        case 1: cell = generateLastUpdatedAtCell(tableView, cellForRowAt: indexPath)
         default: cell = UITableViewCell()
         }
         
@@ -121,5 +135,29 @@ extension ProductViewController: UITableViewDelegate {
         }
         
         return height
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        let height: CGFloat
+        
+        switch section {
+        case 1: height = 32
+        default: height = 0
+        }
+        
+        return height
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let view: UIView?
+        
+        switch section {
+        case 1: view = UIView()
+        default: view = nil
+        }
+        
+        return view
     }
 }
