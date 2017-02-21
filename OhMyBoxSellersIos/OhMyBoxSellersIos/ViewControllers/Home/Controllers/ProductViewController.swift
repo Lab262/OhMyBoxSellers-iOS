@@ -57,6 +57,10 @@ class ProductViewController: UIViewController {
         return cell
     }
     
+    func generateLastUpdatedCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -82,13 +86,18 @@ extension ProductViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: UITableViewCell
-        
-        switch indexPath.row {
-        case 0: cell = generateCatalogCell(tableView, cellForRowAt: indexPath)
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0: cell = generateCatalogCell(tableView, cellForRowAt: indexPath)
+            case 1: cell = generateLabelCell(tableView, cellForRowAt: indexPath)
+            case 2: cell = generateOptionsCell(tableView, cellForRowAt: indexPath)
+            default: cell = UITableViewCell()
+            }
         case 1: cell = generateLabelCell(tableView, cellForRowAt: indexPath)
-        case 2: cell = generateOptionsCell(tableView, cellForRowAt: indexPath)
         default: cell = UITableViewCell()
         }
+        
         return cell
     }
 }
@@ -99,10 +108,15 @@ extension ProductViewController: UITableViewDelegate {
         
         let height: CGFloat
         
-        switch indexPath.row {
-        case 0: height = 420.0
-        case 1: height = 107.0
-        case 2: height = 170.0
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0: height = 420.0
+            case 1: height = 107.0
+            case 2: height = 170.0
+            default: height = 0
+            }
+        case 1: height = 44.0
         default: height = 0
         }
         
