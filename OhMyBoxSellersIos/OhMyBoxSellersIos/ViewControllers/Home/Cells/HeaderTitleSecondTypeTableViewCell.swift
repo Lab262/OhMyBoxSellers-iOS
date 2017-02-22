@@ -10,6 +10,10 @@ import UIKit
 
 class HeaderTitleSecondTypeTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var bottomSpaceConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topSpaceConstraint: NSLayoutConstraint!
+    @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
+    
     static let identifier = "headerSecondTypeCell"
 
     @IBOutlet weak var iconImage: UIImageView!

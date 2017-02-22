@@ -24,6 +24,7 @@ class ProductViewController: UIViewController {
         tableView.register(UINib.init(nibName: "ProductLabelTableViewCell", bundle: nil), forCellReuseIdentifier: ProductLabelTableViewCell.identifier)
         tableView.register(UINib.init(nibName: "ProductOptionsTableViewCell", bundle: nil), forCellReuseIdentifier: ProductOptionsTableViewCell.identifier)
         tableView.register(UINib.init(nibName: "LastUpdatedAtTableViewCell", bundle: nil), forCellReuseIdentifier: LastUpdatedAtTableViewCell.identifier)
+        tableView.register(UINib.init(nibName: "HeaderTitleSecondTypeTableViewCell", bundle: nil), forCellReuseIdentifier: HeaderTitleSecondTypeTableViewCell.identifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -143,6 +144,7 @@ extension ProductViewController: UITableViewDelegate {
         
         switch section {
         case 1: height = 32
+        case 2, 3, 4: height = 114
         default: height = 0
         }
         
@@ -155,6 +157,13 @@ extension ProductViewController: UITableViewDelegate {
         
         switch section {
         case 1: view = UIView()
+        case 2:
+            let header = tableView.dequeueReusableCell(withIdentifier: HeaderTitleSecondTypeTableViewCell.identifier) as! HeaderTitleSecondTypeTableViewCell
+            header.titleLabel.text = "DADOS"
+            header.iconImage.image = #imageLiteral(resourceName: "product_header_icon")
+            header.showAll.isHidden = true
+            
+            view = header
         default: view = nil
         }
         

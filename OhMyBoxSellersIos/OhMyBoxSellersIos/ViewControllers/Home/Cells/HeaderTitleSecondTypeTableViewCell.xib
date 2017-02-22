@@ -41,35 +41,39 @@
                             <constraint firstAttribute="height" constant="24" id="g6e-Cs-t6O"/>
                             <constraint firstAttribute="width" constant="86" id="tPH-de-yhX"/>
                         </constraints>
-                        <state key="normal" title="Ver tudo" image="header_button_icon">
+                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="13"/>
+                        <state key="normal" title="Ver tudo" backgroundImage="header_button_icon">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ver tudo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c63-6C-ppp">
-                        <rect key="frame" x="286.5" y="25" width="57" height="22"/>
-                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="13"/>
-                        <color key="textColor" red="0.14117647059999999" green="0.098039215690000001" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="c63-6C-ppp" firstAttribute="centerX" secondItem="PaZ-LC-4tL" secondAttribute="centerX" id="Gbr-3H-Qp0"/>
-                    <constraint firstItem="c63-6C-ppp" firstAttribute="centerY" secondItem="PaZ-LC-4tL" secondAttribute="centerY" id="MTz-48-wo5"/>
+                    <constraint firstItem="Iui-wl-FFK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="56" id="Je4-r2-Ni2"/>
                     <constraint firstAttribute="trailing" secondItem="PaZ-LC-4tL" secondAttribute="trailing" constant="17" id="OJ7-pg-ZBa"/>
                     <constraint firstItem="PaZ-LC-4tL" firstAttribute="bottom" secondItem="Iui-wl-FFK" secondAttribute="bottom" id="Rww-dj-tOQ"/>
                     <constraint firstItem="Iui-wl-FFK" firstAttribute="centerY" secondItem="4ux-B0-cpe" secondAttribute="centerY" id="Ugz-yu-fnl"/>
                     <constraint firstItem="4ux-B0-cpe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="17" id="b1U-an-nSz"/>
                     <constraint firstItem="Iui-wl-FFK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bX7-ib-GqA"/>
                     <constraint firstItem="Iui-wl-FFK" firstAttribute="leading" secondItem="4ux-B0-cpe" secondAttribute="trailing" constant="8" id="seU-mY-dXh"/>
+                    <constraint firstAttribute="bottom" secondItem="Iui-wl-FFK" secondAttribute="bottom" constant="25" id="zt3-LQ-kWx"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="Je4-r2-Ni2"/>
+                        <exclude reference="zt3-LQ-kWx"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="bottomSpaceConstraint" destination="zt3-LQ-kWx" id="Rcm-GV-I1q"/>
+                <outlet property="centerYConstraint" destination="Ugz-yu-fnl" id="STp-aQ-8Iq"/>
                 <outlet property="iconImage" destination="4ux-B0-cpe" id="8ry-eR-fw0"/>
                 <outlet property="showAll" destination="PaZ-LC-4tL" id="mfm-fl-7zJ"/>
                 <outlet property="titleButtonLabel" destination="Iui-wl-FFK" id="Wq8-3E-uCJ"/>
                 <outlet property="titleLabel" destination="Iui-wl-FFK" id="st0-VV-7ri"/>
+                <outlet property="topSpaceConstraint" destination="Je4-r2-Ni2" id="TWy-JQ-Ttv"/>
             </connections>
             <point key="canvasLocation" x="121.5" y="177"/>
         </tableViewCell>
