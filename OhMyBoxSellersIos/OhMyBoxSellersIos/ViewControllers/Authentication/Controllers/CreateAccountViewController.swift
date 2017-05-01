@@ -9,7 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
-import FalconFrameworkIOSSDK
+//import FalconFrameworkIOSSDK
 
 class CreateAccountViewController: UIViewController {
     
@@ -26,28 +26,28 @@ class CreateAccountViewController: UIViewController {
             return
         }
         
-        let newUser = User()
-        newUser.name = self.nameTextField.text
-        newUser.email = self.emailTextField.text
-        newUser.password = self.passwordTextField.text
-        
-        newUser.saveInCloud { (error, newUser: User?) in
-            
-            if (error == nil && newUser != nil){
-                
-                self.present( self.alertControllerActionWithTitle("Sucesso!!", _withMessage:"Abra o link de verificação que foi enviado para seu email em \(newUser!.email!) e depois faça o login"), animated: true, completion: nil)
-                
-            }else {
-                
-                var errorMsg = error?.detail ?? "Response error"
-                
-                if error?.statusCode == 403 {
-                    errorMsg = "Email/Senha já está sendo usado(a)"
-                }
-                
-                self.present(ViewUtil.alertControllerWithTitle("Erro", _withMessage:errorMsg), animated: true, completion: nil)
-            }
-        }
+//        let newUser = User()
+//        newUser.name = self.nameTextField.text
+//        newUser.email = self.emailTextField.text
+//        newUser.password = self.passwordTextField.text
+//        
+//        newUser.saveInCloud { (error, newUser: User?) in
+//            
+//            if (error == nil && newUser != nil){
+//                
+//                self.present( self.alertControllerActionWithTitle("Sucesso!!", _withMessage:"Abra o link de verificação que foi enviado para seu email em \(newUser!.email!) e depois faça o login"), animated: true, completion: nil)
+//                
+//            }else {
+//                
+//                var errorMsg = error?.detail ?? "Response error"
+//                
+//                if error?.statusCode == 403 {
+//                    errorMsg = "Email/Senha já está sendo usado(a)"
+//                }
+//                
+//                self.present(ViewUtil.alertControllerWithTitle("Erro", _withMessage:errorMsg), animated: true, completion: nil)
+//            }
+//        }
     }
     
     func verifyInformations() -> String? {
@@ -130,23 +130,23 @@ class CreateAccountViewController: UIViewController {
                     let email = data["email"] as! String
                     let name = "\(data["first_name"] as! String) \(data["last_name"])"
                     
-                    FFAuthRequests.loginUserWithSocialMedia(
-                        socialMediaId: socialMediaId,
-                        email: email,
-                        name: name,
-                        socialMediaType: .facebook,
-                        socialMediaPasswordServerSecret: "AQWgd$j[QGe]Bh.Ugkf>?B3y696?2$#B2xwfN3hrVhFrE348g",
-                        autoStoreAuthTokenData: true) { (error, tokenReturnData) in
-                            
-                            if error == nil,
-                                let user = tokenReturnData?["user"] as? NSDictionary,
-                                let userId = user["id"] as? Int {
-                                self.getUserBrands("\(userId)")
-                            } else {
-                                self.view.unload()
-                                self.present(ViewUtil.alertControllerWithTitle("Erro", _withMessage: error!.detail!), animated: true, completion: nil)
-                            }
-                    }
+//                    FFAuthRequests.loginUserWithSocialMedia(
+//                        socialMediaId: socialMediaId,
+//                        email: email,
+//                        name: name,
+//                        socialMediaType: .facebook,
+//                        socialMediaPasswordServerSecret: "AQWgd$j[QGe]Bh.Ugkf>?B3y696?2$#B2xwfN3hrVhFrE348g",
+//                        autoStoreAuthTokenData: true) { (error, tokenReturnData) in
+//                            
+//                            if error == nil,
+//                                let user = tokenReturnData?["user"] as? NSDictionary,
+//                                let userId = user["id"] as? Int {
+//                                self.getUserBrands("\(userId)")
+//                            } else {
+//                                self.view.unload()
+//                                self.present(ViewUtil.alertControllerWithTitle("Erro", _withMessage: error!.detail!), animated: true, completion: nil)
+//                            }
+//                    }
                 }
             })
         }
@@ -157,34 +157,34 @@ class CreateAccountViewController: UIViewController {
     }
     
     func getUserBrands(_ userId: String) {
-        
-        let brandOfTheUserQuery = FFQuery().filterWhere(property: "id", condition: .isInSet, value: "(SELECT \"public\".\"UserHasBrands\".\"BrandId\" from \"public\".\"UserHasBrands\" WHERE \"public\".\"UserHasBrands\".\"UserId\" = \(userId))")
-        
-        Brand.findAllInCloud(queryParams: brandOfTheUserQuery) {
-            (error, brands: [Brand]?) in
-            self.showNextScreenBasedOnBrandData(brands)
-        }
+//        
+//        let brandOfTheUserQuery = FFQuery().filterWhere(property: "id", condition: .isInSet, value: "(SELECT \"public\".\"UserHasBrands\".\"BrandId\" from \"public\".\"UserHasBrands\" WHERE \"public\".\"UserHasBrands\".\"UserId\" = \(userId))")
+//        
+//        Brand.findAllInCloud(queryParams: brandOfTheUserQuery) {
+//            (error, brands: [Brand]?) in
+//            self.showNextScreenBasedOnBrandData(brands)
+//        }
     }
     
-    func showNextScreenBasedOnBrandData(_ brands: [Brand]?) {
-        
-        if let brandArray = brands, brandArray.count < 1 {
-            
-            let registerBrandController = ViewUtil.viewControllerFromStoryboardWithIdentifier("Authentication", identifier: "CreateBrandViewController") as! CreateBrandViewController
-            
-            registerBrandController.inputFieldsData = registerBrandController.inputFieldsData.filter({ (textFieldData) -> Bool in
-                return textFieldData.placeholderText != "email"
-                    && textFieldData.placeholderText != "senha"
-            })
-            
-            self.navigationController?.pushViewController(registerBrandController, animated: true)
-            
-        } else {
-            self.present(ViewUtil.viewControllerFromStoryboardWithIdentifier("Home")!, animated: true, completion: nil)
-        }
-        
-    }
-    
+//    func showNextScreenBasedOnBrandData(_ brands: [Brand]?) {
+//        
+//        if let brandArray = brands, brandArray.count < 1 {
+//            
+//            let registerBrandController = ViewUtil.viewControllerFromStoryboardWithIdentifier("Authentication", identifier: "CreateBrandViewController") as! CreateBrandViewController
+//            
+//            registerBrandController.inputFieldsData = registerBrandController.inputFieldsData.filter({ (textFieldData) -> Bool in
+//                return textFieldData.placeholderText != "email"
+//                    && textFieldData.placeholderText != "senha"
+//            })
+//            
+//            self.navigationController?.pushViewController(registerBrandController, animated: true)
+//            
+//        } else {
+//            self.present(ViewUtil.viewControllerFromStoryboardWithIdentifier("Home")!, animated: true, completion: nil)
+//        }
+//        
+//    }
+//    
 }
 
 extension CreateAccountViewController: UITextFieldDelegate {}

@@ -6,13 +6,13 @@
 //  Copyright © 2016 Lab262. All rights reserved.
 //
 
-import FalconFrameworkIOSSDK
-
-class Brand: FFModel {
-    
-    var name: String? = ""
-    var myDescription: String? = ""
-    var discount: Int? = 0
-    var brandPhone: String? = ""
-    var email: String? = ""
-}
+//import FalconFrameworkIOSSDK
+//
+//class Brand: FFModel {
+//    
+//    var name: String? = ""
+//    var myDescription: String? = ""
+//    var discount: Int? = 0
+//    var brandPhone: String? = ""
+//    var email: String? = ""
+//}

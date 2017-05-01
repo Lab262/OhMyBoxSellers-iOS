@@ -10,8 +10,8 @@ import UIKit
 
 class CreateBrandViewController: UIViewController {
     
-    var brandToCreate = Brand()
-    var userToCreate = User()
+//    var brandToCreate = Brand()
+//    var userToCreate = User()
     
     var headerImage = #imageLiteral(resourceName: "registerFotoPlaceholder")
     var inputFieldsData =  [
@@ -126,22 +126,22 @@ extension CreateBrandViewController : FormFieldCellDelegate {
                 return false
             }
 
-            switch index {
-            case 0:
-                brandToCreate.name = cell.textField.text!
-                break
-            case 1:
-                brandToCreate.myDescription = cell.textField.text!
-                break
-            case 2:
-                brandToCreate.brandPhone = cell.textField.text!
-                break
-            case 3:
-                brandToCreate.email = cell.textField.text!
-            break
-            default:
-                break
-            }
+//            switch index {
+//            case 0:
+//                brandToCreate.name = cell.textField.text!
+//                break
+//            case 1:
+//                brandToCreate.myDescription = cell.textField.text!
+//                break
+//            case 2:
+//                brandToCreate.brandPhone = cell.textField.text!
+//                break
+//            case 3:
+//                brandToCreate.email = cell.textField.text!
+//            break
+//            default:
+//                break
+//            }
         }
         return true
     }

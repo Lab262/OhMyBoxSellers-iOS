@@ -9,7 +9,6 @@
 import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
-import FalconFrameworkIOSSDK
 
 let KEY_EMAIL = "email"
 let KEY_PASS = "pass"
@@ -122,17 +121,17 @@ extension LoginViewController {
                     let email = data["email"] as! String
                     let name = "\(data["first_name"] as! String) \(data["last_name"])"
                     
-                    FFAuthRequests.loginUserWithSocialMedia(socialMediaId: socialMediaId, email: email, name: name, socialMediaType: .facebook, socialMediaPasswordServerSecret: "AQWgd$j[QGe]Bh.Ugkf>?B3y696?2$#B2xwfN3hrVhFrE348g", autoStoreAuthTokenData: true) { (error, tokenReturnData) in
-                        
-                        if error == nil,
-                            let user = tokenReturnData?["user"] as? NSDictionary,
-                            let userId = user["id"] as? Int {
-                            self.getUserBrands("\(userId)")
-                        } else {
-                            self.view.unload()
-                            self.present(ViewUtil.alertControllerWithTitle("Erro", _withMessage: error!.detail!), animated: true, completion: nil)
-                        }
-                    }
+//                    FFAuthRequests.loginUserWithSocialMedia(socialMediaId: socialMediaId, email: email, name: name, socialMediaType: .facebook, socialMediaPasswordServerSecret: "AQWgd$j[QGe]Bh.Ugkf>?B3y696?2$#B2xwfN3hrVhFrE348g", autoStoreAuthTokenData: true) { (error, tokenReturnData) in
+//                        
+//                        if error == nil,
+//                            let user = tokenReturnData?["user"] as? NSDictionary,
+//                            let userId = user["id"] as? Int {
+//                            self.getUserBrands("\(userId)")
+//                        } else {
+//                            self.view.unload()
+//                            self.present(ViewUtil.alertControllerWithTitle("Erro", _withMessage: error!.detail!), animated: true, completion: nil)
+//                        }
+//                    }
                 }
             })
         }
@@ -141,51 +140,51 @@ extension LoginViewController {
     func getRequestLogin(){
         self.view.endEditing(true)
         
-        FFAuthRequests.loginUser(email: loginTextField.text!,password: passwordTextField.text!,autoStoreAuthTokenData: true){
-            (error, tokenReturnData) in
-            
-            if error == nil,
-                let user = tokenReturnData?["user"] as? NSDictionary,
-                let userId = user["id"] as? Int {
-                self.getUserBrands("\(userId)")
-            } else {
-                var errorMsg = error?.detail ?? "Response error"
-                
-                if error?.statusCode == 403 {
-                    errorMsg = "Email não verificado. Entre no email \(self.loginTextField.text!) e clique no link de verificação de email 😬"
-                }
-                
-                if error?.statusCode == 422 {
-                    errorMsg = "Email/Senha inválido(a)"
-                }
-                
-                self.present(ViewUtil.alertControllerWithTitle("Erro", _withMessage: errorMsg), animated: true, completion: nil)
-            }
-        }
+//        FFAuthRequests.loginUser(email: loginTextField.text!,password: passwordTextField.text!,autoStoreAuthTokenData: true){
+//            (error, tokenReturnData) in
+//            
+//            if error == nil,
+//                let user = tokenReturnData?["user"] as? NSDictionary,
+//                let userId = user["id"] as? Int {
+//                self.getUserBrands("\(userId)")
+//            } else {
+//                var errorMsg = error?.detail ?? "Response error"
+//                
+//                if error?.statusCode == 403 {
+//                    errorMsg = "Email não verificado. Entre no email \(self.loginTextField.text!) e clique no link de verificação de email 😬"
+//                }
+//                
+//                if error?.statusCode == 422 {
+//                    errorMsg = "Email/Senha inválido(a)"
+//                }
+//                
+//                self.present(ViewUtil.alertControllerWithTitle("Erro", _withMessage: errorMsg), animated: true, completion: nil)
+//            }
+//        }
     }
     
     func getUserBrands(_ userId: String) {
         
-        let brandOfTheUserQuery = FFQuery().filterWhere(property: "id", condition: .isInSet, value: "(SELECT \"public\".\"UserHasBrands\".\"BrandId\" from \"public\".\"UserHasBrands\" WHERE \"public\".\"UserHasBrands\".\"UserId\" = \(userId))")
-        
-        Brand.findAllInCloud(queryParams: brandOfTheUserQuery) {
-            (error, brands: [Brand]?) in
-            self.showNextScreenBasedOnBrandData(brands)
-        }
+//        let brandOfTheUserQuery = FFQuery().filterWhere(property: "id", condition: .isInSet, value: "(SELECT \"public\".\"UserHasBrands\".\"BrandId\" from \"public\".\"UserHasBrands\" WHERE \"public\".\"UserHasBrands\".\"UserId\" = \(userId))")
+//        
+//        Brand.findAllInCloud(queryParams: brandOfTheUserQuery) {
+//            (error, brands: [Brand]?) in
+//            self.showNextScreenBasedOnBrandData(brands)
+//        }
     }
     
-    func showNextScreenBasedOnBrandData(_ brands: [Brand]?) {
-        
-        if let brandArray = brands, brandArray.count < 1 {
-            
-            let registerBrandController = ViewUtil.viewControllerFromStoryboardWithIdentifier("Authentication", identifier: "CreateBrandViewController") as! CreateBrandViewController            
-            self.navigationController?.pushViewController(registerBrandController, animated: true)
-            
-        } else {
-            self.present(ViewUtil.viewControllerFromStoryboardWithIdentifier("Home")!, animated: true, completion: nil)
-        }
-        
-    }
+//    func showNextScreenBasedOnBrandData(_ brands: [Brand]?) {
+//        
+//        if let brandArray = brands, brandArray.count < 1 {
+//            
+//            let registerBrandController = ViewUtil.viewControllerFromStoryboardWithIdentifier("Authentication", identifier: "CreateBrandViewController") as! CreateBrandViewController            
+//            self.navigationController?.pushViewController(registerBrandController, animated: true)
+//            
+//        } else {
+//            self.present(ViewUtil.viewControllerFromStoryboardWithIdentifier("Home")!, animated: true, completion: nil)
+//        }
+//        
+//    }
     
 }
 

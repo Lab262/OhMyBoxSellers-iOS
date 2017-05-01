@@ -1,19 +1,32 @@
 # Uncomment this line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'OhMyBoxSellersIos' do
-  # Comment this line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
 
-    pod 'FalconFrameworkIOSSDK', :git => 'https://gitlab.com/LAB262/FalconFrameworkIOSSDK.git'
+def common_pods
+    
+    use_frameworks!
+    inhibit_all_warnings!
+
     pod 'Fabric'
     pod 'Crashlytics'
-    pod 'Firebase/Storage'
+    pod 'Parse'
+    pod 'ParseFacebookUtilsV4'
     pod 'SDWebImage', '~>3.8'
+end
 
-  target 'OhMyBoxSellersIosTests' do
+target 'lab262.ohmybox.sales.dev' do
+    common_pods
+end
+
+target 'lab262.ohmybox.sales.test' do
+    common_pods
+end
+
+target 'lab262.ohmybox.sales.production' do
+    common_pods
+end
+
+target 'OhMyBoxSellersIosTests' do
     inherit! :search_paths
-    # Pods for testing
-  end
-
+    common_pods
 end

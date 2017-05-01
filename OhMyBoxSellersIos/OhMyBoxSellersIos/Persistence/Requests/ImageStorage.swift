@@ -7,31 +7,30 @@
 //
 
 import UIKit
-import Firebase
 import SDWebImage
 
-class ImageStorage: NSObject {
-    
-    static let storage = FIRStorage.storage()
-    static let storageRef = storage.reference(forURL: "gs://ohmybox-4ea4e.appspot.com")
-
-    static func uploadImage(_ imageToUpload: UIImage!,
-                            inFolder folder: String,
-                            completion: ((FIRStorageMetadata?,Error?) -> Void)?) -> FIRStorageUploadTask {
-        
-        
-        let imageData = UIImagePNGRepresentation(imageToUpload)!
-        
-        let metadata = FIRStorageMetadata()
-        metadata.contentType = "image/png"
-        
-        let imagesRef = storageRef.child(folder)
-        let fileName = folder + Date().description + ".png"
-        let spaceRef = imagesRef.child(fileName)
-        
-        return spaceRef.put(imageData, metadata: metadata, completion: completion)
-        }
-}
+//class ImageStorage: NSObject {
+//    
+//    static let storage = FIRStorage.storage()
+//    static let storageRef = storage.reference(forURL: "gs://ohmybox-4ea4e.appspot.com")
+//
+//    static func uploadImage(_ imageToUpload: UIImage!,
+//                            inFolder folder: String,
+//                            completion: ((FIRStorageMetadata?,Error?) -> Void)?) -> FIRStorageUploadTask {
+//        
+//        
+//        let imageData = UIImagePNGRepresentation(imageToUpload)!
+//        
+//        let metadata = FIRStorageMetadata()
+//        metadata.contentType = "image/png"
+//        
+//        let imagesRef = storageRef.child(folder)
+//        let fileName = folder + Date().description + ".png"
+//        let spaceRef = imagesRef.child(fileName)
+//        
+//        return spaceRef.put(imageData, metadata: metadata, completion: completion)
+//        }
+//}
 
 extension UIImageView {
     func setImageFromUrl(_ urlString: String,
