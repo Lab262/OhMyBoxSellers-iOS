@@ -75,7 +75,6 @@
 		A44D00CF1DE73978001571E2 /* UITextField+NextResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44D00CD1DE73978001571E2 /* UITextField+NextResponder.swift */; };
 		A44D00D11DE73ED8001571E2 /* TextInputTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44D00D01DE73ED8001571E2 /* TextInputTableView.swift */; };
 		A44D00D31DE7F285001571E2 /* FormFieldFooterActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44D00D21DE7F285001571E2 /* FormFieldFooterActionCell.swift */; };
-		A45A55901DED3DDE0088C39A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A45A558F1DED3DDE0088C39A /* GoogleService-Info.plist */; };
 		A45A55931DEE15A70088C39A /* ImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A55921DEE15A70088C39A /* ImageStorage.swift */; };
 		A45A55961DEE5B770088C39A /* UIImageViewWithPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A55951DEE5B770088C39A /* UIImageViewWithPicker.swift */; };
 		A4796C041EB6AC3800B0E543 /* SignUpHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44D00C81DE73448001571E2 /* SignUpHeaderCell.swift */; };
@@ -145,7 +144,6 @@
 		A4796C471EB6AC3800B0E543 /* IconNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4CB02661DD261B200B01A6B /* IconNavigationBar.xib */; };
 		A4796C481EB6AC3800B0E543 /* SizeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C7FC0941E5B99010086A861 /* SizeCollectionViewCell.xib */; };
 		A4796C491EB6AC3800B0E543 /* ProductCatalogTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C584DE61E57796200EF3740 /* ProductCatalogTableViewCell.xib */; };
-		A4796C4A1EB6AC3800B0E543 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A45A558F1DED3DDE0088C39A /* GoogleService-Info.plist */; };
 		A4796C4B1EB6AC3800B0E543 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C5EC9531E54E67000B28C61 /* ProductCollectionViewCell.xib */; };
 		A4796C4C1EB6AC3800B0E543 /* Muli-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4D825561DE3CFA900A11B56 /* Muli-Regular.ttf */; };
 		A4796C4D1EB6AC3800B0E543 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4D8254B1DE3CECB00A11B56 /* Poppins-SemiBold.ttf */; };
@@ -240,7 +238,6 @@
 		A4796CB61EB6AC7D00B0E543 /* IconNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4CB02661DD261B200B01A6B /* IconNavigationBar.xib */; };
 		A4796CB71EB6AC7D00B0E543 /* SizeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C7FC0941E5B99010086A861 /* SizeCollectionViewCell.xib */; };
 		A4796CB81EB6AC7D00B0E543 /* ProductCatalogTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C584DE61E57796200EF3740 /* ProductCatalogTableViewCell.xib */; };
-		A4796CB91EB6AC7D00B0E543 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A45A558F1DED3DDE0088C39A /* GoogleService-Info.plist */; };
 		A4796CBA1EB6AC7D00B0E543 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C5EC9531E54E67000B28C61 /* ProductCollectionViewCell.xib */; };
 		A4796CBB1EB6AC7D00B0E543 /* Muli-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4D825561DE3CFA900A11B56 /* Muli-Regular.ttf */; };
 		A4796CBC1EB6AC7D00B0E543 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4D8254B1DE3CECB00A11B56 /* Poppins-SemiBold.ttf */; };
@@ -395,14 +392,10 @@
 		A44D00CD1DE73978001571E2 /* UITextField+NextResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+NextResponder.swift"; sourceTree = "<group>"; };
 		A44D00D01DE73ED8001571E2 /* TextInputTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputTableView.swift; sourceTree = "<group>"; };
 		A44D00D21DE7F285001571E2 /* FormFieldFooterActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormFieldFooterActionCell.swift; sourceTree = "<group>"; };
-		A45A558F1DED3DDE0088C39A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A45A55921DEE15A70088C39A /* ImageStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStorage.swift; sourceTree = "<group>"; };
 		A45A55951DEE5B770088C39A /* UIImageViewWithPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewWithPicker.swift; sourceTree = "<group>"; };
-		A4796BFF1EB6AC2900B0E543 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4796C6E1EB6AC3800B0E543 /* lab262.ohmybox.sales.test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lab262.ohmybox.sales.test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4796CDD1EB6AC7E00B0E543 /* lab262.ohmybox.sales.production.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lab262.ohmybox.sales.production.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A4796CE01EB6ACD900B0E543 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A4796CE31EB6ACE300B0E543 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4796CE51EB6AD2700B0E543 /* lab262.ohmybox.sales.dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = lab262.ohmybox.sales.dev.entitlements; sourceTree = "<group>"; };
 		A4796CE61EB6AD3200B0E543 /* lab262.ohmybox.sales.test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = lab262.ohmybox.sales.test.entitlements; sourceTree = "<group>"; };
 		A4796CE71EB6AD3600B0E543 /* lab262.ohmybox.sales.production.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = lab262.ohmybox.sales.production.entitlements; sourceTree = "<group>"; };
@@ -410,6 +403,7 @@
 		A4796CEC1EB6B16700B0E543 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		A4796CEE1EB6B16D00B0E543 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		A4796CF01EB6B17400B0E543 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		A4796CF51EB6BDD600B0E543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = OhMyBoxSellersIos/Info.plist; sourceTree = SOURCE_ROOT; };
 		A489B1F61DDA7D1100B239D5 /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		A4AFBB011DD272A700F270C7 /* UIApplication+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Navigation.swift"; sourceTree = "<group>"; };
 		A4AFBB0C1DD35D4600F270C7 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -648,7 +642,6 @@
 			children = (
 				A4796CEC1EB6B16700B0E543 /* AppConfig.swift */,
 				A4796CE51EB6AD2700B0E543 /* lab262.ohmybox.sales.dev.entitlements */,
-				A4796BFF1EB6AC2900B0E543 /* Info.plist */,
 			);
 			path = lab262.ohmybox.sales.dev;
 			sourceTree = "<group>";
@@ -658,7 +651,6 @@
 			children = (
 				A4796CEE1EB6B16D00B0E543 /* AppConfig.swift */,
 				A4796CE71EB6AD3600B0E543 /* lab262.ohmybox.sales.production.entitlements */,
-				A4796CE01EB6ACD900B0E543 /* Info.plist */,
 			);
 			path = lab262.ohmybox.sales.production;
 			sourceTree = "<group>";
@@ -668,7 +660,6 @@
 			children = (
 				A4796CF01EB6B17400B0E543 /* AppConfig.swift */,
 				A4796CE61EB6AD3200B0E543 /* lab262.ohmybox.sales.test.entitlements */,
-				A4796CE31EB6ACE300B0E543 /* Info.plist */,
 			);
 			path = lab262.ohmybox.sales.test;
 			sourceTree = "<group>";
@@ -842,9 +833,9 @@
 		A4E463021DCAEC4F00A611C0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A4796CF51EB6BDD600B0E543 /* Info.plist */,
 				A44E0C5D1DD092650028F06C /* Fonts */,
 				A4D825691DE3D3DC00A11B56 /* Assets.xcassets */,
-				A45A558F1DED3DDE0088C39A /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1043,6 +1034,9 @@
 					A4796C701EB6AC7D00B0E543 = {
 						DevelopmentTeam = B865ENT4P3;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -1104,7 +1098,6 @@
 				A4796C471EB6AC3800B0E543 /* IconNavigationBar.xib in Resources */,
 				A4796C481EB6AC3800B0E543 /* SizeCollectionViewCell.xib in Resources */,
 				A4796C491EB6AC3800B0E543 /* ProductCatalogTableViewCell.xib in Resources */,
-				A4796C4A1EB6AC3800B0E543 /* GoogleService-Info.plist in Resources */,
 				A4796C4B1EB6AC3800B0E543 /* ProductCollectionViewCell.xib in Resources */,
 				A4796C4C1EB6AC3800B0E543 /* Muli-Regular.ttf in Resources */,
 				A4796C4D1EB6AC3800B0E543 /* Poppins-SemiBold.ttf in Resources */,
@@ -1146,7 +1139,6 @@
 				A4796CB61EB6AC7D00B0E543 /* IconNavigationBar.xib in Resources */,
 				A4796CB71EB6AC7D00B0E543 /* SizeCollectionViewCell.xib in Resources */,
 				A4796CB81EB6AC7D00B0E543 /* ProductCatalogTableViewCell.xib in Resources */,
-				A4796CB91EB6AC7D00B0E543 /* GoogleService-Info.plist in Resources */,
 				A4796CBA1EB6AC7D00B0E543 /* ProductCollectionViewCell.xib in Resources */,
 				A4796CBB1EB6AC7D00B0E543 /* Muli-Regular.ttf in Resources */,
 				A4796CBC1EB6AC7D00B0E543 /* Poppins-SemiBold.ttf in Resources */,
@@ -1188,7 +1180,6 @@
 				A4CB02671DD261B200B01A6B /* IconNavigationBar.xib in Resources */,
 				4C7FC0961E5B99010086A861 /* SizeCollectionViewCell.xib in Resources */,
 				4C584DE81E57796200EF3740 /* ProductCatalogTableViewCell.xib in Resources */,
-				A45A55901DED3DDE0088C39A /* GoogleService-Info.plist in Resources */,
 				4C5EC9541E54E67000B28C61 /* ProductCollectionViewCell.xib in Resources */,
 				A4D825591DE3CFA900A11B56 /* Muli-Regular.ttf in Resources */,
 				A4D825511DE3CECB00A11B56 /* Poppins-SemiBold.ttf in Resources */,
@@ -1733,7 +1724,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/OhMyBoxSellersIos/Vendor",
 				);
-				INFOPLIST_FILE = lab262.ohmybox.sales.test/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/OhMyBoxSellersIos/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEVELOPMENT";
 				PRODUCT_BUNDLE_IDENTIFIER = lab262.ohmybox.sales.test;
@@ -1759,7 +1750,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/OhMyBoxSellersIos/Vendor",
 				);
-				INFOPLIST_FILE = lab262.ohmybox.sales.test/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/OhMyBoxSellersIos/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) -DPRODUCTION";
 				PRODUCT_BUNDLE_IDENTIFIER = lab262.ohmybox.sales.test;
@@ -1786,7 +1777,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/OhMyBoxSellersIos/Vendor",
 				);
-				INFOPLIST_FILE = lab262.ohmybox.sales.production/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/OhMyBoxSellersIos/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEVELOPMENT";
 				PRODUCT_BUNDLE_IDENTIFIER = lab262.ohmybox.sales.production;
@@ -1812,7 +1803,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/OhMyBoxSellersIos/Vendor",
 				);
-				INFOPLIST_FILE = lab262.ohmybox.sales.production/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/OhMyBoxSellersIos/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) -DPRODUCTION";
 				PRODUCT_BUNDLE_IDENTIFIER = lab262.ohmybox.sales.production;
@@ -1936,7 +1927,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/OhMyBoxSellersIos/Vendor",
 				);
-				INFOPLIST_FILE = lab262.ohmybox.sales.dev/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/OhMyBoxSellersIos/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEVELOPMENT";
 				PRODUCT_BUNDLE_IDENTIFIER = lab262.ohmybox.sales.dev;
@@ -1962,7 +1953,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/OhMyBoxSellersIos/Vendor",
 				);
-				INFOPLIST_FILE = lab262.ohmybox.sales.dev/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/OhMyBoxSellersIos/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) -DPRODUCTION";
 				PRODUCT_BUNDLE_IDENTIFIER = lab262.ohmybox.sales.dev;
